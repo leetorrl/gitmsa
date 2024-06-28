@@ -1,0 +1,78 @@
+/* div {
+  background-color: rgb(193, 209, 47);
+  width: 100px;
+  height: 100px;
+} */
+
+
+header{
+  width: 100%;
+  /* 전체 지정가능 */
+  height: 150px;
+background-color: rgb(21, 255, 0);}
+
+
+#logo{
+  /* #붙은건 div id 태그 불러와서 css로 꾸미는것 */
+  width: 100%x; 
+  /* (가로) */
+  /* height: 100px;   */
+  /* 높이를 따로 안주면 글자크기랑 같이 따라감 */
+  /* (세로) */
+  /* background-color: rgb(154, 199, 31); */
+  /* margin: 0 30px 200px 300px; */
+  /* 북쪽 동쪾 남쪾 서쪽 (시계방향) */
+padding-left: 20px;
+/* 헤더, 본문, 푸터 구분 확실히 하고 벌릴것 */
+
+margin: 0 auto;
+/* 아래위로 여백없이 창크기 기준 가운데 정렬 */
+
+
+
+a{
+  text-decoration: none;
+  /* 글자 줄 삭제 */
+}
+
+/* div{
+  font-size: 150px;
+} */
+
+/*<nav class="navi">일시 .navi{}로 
+<nav id="navi">일시 #navi{}로
+*/
+
+nav{
+  float: right;
+/* 오른쪽으로 플로팅(끝에 붙음) */
+}
+li{
+  float: left;
+  list-style-type: none;
+  /* 글자에 점 삭제 */
+}
+
+li a{
+
+  /* 가이드링크 거리벌리기 */
+  display: block;
+  padding: 20px 60px;
+  /* 좌우 60픽셀 상하 20픽셀 */
+
+  
+}
+
+
+section{
+  /* 색션 항목 거리벌리기 */
+  padding: 20px 60px;
+}
+
+footer{
+  height: 150px;
+  background-color: rgb(21, 255, 0);
+  
+}
+
+}

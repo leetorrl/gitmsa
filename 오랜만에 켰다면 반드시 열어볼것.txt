@@ -1,0 +1,18 @@
+이클립 최신버전인지 확인(24년도) -> 자바 17버전으로 지정 필수
+java 설치 확인(17버전)
+sourcetree설치후 git bash 설치
+github 로그인후 git bash를 통하여 open git을 열고 코드 불러오기
+
+sourcetree 없을시 git bash로 git add . git commit -m " " git push origin main 입력해서 깃허브에 직접 푸시하면됨
+
+visual studio code 설치후 불러올 경로 지정(d드라이브 work폴더)
+
+
+이클립스 새파일 작성시
+파일-뉴-자바프로젝트생산-뉴클레스생산
+
+비주얼스투디오 코드 새파일 작성시
+폴더 생산(ex : 0701)
+html새파일 생산(ex : 0701.html)
+css새파일 생산(ex : css폴더 새로 만들거나 폴더내에 0701.css)
+링크삽입후 작업진행

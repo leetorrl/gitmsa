@@ -1,6 +1,6 @@
 package ex03;
 
-public class 연습복합연산해깔릴때보기 {
+public class 연습복합연산누적계산해깔릴때보기 {
 
 	public static void main(String[] args) {
 		
@@ -21,6 +21,8 @@ public class 연습복합연산해깔릴때보기 {
 		System.out.println(결과);
 		System.out.println(a);
 		System.out.println(b);
+
+	
 	}
 
 }

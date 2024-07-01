@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기출문제2</title>
+  <style>
+
+    /* 스타일 부분 다시 공부, css에 복붙해도됨 */
+    table, td, th {
+      /* 선 스타일? */
+      border:1px solid #ccc;
+    }
+    td, th {
+      /* 높이 넓이 지정 */
+      padding:10px 20px;
+    }
+    td:last-child{
+     /* 마지막 구간 넓이 지정 */
+      width:200px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>수급 국원 지원 양식</h1>
+<table>
+ 
+ <tr>
+   <th rowspan="3">개인정보</th>
+   <th>이름</th>
+   <td></td> 
+  <!-- 빈칸도 td를 달아야함 -->
+ </tr>
+
+ <tr>
+  <!-- 앞 테이블에서 th를 rowsapn으로 묶었으므로 다음칸부터 시작 -->
+   <th>학과/학번</th>
+   <td></td>
+ </tr>
+
+ <tr>
+   <th>연락처</th>
+   <td></td>
+ </tr>
+
+ <tr>
+   <th>지원 분야</th>
+   <td colspan="2"></td>
+</tr>
+
+</table>
+</body>
+</html>

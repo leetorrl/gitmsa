@@ -1,3 +1,4 @@
+
 package ex03;
 
 public class ex06결과값실수로강제변환 {

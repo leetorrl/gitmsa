@@ -28,8 +28,9 @@ public class 선생숙제1완 {
 		System.out.println(정답);
 		
 				
-			
-				
+//			System.out.println((사과 % 바구니갯수 > 0 ? 1 : 0));
+//				int 바구니갯수 = 바구니in / 바구니갯수 + (사과 % 바구니갯수 > 0 ? 1:0);
 	
+				
 }
 }

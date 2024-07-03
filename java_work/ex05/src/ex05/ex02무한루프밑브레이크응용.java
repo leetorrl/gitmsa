@@ -10,6 +10,8 @@ public class ex02무한루프밑브레이크응용 {
 		
 		Scanner scan = new Scanner(System.in);
 		
+		//단순반복을 할경우 while 조건 반복을 설정할 경우 for
+	
 		
 		while(true) {
 			

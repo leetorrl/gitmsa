@@ -1,6 +1,6 @@
 package ex05;
 
-public class ex07 {
+public class ex07컨티뉴활용 {
 
 	public static void main(String[] args) {
 		

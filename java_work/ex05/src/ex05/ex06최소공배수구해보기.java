@@ -9,7 +9,7 @@ public class ex06최소공배수구해보기 {
 		
 		int num=1;
 		
-		for(num=1; num<100; num++) {
+		for(num=1; num<100; num++) {//조건있는 반복을 할때
 			
 			
 			if(num%3==0 && num%4==0) {

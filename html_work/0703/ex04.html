@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+
+</head>
+
+
+<body>
+  
+<form action="">
+<fieldset>
+<legend>아이디 패스워드</legend>
+
+<input type="checkbox" name="" id="" checked>
+<!-- checked = 미리 체크된 상태로 나오게 하는것 -->
+
+<label for="id">ID</label>
+<input type="text" name="id" id="id" maxlength="10">
+
+<label for="passwrd">PASSWORD</label>
+<input type="password" name="passwrd" id="qwer">
+
+<label for="tel">tel</label>
+<input type="tel" name="tel" id="tel">
+
+<label for="email">email</label>
+<input type="email" name="email" id="email" required>
+<!-- required는 버튼 누른후 이메일 오류표기해줌 -->
+
+
+
+<button type="button" id="btn">속성바꾸기</button>
+<button>전송</button>
+</fieldset>
+
+
+</form>
+
+
+
+
+</body>
+</html>
+
+<script>
+  // 버튼 추가후 패스워드 드러내기(어려움)
+document.getElementById('btn').addEventListener('click',()=>{
+  document.getElementById('qwer').setAttribute('type','text');
+   
+})
+
+</script>

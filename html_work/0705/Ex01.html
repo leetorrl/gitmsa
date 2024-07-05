@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+
+.컨테이너{width: 500px;
+/* 클레스 지정시 .붙여서 */
+}
+
+legend{
+  border: 1px solid black;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+  <h1>회원 가입을 환영합니다.</h1>
+
+  <div class="컨테이너" id="aa">
+    <form action="">
+      <fieldset>
+        <legend>사용자 정보</legend>
+        <ul>
+          <li>
+            <label for="id">아이디</label>
+            <input type="text" name="" id="id" placeholder="4자~10자 사이 공백없이">
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input type="text" name="" id="email">
+          </li>
+          <li>
+            <label for="비번">비밀번호</label>
+            <input type="text" name="" id="비번">
+          </li>
+
+          <li>
+            <label for="비번확인">비밀번호확인</label>
+            <input type="text" name="" id="비번확인">
+          </li>
+          <li>
+            <label for="경로">가입경로</label>
+            <input type="text" name="" id="경로"><select name="" id="">
+              <option value="">블로그</option>
+              <option value="">구청</option>
+              <option value="">TV광고</option>
+            </select>
+          </li>
+          <li>
+            <label for="memo">메모</label>
+            <textarea name="memo" id="memo"></textarea>
+          </li>
+        </ul>
+        <legend>이벤트와 새로운소식</legend>
+        <ul>
+          <li>
+            <input type="radio" name="메일수신버튼" id="">메일수신
+            <input type="radio" name="메일수신버튼" id="" checked>메일수신 안함
+          </li>
+        </ul>
+      </fieldset>
+  </div>
+<button onclick="asdasd();">넓이 바꾸기</button>
+
+  <input type="submit" value="회원가입">
+  <input type="reset" value="취소">
+
+
+  </form>
+
+</body>
+
+</html>
+<script>
+  function asdasd(){
+    const aa = document.getElementById('aa');
+    const bb = Math.random()*1200;
+    alert(bb);
+    aa.style.width=`${bb}px`;
+  }
+</script>

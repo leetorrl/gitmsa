@@ -1,0 +1,15 @@
+p{
+  color: red;
+}
+
+div{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  /* padding-left: 30px; */
+ padding: 0 0 0 30px;
+ /* 12시로 부터 시계방향 */
+
+ /* margin-left: 30px; */
+ margin: 0 auto 0 auto;
+}

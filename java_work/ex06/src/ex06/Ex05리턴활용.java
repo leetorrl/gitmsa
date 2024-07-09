@@ -4,7 +4,7 @@ public class Ex05리턴활용 {
 
 	
 	public static int aa() {
-		System.out.println("aa");
+		System.out.println("Ex09/src/aa");
 		return 10; //돌아갈시 a는 10으로 지정하는 함수
 	}
 	

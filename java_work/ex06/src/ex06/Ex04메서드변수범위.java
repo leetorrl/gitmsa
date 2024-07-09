@@ -4,7 +4,7 @@ public class Ex04메서드변수범위 {
 
 	// 보냈는 구구단 호출 하는 메서드 => 2 3
 	public static void aa(int dan) {// 스테틱 인트명 요기서 지정가능, 현 중괄호 안에서만 사용가능 벗어나면 사라짐
-		System.out.println("aa");
+		System.out.println("Ex09/src/aa");
 		for (int i = 3; i < 10; i++) {
 			System.out.println(dan * i);
 		}

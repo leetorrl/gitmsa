@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 
-public class 기출문제{
+public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;;
 
     public static void main(String[] args) {
 
@@ -17,79 +17,95 @@ public class 기출문제{
           while (true) {
 
               System.out.println();
-              System.out.print("1=가위, 2=바위, 3=보 중 입력후 엔터>>");
+              System.out.print("0=종류, 1=가위, 2=바위, 3=보 중 입력후 엔터>>");
 
-
+              int sum = 0;
               int result1 = scan.nextInt();
+
 
 
               for (int i = 1; i < 2; i++) {//1=가위 2=바위 3=보
 
                   a = (int) (Math.random() * 3) + 1;
 
+
+
                   System.out.println();
 
 
-                  switch (a){
+                  switch (result1){
+                      case 0 :
+                          System.out.println("종류합니다");
+                          return ;
+
                       case 1 :
-                          System.out.println("컴퓨터는 가위");
+                          System.out.println("나는 가위");
 
-                          if(result1==1){
+                          if(a==1){
 
-                              System.out.println("비겼습니다");
+                              System.out.println("컴퓨터는 가위! 비겼습니다");
+                              System.out.println("현재 승리수="+sum);
                               break;
+                          } else if (a==2) {
 
-                          } else if (result1==2) {
-
-                              System.out.println("이겼습니다");
+                              System.out.println("컴퓨터는 바위! 졌습니다");
                               break;
 
                           }else {
-
-                              System.out.println("졌습니다");
+                              System.out.println("컴퓨터는 보! 이겼습니다");
+                              sum ++;
+                              System.out.println("현재 승리수="+sum);
                               break;
+
                           }
 
 
 
                       case 2 :
-                          System.out.println("컴퓨터는 바위");
+                          System.out.println("나는 바위");
 
-                          if(result1==1){
+                          if(a==1){
 
-                              System.out.println("졌습니다");
+                              System.out.println("컴퓨터는 가위! 이겼습니다");
+                              sum ++;
+                              System.out.println("현재 승리수="+sum);
                               break;
 
-                          } else if (result1==2) {
+                          } else if (a==2) {
 
-                              System.out.println("비겼습니다");
+                              System.out.println("컴퓨터는 바위! 비겼습니다");
+                              System.out.println("현재 승리수="+sum);
                               break;
-
                           }else {
-
-                              System.out.println("이겼습니다");
+                              System.out.println("컴퓨터는 보! 졌습니다");
                               break;
+
                           }
 
                       case 3 :
-                          System.out.println("컴퓨터는 보");
+                          System.out.println("나는 보");
 
-                          if(result1==1){
-
-                              System.out.println("이겼습니다");
+                          if(a==1){
+                              System.out.println("컴퓨터는 가위! 졌습니다");
                               break;
 
-                          } else if (result1==2) {
 
-                              System.out.println("졌습니다");
+                          } else if (a==2) {
+                              System.out.println("컴퓨터는 바위! 이겼습니다");
+                              sum ++;
+                              System.out.println("현재 승리수="+sum);
                               break;
+
 
                           }else {
 
-                              System.out.println("비겼습니다");
+                              System.out.println("컴퓨터는 보! 비겼습니다");
+                              System.out.println("현재 승리수="+sum);
                               break;
+
                           }
                   }
+
               }
           }
     }

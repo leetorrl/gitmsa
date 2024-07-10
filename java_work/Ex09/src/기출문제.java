@@ -1,5 +1,6 @@
 package Ex09.src;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 
@@ -19,10 +20,11 @@ public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;
               System.out.println();
               System.out.print("0=종류, 1=가위, 2=바위, 3=보 중 입력후 엔터>>");
 
-              int sum = 0;
+
+
               int result1 = scan.nextInt();
 
-
+              int sum = 0;
 
               for (int i = 1; i < 2; i++) {//1=가위 2=바위 3=보
 
@@ -31,6 +33,8 @@ public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;
 
 
                   System.out.println();
+
+
 
 
                   switch (result1){
@@ -45,17 +49,18 @@ public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;
 
                               System.out.println("컴퓨터는 가위! 비겼습니다");
                               System.out.println("현재 승리수="+sum);
-                              break;
+
                           } else if (a==2) {
 
                               System.out.println("컴퓨터는 바위! 졌습니다");
-                              break;
+
 
                           }else {
+                              sum++;
                               System.out.println("컴퓨터는 보! 이겼습니다");
-                              sum ++;
-                              System.out.println("현재 승리수="+sum);
-                              break;
+
+                              System.out.println("현재 승리수="+(sum));
+
 
                           }
 
@@ -65,20 +70,19 @@ public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;
                           System.out.println("나는 바위");
 
                           if(a==1){
-
+                              sum++;
                               System.out.println("컴퓨터는 가위! 이겼습니다");
-                              sum ++;
-                              System.out.println("현재 승리수="+sum);
-                              break;
+
+                              System.out.println("현재 승리수="+(sum));
+
 
                           } else if (a==2) {
 
                               System.out.println("컴퓨터는 바위! 비겼습니다");
                               System.out.println("현재 승리수="+sum);
-                              break;
+
                           }else {
                               System.out.println("컴퓨터는 보! 졌습니다");
-                              break;
 
                           }
 
@@ -87,29 +91,34 @@ public class 기출문제{//시스템은 구동되는데 기록이 저장안됨;
 
                           if(a==1){
                               System.out.println("컴퓨터는 가위! 졌습니다");
-                              break;
+
 
 
                           } else if (a==2) {
+                              sum++;
                               System.out.println("컴퓨터는 바위! 이겼습니다");
-                              sum ++;
-                              System.out.println("현재 승리수="+sum);
-                              break;
+
+                              System.out.println("현재 승리수="+(sum));
+
 
 
                           }else {
 
                               System.out.println("컴퓨터는 보! 비겼습니다");
                               System.out.println("현재 승리수="+sum);
-                              break;
+
 
                           }
+
+
+}
+
                   }
 
               }
           }
     }
-    }
+
 
 
 

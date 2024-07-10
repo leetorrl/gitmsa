@@ -8,9 +8,12 @@ public class BackAccountMain {
     public static void main(String[] args) {
         System.out.println("시작");
 
-        BankAccount park = new BankAccount("박길동");
-        BankAccount yoon = new BankAccount("윤길동");
+        BankAccount park = new BankAccount("박길동","1234","850511",5000);
+        BankAccount yoon = new BankAccount("윤길동","4567","950511",5000);
 
+//        park.initAccount("1234","850511",5000);
+//        yoon.initAccount("4567","950511",5000);
+        //초기화 메소드
         park.cmb();
         yoon.cmb();
 

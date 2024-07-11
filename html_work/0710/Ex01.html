@@ -5,74 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
-    * {
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+  <link rel="stylesheet" href="style.css">
 
-      font-family: "Do Hyeon", sans-serif;
-      font-weight: 400;
-      font-style: normal;
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+
+  <script>
 
 
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    $(document).ready(function () {
+      $(".slider").bxSlider({
+        auto: true, //자동 슬라이드
+        speed: 300, //자동 슬라이드 속도
+        
+        nextSelector: '#slider-next',
+        prevSelector: '#slider-prev',
+        nextText: 'Onward →',
+        prevText: '← Go back'
+      });
 
-    .container {
-      width: 960;
-      min-width: 960px;
-      margin: 0 auto;
-      background-color: antiquewhite;
+    });
 
-    }
 
-    .header {
-      overflow: hidden;
-    }
-
-    .logo {
-      float: left;
-      display: block;
-      padding: 0.2rem;
-      margin: 0.1rem;
-    }
-
-    .slide {}
-
-    ul {
-      float: right;
-    }
-
-    li {
-      list-style-type: none;
-      float: left;
-    }
-
-    a {
-      margin: 0.8rem 0.3rem;
-      display: block;
-      text-decoration: none;
-      padding: 0.4rem 1rem;
-      text-decoration: none;
-      /* background-color: aqua; */
-    }
-
-    .Sign {
-      background-color: aquamarine;
-      border-radius: 0.4rem;
-    }
-
-    .Register {
-      background-color: cadetblue;
-      border-radius: 0.4rem;
-    }
-  </style>
+  </script>
 
 </head>
 
 <body>
+
   <div class="container">
     <div class="header">
       <div>
@@ -92,9 +54,74 @@
 
     </div>
   </div>
+  <div class="prevnext">
+    <span id="slider-prev"></span>
+    <span id="slider-next"></span>
   </div>
-  <div class="slide">
-    <h1>slide</h1>
+  </div>
+  <div class="slide" style="background-color: rgb(250, 215, 232);">
+
+    <div class="slider">
+
+
+      <div>
+        <img src="aaa.jpg">
+        I am a slide.
+      </div>
+      <div>
+        <img src="bbb.jpg" alt="">
+        I am another slide.
+      </div>
+      <div>
+        <img src="ccc.jpg" alt="">
+      </div>
+      <div>
+        <img src="ddd.png" alt="">
+      </div>
+
+    </div>
+    <div class="heading">
+      <h1>Heading</h1>
+      <h2>SubHeading</h2>
+      <div class="sub-heading">
+        <div>
+          <h1>홍길동</h1>
+          <p>
+            내사랑내곁에<br>
+            zzz
+          </p>
+        </div>
+        <div>
+          <h1>김길동</h1>
+          <p>ㅎㅎㅎ<br>nnn</p>
+        </div>
+
+        <div>
+          <h1>박길동</h1>
+          <p>ㅂㅂㅂ<br>ppp</p>
+        </div>
+
+      </div>
+      <div class="sub-heading">
+        <div>
+          <h1>홍길동</h1>
+          <p>
+            😊내사랑내곁에<br>
+            zzz
+          </p>
+        </div>
+        <div>
+          <h1>김길동</h1>
+          <p>ㅎㅎㅎ<br>😊nnn</p>
+        </div>
+
+        <div>
+          <h1>박길동</h1>
+          <p>😊ㅂㅂㅂ<br>ppp</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <div class="heading">

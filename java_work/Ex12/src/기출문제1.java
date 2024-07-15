@@ -28,7 +28,7 @@ public class 기출문제1 {
 
         String str = "12345";
 
-        char strr =
+
 
 
         int sum = 0;

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+      display: inline;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      margin: 30px;
+      line-height: 100px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      background-color: aquamarine;
+      width: 1140px;
+      margin: 0 auto;
+      height: 100px;
+    }
+
+    .active {
+      border: 1px solid white;
+    }
+
+    a:hover {
+      border: 1px solid white;
+      /* 커서 대면 실선 생김 */
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <ul>
+
+    <li><a class="active" href="#" id="menu1">MENU1</a></li>
+    <li><a href="#" id="menu2">abcdef</a></li>
+    <li><a href="#" id="menu3">NEWMENU</a></li>
+    <li><a href="#" id="menu4">SIGNIN</a></li>
+    <li><a href="#" id="menu5">signUP</a></li>
+
+
+  </ul>
+  <div id="div1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+  </div>
+  <div id="idv2">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe debitis natus accusamus suscipit voluptatem.
+      Laudantium labore recusandae minus? Amet distinctio quidem minus sed dolor explicabo temporibus, fugit ut libero?
+    </p>
+  </div>
+
+</div>
+
+</body>
+
+</html>
+
+<script>
+  $(document).ready(function () {
+    $('#menu1').mouseenter(function () { $('#div1').fadeIn(); });
+    $('#menu1').mouseleaven(function () { $('#div1').fadeOut(); });
+    $('#menu1').click(function () { $('#div2').fadeToggle(); });
+  });
+</script>

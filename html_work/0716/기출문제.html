@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div{
+  width: 1000px;
+}
+
+#static{
+  position: static; 
+  /* html기준 문서흐름에 맞춰 평범하게 위치하게함 */
+  background-color: rgb(20, 41, 228);
+  
+}
+#relativer-1{
+  position: relative;
+  /* left와 top등을 이용해서 위치 변경 가능함 */
+  background-color: rgb(255, 255, 255);
+}
+#relativer-2{
+  position: relative;
+  background-color: rgb(231, 23, 34);
+  left: 100px;
+  top: -50px;
+  /* -로 할경우 겹쳐진다 */
+
+}
+#fixed{
+  width: 100px;
+  height: 100px;
+  background-color: rgba(231, 23, 34, 50% );
+  background-image: url(../0710/ccc.jpg);
+  position: fixed;
+  /* 브라우저 창 기준으로 위치를 지정 */
+  border-radius: 50%;
+  right: 50px; 
+  top: 20px;
+/* top 과 right를 지정하므로서 브라우저 기분 위치를 설정가능 */
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+  <div>
+<P id="static">Lorem ipsum dolorbr 
+  <br> sit amet, 
+  <br>  consectetur a  
+  <br> dipisicing elit. Nihi 
+  <br> l nam quis at exceptu 
+  <br> ri debitis sapiente  
+  <br> ipsum dolorem porro s 
+  <br> it, deserunt, quas t 
+  <br> empora repellendus  
+  <br> quisquam, dicta sint 
+  <br>  temporibus? Quide 
+  <br> m, totam at!</P>
+<p id="relativer-1">Lorem ipsum br 
+  <br>dolor sit  
+  <br> amet consectet  
+  <br> ur, adipisicing elit. 
+  <br>  Asperiores architect 
+  <br> o eum quas earum exp 
+  <br> edita, error consequu 
+  <br> ntur cum, nulla ipsa 
+  <br> m ducimus ea praese 
+  <br> ntium? Debitis magni 
+  <br> , commodi laborum  
+  <br> officiis suscipit aut obcaecati.</p>
+<p id="relativer-2">Lorem ipsum br 
+  <br>dolor, sit 
+  <br>  amet consecte  
+  <br> tur adipisicing elit. 
+  <br>  Repudiandae perferen 
+  <br> dis rem modi quia co 
+  <br> rporis aut fugiat rep 
+  <br> ellendus itaque opti 
+  <br> o. Soluta assumenda 
+  <br>  sit, nesciunt labor 
+  <br> iosam culpa a dict 
+  <br> a dolorem molestias qui!</p>
+</div>
+<p id="fixed"></p>
+
+  
+</body>
+</html>

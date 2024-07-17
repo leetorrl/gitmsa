@@ -17,19 +17,17 @@ public class 기출문제1 {
     }
 void java(String[] back){
 
-
     System.out.println("확장자 "+back);
 }
-
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
+        System.out.println(" << 문장에 . 을 추가하여 입력하시오 >> ");
         String str = scan.nextLine();
 
 
 
-        String [] strr = str.split(".");
+        String [] strr = str.split("\\."); //역슬러쉬 두개 꼭 붙이기
 
         System.out.println(strr[0]);
         System.out.println(strr[1]);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+*{
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.back{
+     margin: 30px;
+  height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.back::before{
+  content: "*";
+  /* 컨탠트는 문장을 넣는 기능 */
+  background-image: url(../0710/bbb.jpg);
+  background-size: cover;
+  opacity: 0.5;
+  /* 반두명하게 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+h1{
+color: black;
+position: relative;
+text-shadow: 3px 3px 10px #000;
+}
+  </style>
+</head>
+<body>
+  
+<div class="back">
+
+<h1>나는 알 수 있따"</h1>
+
+</div>
+
+</body>
+</html>

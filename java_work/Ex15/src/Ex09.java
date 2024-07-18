@@ -14,62 +14,28 @@ package Ex15.src;
 
 import java.util.Scanner;
 
-class Song{
+class Song {
 
-    String title;
-    String artist;
-    int year;
-    String country;
-
-
-    public int Song(int A){//기본생산자
-
-
-        switch (A){
-
-            case 0 : title = "Dancing Queen";
-                     artist = "ABBA";
-                     year = 1978;
-                     country = "스웨덴";
-
-
-
-
-
-        }
-
-
-
-        return 0;
+    public Song() {//기본생산자
     }
 
+    public String Song(String title,String artist,int year,String country){
 
-
-    public void show(){
-
-
-        System.out.println();
+        return year+" 년 "+ country + " 국적의 "+artist+" 가 부른 "+title;
     }
 
-
+    public void show(String Song){
+        System.out.println(Song);
+    }
 }
 
 public class Ex09 {
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-
-        int A = scan.nextInt();
-
-
-
         Song S = new Song();
 
-        S.Song(A);
-
-        S.show();
-
+        System.out.println();
+        S.show(S.Song("Dancing Queen","ABBA",1978,"스웨던"));
     }
-
 }

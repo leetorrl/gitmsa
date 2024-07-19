@@ -4,9 +4,7 @@ public class KCar extends Car {
 
  public KCar(){
 
-
 }
-
     public KCar(String name, String dase, String company){
 
         super.name = name;
@@ -14,15 +12,11 @@ public class KCar extends Car {
         super.company = company;
     }
 
-
-
     public void show() {
         System.out.println(
                 name + " " +
                         dasc + " " +
                         company);
-
-
     }
 
     @Override

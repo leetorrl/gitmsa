@@ -1,34 +1,38 @@
 package org.example;
 
+import org.example.friend.CompFriend;
+import org.example.friend.UniFriend;
+
 import java.util.Arrays;
+//class A{
+//    public void doA(){}
+//}
 
 public class Ex03 {
+
     public static void main(String[] args) {
-int test[]={1,2,3};
-int test1[]={4,5,6,7};
+//        A a = null;
+//        a.doA();
+        int ucnt = 0;
+        int ccnt = 0;
 
+        // 대학동창
+        UniFriend uniFriend[] = new UniFriend[10];
+        // 회사동료
+        CompFriend cmpFriend[] = new CompFriend[10];
 
-        int temp[][] = {test,test1,{8,9,10,11}};
+        uniFriend[ucnt++] = new UniFriend("홍길동","010-9900-2600","ㅎㅎ");
 
-        int arr[][]={{1,2,3},{4,5,6},{7,8,9}};
+        System.out.println(Arrays.toString(uniFriend));
+        System.out.println(Arrays.toString(cmpFriend));
 
-        int dimension3[][][]={arr,temp};
+        System.out.println("ucnt = "+ucnt);
+        for (int i = 0; i < ucnt; i++) {
+            uniFriend[i].showInfo();
+        }
 
-        int temp0[] = arr[0];
-        int [] temp1 = arr[1];
-        int temp2[] = arr[2];
-
-        arr[0] = arr[2];
-
-        arr[0]= temp2;
-        arr[1]= temp0;
-        arr[2]= temp1;
-
-        System.out.println(Arrays.toString(arr[0]));
-        System.out.println(Arrays.toString(arr[1]));
-        System.out.println(Arrays.toString(arr[2]));
-
-//        System.out.println("temp");
-//        System.out.println(Arrays.toString(temp));
+        for (int i = 0; i < ccnt; i++) {
+            cmpFriend[i].showInfo();
+        }
     }
 }

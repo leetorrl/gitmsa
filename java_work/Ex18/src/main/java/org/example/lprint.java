@@ -1,8 +1,15 @@
 package org.example;
 
-import java.awt.print.Printable;
-
-public class lprint implements Printable{
-    public
-}
+// ctrl + space enter
+// ctrl + space enter
+// alt + enter enter
+public class LPrint implements Printable{
+    @Override
+    public void print(String doc) {
+        System.out.println("LG프린터");
+        System.out.println(doc);
+    }
+    @Override
+    public void doA() {
+    }
 }

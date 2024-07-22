@@ -4,30 +4,25 @@ import java.util.Arrays;
 
 public class Ex01 {
 
-    public static void addOneDArr(int[] arr, int add) {
-
-        for(int i=0; i< arr.length; i++){
-            arr[i]+= add;
-        }
+    public static void doA(int temp){
+        temp += 5;
+        System.out.println("do A temp "+temp);
     }
 
-    public static void addTwoDArr(int[][] arr, int add){
-
-        for(int i=0; i<arr.length; i++){
-            addOneDArr(arr[i],add);
+    public static void doA(int[] crr){
+        for (int i = 0; i < crr.length; i++) {
+            crr[i] +=5;
         }
-
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        int arr[][]={{1,2,3},{4,5,6},{7,8,9}};
+        int a = 10;
+        doA(a);
+        System.out.println(a);
 
-        addTwoDArr(arr,0);
-
+        int arr[] = {1,2,3};
+        doA(arr);
         System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(arr[0]));
-        System.out.println(Arrays.toString(arr[1]));
-        System.out.println(Arrays.toString(arr[2]));
     }
-
 }

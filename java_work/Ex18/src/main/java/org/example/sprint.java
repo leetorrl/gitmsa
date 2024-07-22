@@ -1,15 +1,12 @@
 package org.example;
 
-public class sprint implements Pringtable{
-
-    public void print(){
+public class SPrint implements Printable{
+    @Override
+    public void print(String doc) {
         System.out.println("삼성프린터기");
+        System.out.println(doc);
     }
-
-    public void doA(){
-
+    @Override
+    public void doA() {
     }
-
 }
-
-

@@ -40,11 +40,21 @@ class Box{
         System.out.println();
     }
 
-    boolean contatins(Box r){
 
-       
-                return ;
-    }
+//    boolean contains(Box r){
+//
+//       boolean temp;
+//
+//        if((r.q > q)&&(r.w > w)){
+//
+//            boolean a = true;
+//
+//            temp = a;
+//
+//        }
+//
+//
+//    }
 
     public Box(int x, int y, int width, int height){
 
@@ -66,10 +76,10 @@ public class Ex07 {
             System.out.println(" s의 면적은 " + s.square(s.e,s.t));
 
 
-            if (t.contains(r)) {
-                System.out.println("t는 r을 포함합니다.");
-
-                if (t.contains(s)) System.out.println("t는 s를 포함합니다.");
+//            if (t.contains(r)) {
+//                System.out.println("t는 r을 포함합니다.");
+//
+//                if (t.contains(s)) System.out.println("t는 s를 포함합니다.");
             }
 
 

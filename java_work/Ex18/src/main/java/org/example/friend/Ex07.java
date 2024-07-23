@@ -66,10 +66,6 @@ public class Ex07 {
             System.out.println(" s의 면적은 " + s.square(s.e,s.t));
 
 
-
-
-
-
             if (t.contains(r)) {
                 System.out.println("t는 r을 포함합니다.");
 

@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  
+  cursor: pointer;
+  border: 1px solid black;
+  list-style: none;
+  padding: 20px;
+}
+li:hover{
+  background-color: #ccc;
+}
+div{
+  padding: 30px;
+  width: 300px;
+  display: none;
+}
+button:hover + div{
+  display: block;
+
+}
+div:hover{
+ display: block;
+}

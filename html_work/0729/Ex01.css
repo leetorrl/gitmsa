@@ -1,0 +1,9 @@
+#heading{
+  display: inline;
+  cursor: pointer;
+  color: blue;
+}
+#heading:hover{
+  color: red;
+  background-color: beige;
+}

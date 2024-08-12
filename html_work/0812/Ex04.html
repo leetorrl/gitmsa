@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    tailwind.config = {
+    theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
+  }
+}
+
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+</head>
+<body>
+
+<div class="md:container md:mx-auto cursor-pointer hover:bg-blue-700">
+<h1>heading</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+   Error ipsum sequi, incidunt vero, d
+   olorem modi reiciendis nobis labore distinctio i
+   taque ab accusamus veritatis, corrupti eveniet. 
+   Ratione soluta quis ab quod.</p>
+</div>
+
+  <h1 class="text-3xl font-bold underline" style="color: #4338ca;">
+    Hello world!
+  </h1>
+
+
+  <div class="flex text-5xl my-3 mx-3 gap-3" >
+<div class="flex bg-blue-500 w-1/4">01</div>
+<div class="flex-1 bg-yellow-800">02</div>
+<div class="flex bg-red-100 w1/4">03</div>
+</div>
+
+<div class="z-40 ...">05</div>
+<div class="z-30 ...">04</div>
+<div class="z-20 ...">03</div>
+<div class="z-10 ...">02</div>
+<div class="z-0 ...">01</div>
+
+
+  <div class="flex ...">
+    <div class="grow h-14 ...">
+      01
+    </div>
+    <div class="grow-0 h-14 ...">
+      02
+    </div>
+    <div class="grow h-14 ...">
+      03
+    </div>
+  </div>
+
+</body>
+</html>

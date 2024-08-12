@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+.h{
+  cursor: pointer;
+}
+.h:hover{
+  color: red;
+}
+
+</style>
+
+</head>
+<body>
+  <input type="text" class="t">
+<h1 class="h" onclick="hh()">클릭후 입력1</h1>
+<h1 class="H" onclick="hhh()">박스 내용 추가후 클릭2</h1>
+<p class="j"></p>
+<p class="jj"></p>
+
+</body>
+</html>
+<script>
+function hh(){
+  
+  const TT = prompt("아무거나");
+  const J = document.querySelector('.j');
+  
+  console.log(TT);
+  J.innerText = TT;
+  
+}
+
+function hhh(){
+  const T = document.querySelector('.t').value;
+  
+
+  const JJ = document.querySelector('.jj');
+
+  console.log(T);
+  JJ.innerText = T;
+}
+</script>

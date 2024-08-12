@@ -43,3 +43,12 @@ from book, customer , orders
 where book.bookid = orders.bookid
 and customer.custid=orders.custid
 group by name;
+
+
+select abs(-78);
+
+select round(4.875, 2);
+
+
+
+

@@ -1,0 +1,310 @@
+<!-- <li><label for="">최근 접속시간: </label> <input type="text" value=" 2024-07-31 15:00"></li>
+<li><label for="">학적상태: </label><input type="text" value="재학"></li> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미니언즈 대학교 학사관리 시스템</title>
+    <link rel="stylesheet" href="school2.css">
+  </head>
+  <body>
+    <div class="wrap">
+    <div class="header">
+      <a href="school2.html"><h1>미니언즈 대학교 학사관리 시스템</h1></a>
+    </div>
+    <div style="height: 100px"></div>
+    <div class="sidenav">
+      <a href="#">학생정보</a>
+      <a href="#">수강신청</a>
+      <a href="#">성적조회</a>
+      <a href="#">졸업관리</a>
+    </div>
+    <div class="main">
+      <div class="container" id="minion-container-1">
+        <div class="profile-container">
+          <img
+            class="profile-picture"
+            src="images/bob.jpg"
+            alt="미니언 프로필 사진"
+          />
+          <div class="profile-info">
+            <h2>밥</h2>
+            <p>전공: 바나나 학과</p>
+            <p>학번: 20230001</p>
+            <p>학년: 1학년</p>
+          </div>
+        </div>
+        <div class="tabs-container">
+          <button
+            class="tab-button active"
+            onclick="openTab('minion-container-1', 'bob-tab-1')"
+          >
+            학적상태
+          </button>
+          <button
+            class="tab-button"
+            onclick="openTab('minion-container-1', 'bob-tab-2')"
+          >
+            학생정보
+          </button>
+          <div id="bob-tab-1" class="tab active">
+            <div class="tab-content">
+              <table>
+                <tr>
+                  <th>학기</th>
+                  <th style="width: 180px">교과목</th>
+                  <th style="width: 50px">학점</th>
+                  <th style="width: 50px">등급</th>
+                </tr>
+                <tr>
+                  <td rowspan="3">23학년 1학기</td>
+                  <td>바나나 재배학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 요리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 심리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">23학년 2학기</td>
+                  <td>세계 악당 역사</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>악당 심리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>악당 패션 디자인</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="bob-tab-2" class="tab">
+            <div class="tab-content">
+              <fieldset>
+                <ul>
+                    <li> <img src="images/icon.jpg" alt=""> 학사행정 문의 </li>
+                    <li> <img src="images/icon.jpg" alt=""> 장학금 신청 </li>
+                    <li> <img src="images/icon.jpg" alt=""> </li>
+                </ul>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="minion-container-2">
+        <div class="profile-container">
+          <img
+            class="profile-picture"
+            src="images/stuart.jpg"
+            alt="미니언 프로필 사진"
+          />
+          <div class="profile-info">
+            <h2>스튜어트</h2>
+            <p>전공: 바나나 학과</p>
+            <p>학번: 20230002</p>
+            <p>학년: 1학년</p>
+          </div>
+        </div>
+        <div class="tabs-container">
+          <button
+            class="tab-button active"
+            onclick="openTab('minion-container-2', 'stuart-tab-1')"
+          >
+            학적상태
+          </button>
+          <button
+            class="tab-button"
+            onclick="openTab('minion-container-2', 'stuart-tab-2')"
+          >
+            학생정보
+          </button>
+          <div id="stuart-tab-1" class="tab active">
+            <div class="tab-content">
+              <table>
+                <tr>
+                  <th>학기</th>
+                  <th style="width: 180px">교과목</th>
+                  <th style="width: 50px">학점</th>
+                  <th style="width: 50px">등급</th>
+                </tr>
+                <tr>
+                  <td rowspan="3">23학년 1학기</td>
+                  <td>바나나 재배학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 요리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 심리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">23학년 2학기</td>
+                  <td>세계 악당 역사</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>악당 심리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>악당 패션 디자인</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="stuart-tab-2" class="tab">
+            <div class="tab-content">
+              <fieldset>
+                <ul>
+                    <li> <img src="images/icon.jpg" alt=""> 학사행정 문의 </li>
+                    <li> <img src="images/icon.jpg" alt=""> 장학금 신청 </li>
+                    <li> <img src="images/icon.jpg" alt=""> </li>
+                </ul>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="minion-container-3">
+        <div class="profile-container">
+            <img
+            class="profile-picture1"
+            src="images/dave.jpg"
+            alt="미니언 프로필 사진"
+          />
+          <div class="profile-info">
+            <h2>데이브</h2>
+            <p>전공: 바나나 학과</p>
+            <p>학번: 20230003</p>
+            <p>학년: 1학년</p>
+          </div>
+        </div>
+        <div class="tabs-container">
+          <button
+            class="tab-button active"
+            onclick="openTab('minion-container-3', 'dave-tab-1')"
+          >
+            학적상태
+          </button>
+          <button
+            class="tab-button"
+            onclick="openTab('minion-container-3', 'dave-tab-2')"
+          >
+            학생정보
+          </button>
+          <div id="dave-tab-1" class="tab active">
+            <div class="tab-content">
+              <table>
+                <tr>
+                  <th>학기</th>
+                  <th style="width: 180px">교과목</th>
+                  <th style="width: 50px">학점</th>
+                  <th style="width: 50px">등급</th>
+                </tr>
+                <tr>
+                  <td rowspan="3">23학년 1학기</td>
+                  <td>바나나 재배학</th>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 요리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>바나나 심리학</td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><b>23학년 2학기</b></td>
+                  <td><b>세계 악당 역사</b></td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td><b>악당 심리학</b></td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td><b>악당 패션 디자인</b></td>
+                  <td>3</td>
+                  <td>A</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="dave-tab-2" class="tab">
+            <div class="tab-content">
+              <fieldset>
+                <ul>
+                    <li> <img src="images/icon.jpg" alt=""> 학사행정 문의 </li>
+                    <li> <img src="images/icon.jpg" alt=""> 장학금 신청 </li>
+                    <li> <img src="images/icon.jpg" alt=""> </li>
+                </ul>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="professor-info">
+      <div class="profile-container">
+        <img src="images/professor.jpg" alt="교수님 프로필 사진">
+        <div class="profile-info">
+          <h2>이승용 교수</h2>
+          <p>tmddyd654@naver.com</p>
+          <a href="#" class="logout-button">로그아웃</a>
+        </div>
+      </div>
+      <div class="menu-container">
+        <a href="#">시작하기</a>
+        <a href="#">쪽지 21</a>
+        <a href="#">해피빈 10</a>
+      </div>
+    </div>
+  </div>
+ 
+    <script>
+      function openTab(containerId, tabName) {
+        let container = document.getElementById(containerId);
+        let tabs = container.getElementsByClassName("tab");
+        let tabButtons = container.getElementsByClassName("tab-button");
+
+        for (let i = 0; i < tabs.length; i++) {
+          tabs[i].style.display = "none";
+          tabButtons[i].classList.remove("active");
+        }
+
+        container.querySelector("#" + tabName).style.display = "block";
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

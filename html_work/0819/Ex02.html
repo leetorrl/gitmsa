@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+
+
+  <title>Document</title>
+
+<style>
+#wrapper{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ grid-template-rows: repeat(3,200px);
+}
+
+.box1{
+  background-color: yellow;
+  grid-column: 1/4;
+}
+.box2{
+  background-color: aqua;
+  grid-row: 2/4;
+}
+.box3{
+  background-color: rgb(223, 205, 178);
+  grid-column: 2/4;
+  grid-row-start: 2;
+
+}
+.box4{
+  background-color: darkblue;
+  grid-column:3;
+  grid-row: 3;
+}
+</style>
+
+</head>
+<body>
+
+
+<div id="wrapper">
+<div class="items box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+</div>
+</body>
+
+</html>
+
+<script>
+
+</script>

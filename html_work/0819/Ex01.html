@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+#wrapper{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px,auto));
+ grid-template-rows: minmax(100px,auto);
+ grid-gap: 20px;
+}
+.items{
+  padding: 10px;
+  background-color: #eee;
+}
+.items:nth-child(odd){ /*even 짝수 or odd 홀수*/
+  background-color: #bbb;
+}
+</style>
+
+</head>
+<body>
+
+<div id="wrapper">
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+<div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur veritatis aut nisi! Autem facere repudiandae ad? Dolorum, explicabo sunt ex officiis reiciendis, ab molestiae laboriosam architecto odio quae et sit?</div>
+</div>
+  
+</body>
+</html>
+<script>
+
+</script>

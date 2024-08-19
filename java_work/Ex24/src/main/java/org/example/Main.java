@@ -24,7 +24,17 @@ public class Main {
 
             if(cho==1){
                 dbRepostory.insert();
-            }else {
+
+
+            } else if (cho==3) {
+
+                dbRepostory.update();
+
+            } else if (cho==4) {
+
+                dbRepostory.delete();
+
+            } else {
                 System.out.println("종료됩니다.");
                 break;
             }

@@ -25,12 +25,13 @@ public void insert() {
 
         System.out.println("연결성공");
 
-        pstmt = conn.prepareStatement("INSERT INTO HelloJava (H_id,H_name,H_power) VALUES(?,?,?)");
+        pstmt = conn.prepareStatement("INSERT INTO HelloJava (H_id,H_name,H_power,email,password) VALUES(?,?,?,?,?)");
 
         pstmt.setInt(1, 3);
         pstmt.setString(2, "Hello");
         pstmt.setInt(3, 20);
-
+        pstmt.setString(4, "donghyun");
+        pstmt.setString(5, "lee");
         pstmt.executeUpdate();
 
     } catch (Exception e) {

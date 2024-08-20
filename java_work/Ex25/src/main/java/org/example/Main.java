@@ -8,6 +8,7 @@ public class Main{
 public static void main(String[] args) {
 
 
+
     Scanner scan = new Scanner(System.in);
 
     dbmake db = new dbmake();
@@ -52,3 +53,4 @@ public static void main(String[] args) {
 
   }
 }
+

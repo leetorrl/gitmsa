@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  
+
+  <style>
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: #F07260;
+    }
+
+    
+    .circle {
+      position: absolute;
+      top: 40px;
+      left: calc(50%);
+      transform: translate(-50%);
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+    0% {
+      top: 40px;
+  	  animation-timing-function: ease-in;
+  	}
+  	50% {
+      top: 120px;
+  	  height: 40px;
+      animation-timing-function: ease-out;
+  	}
+  	55% {
+      top: 150px; height: 25px;
+  	  animation-timing-function: ease-in;
+    }
+  	65% {
+      top: 120px; height: 40px;
+  	  animation-timing-function: ease-out;
+    }
+  	95% {
+  	  top: 40px;
+  	  animation-timing-function: ease-in;
+  	}
+  	100% {
+      top: 40px;
+  	  animation-timing-function: ease-in;
+  	}
+  }
+
+    .shadow {
+      position: absolute;
+      width: 40px;
+      height: 5px;
+      left: calc(40%);
+      
+      bottom: 20px;
+      border-radius: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      animation: shadow 1s infinite;
+    }
+
+
+    @keyframes shadow {
+    0% {
+      transform: scale(0.1);
+      transform: translate(100%);
+      background-color: rgba(0, 0, 0, 0.1);
+      animation-timing-function: ease-in;
+  	}
+    50% {
+      transform: scale(1);
+      background-color: rgba(0, 0, 0, 0.2);
+      animation-timing-function: ease-out;
+    }
+    55% {
+      transform: scale(1);
+      background-color: rgba(0, 0, 0, 0.2);
+      animation-timing-function: ease-in;
+    }
+    65% {
+      transform: scale(0.5);
+      background-color: rgba(0, 0, 0, 0.15);
+      animation-timing-function: ease-out;
+    }
+    95% {
+      transform: scale(0.1);
+      background-color: rgba(0, 0, 0, 0.1);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: scale(0.1);
+      
+      background-color: rgba(0, 0, 0, 0.1);
+      animation-timing-function: ease-in;
+    }
+  }
+  </style>
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+      <div class="shadow"></div>
+    </div>
+  </body>
+
+
+
+</html>

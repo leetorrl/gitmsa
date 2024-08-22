@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Document</title>
+
+  <style>
+.aa{
+  background-color: bisque;
+}
+  .aaa{
+
+    background-color: blueviolet;
+  }
+
+.btn{
+  cursor: pointer;
+  display: inline; 
+  border: 1px solid black;
+}
+.btn:hover{
+  background-color: red
+}
+  </style>
+
+</head>
+<body>
+  
+  <div>
+
+    <h1 style="background-color: aquamarine; display: inline;">구구단 생성기</h1>
+<input type="text" name="" id="num1" style="display: block;">
+<input type="text" name="" id="num2" style="display: inline-block;">
+<p class="btn" onclick="bb()">출력</p>
+
+<div class="aa"> 요기다!</div>
+
+
+<input type="text" name="" id="num3" style="display: block;">
+<input type="text" name="" id="num4" style="display: inline-block;">
+
+<p class="btn" onclick="cc()">출력</p>
+<div class="aaa">곱셈식 나올듯?</div>
+
+  </div>
+
+</body>
+</html>
+
+<script>
+  
+
+  function bb(){
+
+
+    const N1 = document.querySelector('#num1').value;
+    const N2 = document.querySelector('#num2').value;
+    
+    const AA = document.querySelector('.aa');
+
+    
+    console.log("첫번째 = "+N1);
+    console.log("두번째 = "+N2);
+
+
+    AA.innerHTML = N1*N2;
+ 
+  // AA.innerHTML = AA.innerHTML+D+N1*N2;;
+}
+
+
+// AA.innerHTML=arr;
+    
+
+function cc(){
+
+const N3 = document.querySelector('#num3').value;
+const N4 = document.querySelector('#num4').value;
+
+const AAA = document.querySelector('.aaa');
+const D = "<div></div>";
+
+
+for(let i= 0; i<N3; i++){
+  for(let j= 0; j<N4; j++){
+ 
+  
+  
+ }
+ AAA.innerHTML += '<div>'+(i+1)+"x"+N4+"="+(i+1)*N4;
+  
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+
+</head>
+<body>
+<button id="aa" class="border border-gray-500 m-3 p-3 hover:bg-gray-400">요소추가</button>
+<div id="print"></div>
+<script>
+  var arr = "<div class='text-3x1 bg-red-50 p-3'>태그추가</div>";
+
+  var aa = document.getElementById('aa');
+
+var P = document.getElementById('print');
+
+  aa.onclick = function(){
+    
+    P.innerHTML=P.innerHTML+arr;
+  }
+  P.innerHTML=arr;
+</script>
+
+  
+</body>
+</html>

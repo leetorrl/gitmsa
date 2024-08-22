@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+
+ <script>
+var arr = [];
+  
+  arr.unshift(10);
+  arr.unshift(30);
+  arr.unshift(120);
+  arr.unshift(50);
+  
+  arr.push(40);
+  
+  
+  var output = arr.shift();
+  
+  document.write(arr);
+  document.write('<br/>');
+  document.write(output);
+  
+
+
+
+ </script>
+
+</head>
+
+<body >
+  <div class="flex items-center justify-center h-screen">
+<div class="flex flex-col items-center justify-center w-96 space-y-5">
+
+
+<h1 id="aa" class="bg-slate-700">heading</h1>
+<h1 id="bb" class="bg-red-800">heading</h1>
+<h1 class="bg-amber-200">heading</h1>
+<h1 class="bg-slate-400">heading</h1>
+
+<script>
+
+  
+  var h1 = document.getElementById('aa');
+  
+  h1.innerText = '<span>'+arr+'</span>';
+  
+  var h1_1 = document.getElementById('bb');
+  h1_1.innerText = output;
+
+    </script>
+
+
+</div>
+</div>
+</body>
+</html>
+

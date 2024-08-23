@@ -14,17 +14,17 @@ public class MMain {
         PreparedStatement pstmt = null;
 
         try {
-
-            Class.forName();
-            conn = DriverManager.getConnection();
-            pstmt = conn.prepareStatement();
-
-            pstmt.setInt();
-            pstmt.setString();
-            pstmt.setInt();
-            pstmt.setString();
-
-            pstmt.executeUpdate();
+//
+//            Class.forName();
+//            conn = DriverManager.getConnection();
+//            pstmt = conn.prepareStatement();
+//
+//            pstmt.setInt();
+//            pstmt.setString();
+//            pstmt.setInt();
+//            pstmt.setString();
+//
+//            pstmt.executeUpdate();
 
 
 
@@ -60,16 +60,16 @@ public class MMain {
 
             rs = pstmt.executeQuery();
 
-            System.out.println("""
-                    g_id = d%
-                    g_name = %s
-                    g_age = d&
-                    g_addres = %s
-                    
-                    """.formatted(rs.getInt(g_id),
-                                  rs.getString(g_name),
-                                  rs.getInt(g_id),
-                                   rs.getString(g_addres)));
+//            System.out.println("""
+//                    g_id = d%
+//                    g_name = %s
+//                    g_age = d&
+//                    g_addres = %s
+//
+//                    """.formatted(rs.getInt(g_id),
+//                                  rs.getString(g_name),
+//                                  rs.getInt(g_id),
+//                                   rs.getString(g_addres)));
 
         }catch (Exception e){
 

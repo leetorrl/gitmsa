@@ -1,10 +1,8 @@
 package org.example;
 
-
 interface RETCAL{
     int cal(int a, int b);
 }
-
 
 interface Calculate{
     void cal(int a, String b);

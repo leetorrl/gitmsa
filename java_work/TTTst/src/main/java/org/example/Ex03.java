@@ -20,7 +20,5 @@ public class Ex03 {
 
         System.out.println("인터페이스ran의 디폴트 doA = "+ran.doA());
 
-
-
     }
 }

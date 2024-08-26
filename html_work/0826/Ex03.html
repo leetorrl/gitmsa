@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+.matemasie-regular {
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+</style>
+
+
+</head>
+<body>
+
+  <div class="flex flex-col bg-red-200 p-5 space-y-2">
+<label for="" class="matemasie-regular">총 몇명?</label>
+<input type="text" id="total"  class="border border-b-indigo-500">
+<label for="" class="matemasie-regular">한중에 몇명?</label>
+<input type="text" id="columncount" class="border border-b-indigo-500">
+<div class="flex justify-center">
+<button id="submit" class="px-5 py-1 bg-amber-800 hover:bg-amber-600">확인</button>
+  </div>
+</div>
+
+<div>
+  <h1>좌석</h1>
+  <div id="print"></div>
+</div>
+<script>
+
+
+document.getElementById('submit').onclick = ()=>{
+
+const tota = document.querySelector('#total').value;
+
+
+console.log(tota);
+}
+/*
+const total = document.getElementById('total');
+const colcount = document.getElementById('colcount');
+const print = document.getElementById('print');
+
+const start = "<table class='border border=gary-300'>";
+  const end = `</table>`;
+
+document.getElementById('submit').onclick = ()=>{
+
+  if(total.value > 100 ){
+    alert('총인원수 100보다 작아야 합니다.');
+  }
+  if(colcount.value > 10 ){
+    alert('한줄에 10명보다 작아야 합니다.');
+  }
+
+  const arr = ["김길동","이길동","최길동"];
+
+  const arrIndex = [0,5,9,12,39,10];
+
+  const lineNum = total.value/colcount.value;
+  let 행 = "";
+  let num = 1;
+  
+  for(let i=0; i<lineNum; i++){
+    행 = 행+`<tr>`;
+
+      for(let j=0; j<colcount.value;j++){
+        행 = 행+`<td c;ass="border border-gary-300 px-3">${num}</td>`;
+        if(num == Number(total.value))
+        break;      
+      
+        num++;
+      
+      }
+      행 = 행+'</tr>';
+
+  }
+ 
+  print.innerHTML=`${start}${행}${end}`;
+}
+*/
+</script>
+</body>
+</html>

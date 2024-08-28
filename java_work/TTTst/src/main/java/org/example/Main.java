@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 interface supotter {
     int num(int a, int b);
+
     supotter bb = (a,b)->a+b;
     supotter cc = (a,b)->a-b;
     supotter dd = (a,b)->a*b;
@@ -50,6 +51,7 @@ public class Main {
 
             default:
                 System.out.println("아직 만드는중");
+                break;
         }
     }
 }

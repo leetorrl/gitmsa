@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /*바디는 텍스트만 건들기로!!*/
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            word-break: break-all;
+            /*텍스트 자동 줄바꿈, 사이드는 별도라서 따로 지정*/
+            background-color: #eee;
+        }
+
+        .wrap {
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            /*전체의 부모, 전체 화면 너비 높이 지정용*/
+            margin: 0 auto;
+            background-color: rgb(102 149 185);
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        .header {
+            /* container 자식, float시작점, 로고, 가이드블록*/
+
+            background-color: rgb(255, 223, 110);
+            border-radius: 35px 35px 0 0;
+            width: 1280px;
+            height: 200px;
+            position: relative;
+        }
+
+        .guide1 {
+           
+            background-color: rgb(102 149 185);
+            
+            /* width:1280px; */
+            border-radius: 25px 5px 0 0;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 0;
+            margin: auto;
+        }
+
+        .listt1 {
+            
+          background-color:   rgb(102 149 185);
+            /*이거 색깔이 보이면 안됨*/
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qq1,
+        .ww1,
+        .ee1,
+        .rr1 {
+            font-size: 20px;
+            text-align: center;
+            /* border: 1px solid black; */
+            width: 200px;
+            height: 50px;
+            padding: 10px;
+            /* line-height: 50px; */
+            float: left;
+            background-color: rgb(102 149 185);
+            cursor: pointer;
+            z-index: 2;
+
+        }
+
+        .qq2,
+        .ww2,
+        .ee2,
+        .rr2 {
+            font-size: 20px;
+            text-align: center;
+            /* border: 1px solid black; */
+            width: 200px;
+            height: 50px;
+            padding: 10px;
+            /* line-height: 50px; */
+            float: left;
+            background-color: rgb(4, 79, 135);
+            background: linear-gradient(180deg, rgb(4, 79, 135), rgba(251, 251, 251, 1));
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .qq1:hover,
+        .ww1:hover,
+        .ee1:hover,
+        .rr1:hover {
+            background-color: rgb(4, 79, 135);
+        }
+
+        /* .qq1:active,
+        .ww1:active,
+        .ee1:active,
+        .rr1:active {
+            background-color:  rgb(4, 79, 135);
+            background: linear-gradient(180deg,  rgb(4, 79, 135), rgba(251, 251, 251, 1));
+        } */
+
+        .QQ,
+        .WW,
+        .EE,
+        .RR {
+            display: none;
+            padding: 10px;
+
+        }
+
+        /* .hidden {
+            background-color: antiquewhite;
+            width: 1000px;
+            height: 500px;
+
+
+        } */
+
+       
+
+        .side1 {
+            /*부모없음, z-index 가장 우선권을 가지게 할것, 필요없으면 주석처리*/
+            margin: 0 auto;
+            background-color: rgb(0, 0, 0);
+            
+            position: fixed;
+            top: 200px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            word-break: break-all;
+            border-radius: 100%;
+            
+            
+            z-index: 2;
+            /*숫자가 높을수록 위에 표시
+                         만들생각 없었는데 그리드가 자꾸 가림 ㅡㅡ*/
+        }
+        .side1:hover{
+            color: red;
+        }
+        
+        .main {
+            /*container 자식, base 부모, 그리드AA 부모, 헤더 다음 float,
+              베이스와 그리드 내용 추가시 높이 늘려줄것 */
+            background-image: url(Image/pngegg.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+            float: left;
+            width:1280px;
+            height: 1200px;
+            position: relative;
+            /* display 그리드 클래스 위치 지정을 위하여
+                                               main을포지션 relative지정*/
+        }
+
+        .base {
+            /*main 자식, 주요내용 입력공간*/
+            margin: 50px auto ;
+            /*귀찮아서 일단 마진오토로 가운데 정렬*/
+            width: 80%;
+            background-color: rgba(238, 238, 238, 50%);
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .footer {
+            /*container 자식, float이 끝나는 clear 지점, 로고, 가이드블록*/
+            margin: 0 auto;
+            clear: both;
+            background-color: rgb(4, 79, 135);
+            border-radius: 0 0 25px 25px;
+            width:1280px;
+            height: 150px;
+        }
+
+        .AA임시 {
+            /* main 자식, abcd 부모, 그리드 전용 div, side가려서 z-index 1로 표기,
+             이 구역에 내용넣지 말것...그리드 위치 일그러짐,
+            생성한 그리드 너비 높이 조절만, 위치 조절은 취향것 */
+
+            width: 1000px;
+
+           background-color: bisque;
+             display: grid;
+            grid-template-columns: 80%;
+                                                /* 두개 합쳐 1000px이지만 */
+                                                 /* 소문자abcd클래스들의 마진때문에 축소됨 */
+            grid-template-rows: 280px ; 
+
+             border: 1px solid black; 
+
+             position: absolute; 
+             top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           /* 센터 조절시 top letf50%에 50% 50% 셋팅 */
+             z-index: 1; 
+            justify-content: center;
+           /* 가로정렬  */
+        }
+
+        .aa,
+        .bb,
+        .cc,
+        .dd {
+            /*AA자식, 그리드 본체 마진은 요기서 줄것, 내용 오버시 스크롤 오토 
+             base랑 내용 겹치므로 메인크기 조절 알아서 */
+
+            background-color: #eee;
+            border: 1px solid black;
+            overflow-y: auto;
+            margin: 10px 20px 10px 20px;
+            /* position: relative;
+            top : 50%;
+            left: 50%; */
+            /* transform: translate(25%, 0); */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+.sid{
+  margin: 27px;
+}
+        .sidee{
+           color: #eee;
+           text-align: center;
+          
+           cursor: pointer;
+           
+        }
+        .sidee:hover{
+            color: red;
+        }
+       
+        .guide2{
+            background-color:  rgb(102 149 185); 
+            width: 1028px;
+              
+             position: absolute;
+            bottom: 0;
+        }
+
+        .potal{
+            text-decoration-line: none;
+
+        }
+        .potal:hover{
+            font-size: 2rem;
+            color: red;
+        }
+
+.listqqq:hover{
+font-size: 2rem;
+}
+
+        @media (max-width:400px){
+            .side1{
+            display: none;
+        }
+
+            .header {
+                width: 400px;
+            }
+            .guide1 {
+                width: 400px;
+        }
+        .guide2{
+            width: 400px;
+        height: 100px;
+        }
+        .main {
+            width: 400px;
+        }
+        .footer {
+            width:400px;
+        }
+    }
+
+        @media (min-width:400px){
+            .side1{
+            display: none;
+        }
+
+            .header {
+                width: 400px;
+            }
+            .guide1 {
+                width: 400px;
+        }
+        .guide2{
+            width: 400px;
+            height: 100px;
+        }
+        .main {
+            width: 400px;
+        }
+        .footer {
+            width: 400px;
+        }
+    }
+
+
+        @media (min-width:576px){
+            .side1{
+            display: none;
+        }
+
+            .header {
+                width: 576px;
+            }
+            .guide1 {
+                width: 400px;
+        }
+        .guide2{
+            width: 576px;
+            height: 100px;
+        }
+        .main {
+            width: 576px;
+        }
+        .footer {
+            width: 576px;
+        }
+    }
+
+
+    @media (min-width:640px){
+        .side1{
+            display: none;
+        }
+
+            .header {
+                width: 640px;
+            }
+            .guide1 {
+                width: 400px;
+        }
+        .guide2{
+            width: 640px;
+            height: 100px;
+        }
+        .main {
+            width: 640px;
+        }
+        .footer {
+            width: 640px;
+        }
+    }
+    @media (min-width:768px){
+
+        .side1{
+            display: none;
+        }
+
+            .header {
+                width: 768px;
+                
+            }
+            .guide1 {
+                width: 400px;
+        }
+        .guide2{
+            width: 768px;
+            height: 100px;
+        }
+        .main {
+            width: 768px;
+        }
+        .footer {
+            width: 768px;
+        }
+    }
+    @media (min-width:1024px){
+        .side1{
+            display: block;
+        }
+
+            .header {
+                width: 1024px;
+                height: 200px;
+            }
+            .guide1 {
+                width: 1024px;
+        }
+        .guide2{
+            width: 1024px;
+            height: 0;
+        }
+        .main {
+            width: 1024px;
+        }
+        .footer {
+            width: 1024px;
+        }
+    }
+    @media (min-width:1280px){
+        .side1{
+            display: block;
+        }
+
+            .header {
+                width: 1280px;
+                height: 200px;
+            }
+            .guide1 {
+                width: 1280px;
+        }
+        .guide2{
+            height: 0;
+            width: 1280px;
+        }
+        .main {
+            width: 1280px;
+        }
+        .footer {
+            width: 1280px;
+        }
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="side1">
+           <p class="sid"><a class="sidee" href="#" style="text-decoration-line: none;">로그인 페이지</a></p> 
+            <!-- <caption>사이드</caption> -->
+        </div>
+
+        <div class="container">
+            <div class="header">
+                   <div class="guide2">
+                <div class="guide1">
+                    <ul class="listt1">
+                        <li class="qq1" onclick="openqq1()"><b>조원소개</b></li>
+                    
+                        <li class="ww1" onclick="openww1()"><b>학사소개</b></li>
+                    
+                        <li class="ee1" onclick="openee1()"><b>학생정보</b></li>
+                       
+                        <li class="rr1" onclick="openrr1()"><b>공사중</b></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div class="main">
+                <!-- <caption>메인</caption> -->
+
+                <div class="base">
+                    <div class="PP" style="padding: 10px; height: auto; ">
+                   <h1>-방문을 환영합니다-</h1>
+                   <br>
+                   <img src="Image/minion-biz-featured.webp" alt="" style="width: 69%; 
+                                  border-radius: 10px 10px 10px 10px; margin-left: 5px; display:inline-block; vertical-align: top;">
+                                <p style="width: 70%; display: inline-block;  border-radius: 10px 10px 10px 10px; font-size: 25px; background-color:rgba(238, 238, 238, 50%);">                                                       
+                                                                                       본 시설은 슈퍼 악당을 섬기기 위한 미니언들의<br>
+                                                                                       기초능력을 가르치는 공간이며 미래 사회의 악당<br>
+                                                                                       조연이 될 수준 높은 전문가들을 양상하고<br>
+                                                                                       있습니다. <br>
+                                                                                       <br>
+                                                                                       - 미니언즈 대학대표 : 그루 -<br><br></p>
+                   </div>
+                    <div class="hidden">
+        <div class="QQ">
+            <ul class="listqq" style="font-size: 20px;">
+                <h2>-조원소개-</h2>
+                <br>
+           
+                <li class="listqqq" style="padding: 10px;"> 이상진 : 로그인 페이지 제작</li>
+                <li class="listqqq" style="padding: 10px;"> 이승용 : 학생정보 페이지 제작</li>
+                <li class="listqqq" style="padding: 10px;"> 이동현 : 메인 페이지 제작</li>
+                <li class="listqqq" style="padding: 10px;"> 정세엽 : 백업 및 코드정리</li>
+            </ul>
+            <img src="./Image/dm4-blogroll-1719790355961-1720723485312.jpg" alt="" style="width: 100%; border-radius: 3%;">
+        </div>
+        <div class="WW">
+            <ul class="listww">
+                <li class="listwww">학사 소개 태그입니다만 아직 기획중입니다.</li>
+                <li class="listwww">ww하나</li>
+                <li class="listwww">ww둘</li>
+                <li class="listwww">ww셋</li>
+                <li class="listwww">ww야!</li>
+            </ul>
+        </div>
+        <div class="EE">
+            <ul class="listee">
+                <li class="listeee"><p ><a href="#" class="potal">학생정보 페이지로 이동</a></p></li>
+                <!-- <li class="listeee">ee둘</li>
+                <li class="listeee">ee셋</li>
+                <li class="listeee">ee야!</li> -->
+            </ul>
+        </div>
+        <div class="RR">
+            <ul class="listrr">
+                <h1 style="text-align: center;">-공사중-</h1>
+                <br>
+               <div style="text-align: center;"><img src="Image/e12d65350729e75591e886b91a724de184f0a62ca0c0c36a3fca9bf76f0213f6.jpg" alt="" 
+                     style="width: 100%; border-radius: 10px 10px 10px 10px; "></div> 
+                <!-- <li class="listrrr">rr하나</li>
+                <li class="listrrr">rr둘</li>
+                <li class="listrrr">rr셋</li>
+                <li class="listrrr">rr야!</li> -->
+            </ul>
+        </div>
+
+                </div>
+
+
+
+                <div class="AA">
+                    
+                    <div class="aa"  style="width:50%; border-radius: 2% 2% 2% 2%;" >
+                        
+                        <ul>
+                            <li><img src="./Image/0bf0b6420a3ce99c1841c063b0c9ebe4.jpg" alt="" style="width: 100%;" ></li>
+                            <li> <b>- 최고의 멘토가 기다리고 있습니다 -</b> </li>
+                            <li> 슈퍼악당 지도교수의 아래에서 수준높은 악당 교육을 이수하시길 바랍니다. </li>
+                            <br>
+                            <li> ps. 슬라이드 넣고 싶었는데 실패함;; </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="bb">
+                        <caption>그리드 div bb</caption><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint magnam ullam soluta veniam quam
+                        vero ut, quasi facere dolorem,Sint magnam ullam soluta veniam quam vero ut, quasi facere
+                        dolorem,Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,
+                        Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,
+                        veritatis aperiam quaerat, voluptatum quos ab debitis inventore
+                    </div> -->
+                   <br>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <!-- <caption>푸터</caption> -->
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+const qq = document.querySelector('.qq1');
+const ww = document.querySelector('.ww1');
+const ee = document.querySelector('.ee1');
+const rr = document.querySelector('.rr1');
+const aa = document.querySelector('.AA');
+
+    function openqq1() {
+       
+        
+        if( qq.style.background == 'rgb(4, 79, 135)'){
+        qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'block';
+        aa.style.display = 'block';
+    }
+        else {
+        qq.style.background = 'rgb(4, 79, 135)';
+        rr.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'block';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'none';
+        aa.style.display = 'none';
+        }
+      
+    }
+    function openww1() {
+
+      
+        
+        if( ww.style.background == 'rgb(4, 79, 135)'){
+            qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'block';
+
+        document.querySelector('.WW').style.display = 'none';
+        aa.style.display = 'block';
+        }
+        else {
+        ww.style.background = 'rgb(4, 79, 135)';
+        qq.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'block';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'none';
+
+        document.querySelector('.WW').style.display = 'block';
+        aa.style.display = 'none';
+    }
+    }
+    function openee1() {
+     
+        
+        if(ee.style.background == 'rgb(4, 79, 135)'){
+            qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'block';
+
+        document.querySelector('.EE').style.display = 'none';
+        aa.style.display = 'block';
+    }else{
+    ee.style.background = 'rgb(4, 79, 135)';
+    
+    qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'block';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'none';
+
+        document.querySelector('.EE').style.display = 'block';
+        aa.style.display = 'none';
+    }
+
+    }
+    function openrr1() {
+     
+        
+        if(rr.style.background == 'rgb(4, 79, 135)'){
+        qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+        rr.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'none';
+        document.querySelector('.PP').style.display = 'block';
+
+        document.querySelector('.RR').style.display = 'none';
+        aa.style.display = 'block';
+    }
+    else{
+       
+       rr.style.background = 'rgb(4, 79, 135)';
+       qq.style.background= 'rgb(102 149 185)'
+        ww.style.background= 'rgb(102 149 185)'
+        ee.style.background= 'rgb(102 149 185)'
+
+        document.querySelector('.QQ').style.display = 'none';
+        document.querySelector('.WW').style.display = 'none';
+        document.querySelector('.EE').style.display = 'none';
+        document.querySelector('.RR').style.display = 'block';
+        document.querySelector('.PP').style.display = 'none';
+
+        document.querySelector('.RR').style.display = 'block';
+        aa.style.display = 'none';
+    }
+    }
+</script>

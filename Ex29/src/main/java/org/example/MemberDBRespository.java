@@ -29,14 +29,16 @@ public class MemberDBRespository {
             try{
                 // DB 연결
                 conn =  DriverManager.getConnection(
-                        "jdbc:mysql://192.168.0.29:3307/hellojava",
+                        "jdbc:mysql://192.168.0.29:3307/SKLL_library",
                         "root",
                         "1234");
                 //sql 생성
-                pstmt = conn.prepareStatement("INSERT INTO 하잇하잇 (hi_num,hi_name,hi_age) VALUES (?,?,?)");
+                pstmt = conn.prepareStatement("INSERT INTO Book (B_id, B_name, B_type,publisher,B_state) VALUES (?,?,?,?,?)");
 
                 pstmt.setInt(1,1);
-                pstmt.setString(2,"동현");
+                pstmt.setString(2,"책");
+                pstmt.setString(2,"헐");
+                pstmt.setString(2,"갔냐");
                 pstmt.setInt(3,100);
 
                 // sql구문 실행
@@ -64,14 +66,14 @@ public class MemberDBRespository {
             try{
                 // DB 연결
                 conn =  DriverManager.getConnection(
-                        "jdbc:mysql://192.168.0.29:3307/hellojava",
+                        "jdbc:mysql://192.168.0.29:3307/SKLL_library",
                         "root",
                         "1234");
                 //sql 생성
-                pstmt = conn.prepareStatement("DELETE FROM 하잇하잇 where hi_num = ?");
+                pstmt = conn.prepareStatement("DELETE FROM Book where B_id = ?");
 
-                int hi_age = Integer.parseInt( JOptionPane.showInputDialog("hi_num") );
-                pstmt.setInt(1,hi_age);
+                int B_id = Integer.parseInt( JOptionPane.showInputDialog("B_id") );
+                pstmt.setInt(1,B_id);
 
                 // sql구문 실행
                 pstmt.executeUpdate();
@@ -101,11 +103,11 @@ public class MemberDBRespository {
             try{
                 // DB 연결
                 conn =  DriverManager.getConnection(
-                        "jdbc:mysql://192.168.0.29:3307/hellojava",
+                        "jdbc:mysql://192.168.0.29:3307/SKLL_library",
                         "root",
                         "1234");
                 //sql 생성
-                pstmt = conn.prepareStatement("SELECT * FROM 하잇하잇");
+                pstmt = conn.prepareStatement("SELECT * FROM Book");
                 // sql구문 실행
                 rs = pstmt.executeQuery();
                 while(rs.next()){
@@ -113,12 +115,12 @@ public class MemberDBRespository {
 //                System.out.println("name =  "+rs.getString("name"));
 //                System.out.println("age =  "+rs.getInt("age"));
                     System.out.println("""
-                        hi_num = %d
-                        hi_name = %s
-                        hi_age = %d
-                        """.formatted( rs.getInt("hi_num"),
-                            rs.getString("hi_name"),
-                            rs.getInt("hi_age")
+                        B_id = %d
+                        B_name = %s
+                        B_type = %d
+                        """.formatted( rs.getInt("B_id"),
+                            rs.getString("B_name"),
+                            rs.getInt("B_type")
                              ));
                 }
             }catch (Exception e){
@@ -143,20 +145,20 @@ public class MemberDBRespository {
             try{
                 // DB 연결
                 conn =  DriverManager.getConnection(
-                        "jdbc:mysql://192.168.0.29:3307/hellojava",
+                        "jdbc:mysql://192.168.0.29:3307/SKLL_library",
                         "root",
                         "1234");
                 //sql 생성
-                pstmt = conn.prepareStatement("UPDATE 하잇하잇 SET hi_name=?, hi_age=? WHERE hi_num=?");
+                pstmt = conn.prepareStatement("UPDATE Book SET B_id=?, B_name=?, B_type=?,publisher=?,B_state=? WHERE B_id=?");
 
-                String hi_name = JOptionPane.showInputDialog("이름");
-                pstmt.setString(1,hi_name);
+                String B_name = JOptionPane.showInputDialog("이름");
+                pstmt.setString(1,B_name);
 
-                int hi_age = Integer.parseInt(JOptionPane.showInputDialog("나이"));
-                pstmt.setInt(2,hi_age);
+                int B_type = Integer.parseInt(JOptionPane.showInputDialog("상태"));
+                pstmt.setInt(2,B_type);
 
-                int hi_num = Integer.parseInt(JOptionPane.showInputDialog("hi_num(키)"));
-                pstmt.setInt(3,hi_num);
+                int B_id = Integer.parseInt(JOptionPane.showInputDialog("B_id(키)"));
+                pstmt.setInt(3,B_id);
 
                 // sql구문 실행
                 pstmt.executeUpdate();

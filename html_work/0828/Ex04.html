@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  #btn{
+    cursor: pointer;
+    border: 1px solid black;
+    display: inline;
+  }
+  #btn:hover{
+    background-color: red;
+  }
+</style>
+  <title>Document</title>
+
+
+</head>
+<body>
+  <div>
+<input id="a" type="text">
+<input id="b" type="text">
+<p id="btn" onclick="bb()">눌</p>
+</div>
+<div id="print">나와랏</div>
+</body>
+</html>
+
+<script>
+
+function bb(){
+
+  const num1 = document.getElementById('a');
+  const num2 = document.getElementById('b');
+  const P = document.getElementById('print');
+
+  
+  let sum = 0;
+
+  for(let i =1; i<=num1.value; i++)
+
+    sum += i;
+    
+  
+
+  P.innerHTML = sum;
+
+}
+
+</script>

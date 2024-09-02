@@ -3,6 +3,7 @@ package org.example;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @Setter
@@ -20,6 +21,18 @@ public class SKLL_library {
     private int B_state;
     private LocalDateTime B_date;
 
+    @Override
+    public String toString() {
+//        String temp = mydate==null? "" : DateTimeFormatter.ofPattern("yyyy/mm/dd");
+        return "SKLL_library{" +
+                "B_id=" + B_id +
+                ", B_name='" + B_name + '\'' +
+                ", B_type='" + B_type + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", B_state=" + B_state +
+                ", B_date=" + B_date +
+                '}';
+    }
 
     public SKLL_library(int b_id, String b_name, String b_type, String publisher, int b_state, LocalDateTime b_date) {
         this.B_id = b_id;

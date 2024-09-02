@@ -5,15 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.*;
-import java.lang.reflect.Member;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class skllPepository {
 
@@ -36,28 +28,24 @@ public class skllPepository {
             System.out.println("연결성공");
 
             pstmt = conn.prepareStatement("INSERT INTO Book (B_id ,B_name, B_type,publisher,B_state,B_date) VALUES (?,?,?,?,?,?)");
-//            "INSERT INTO Book (B_name, B_type,publisher,B_state,B_date) VALUES ('동현일기','일상','황금나무',2,20240804)"
-                        pstmt.setInt(1,2);
-            pstmt.setString(2,"동현일기");
-            pstmt.setString(3,"일상");
-            pstmt.setString(4,"황금나무");
-            pstmt.setInt(5,2);
-             pstmt.setObject(6,mydate);
+//            "INSERT INTO Book (B_id, B_name, B_type,publisher,B_state,B_date) VALUES ('2' ,'동현일기','일상','황금나무',2,20240804)"
+                        pstmt.setInt(1,3);
+                        pstmt.setString(2,"동현일기");
+                        pstmt.setString(3,"일상");
+                        pstmt.setString(4,"황금나무");
+                        pstmt.setInt(5,2);
+                        pstmt.setObject(6,mydate);
 
             pstmt.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("오류");
         }
-
     }
-
 
     public void select(){
 
-
         try{
-
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -88,13 +76,11 @@ public class skllPepository {
                     rs.getObject("B_date")
 
             ));
-
     }
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("오류발생");
         }
-
 }
 
 public void delete(){
@@ -155,6 +141,5 @@ public void update(){
             e.printStackTrace();
             System.out.println("오류발생");
         }
-}
-
+    }
 }

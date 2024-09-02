@@ -27,14 +27,15 @@ public class skllPepository {
 
             System.out.println("연결성공");
 
-            pstmt = conn.prepareStatement("INSERT INTO Book (B_id ,B_name, B_type,publisher,B_state,B_date) VALUES (?,?,?,?,?,?)");
+            pstmt = conn.prepareStatement("INSERT INTO Book ( B_name, B_type,publisher,B_state,B_date) VALUES ('동현일기','일상','황금나무',2,20240804)");
+//            "INSERT INTO Book (B_id ,B_name, B_type,publisher,B_state,B_date) VALUES (?,?,?,?,?,?)"
 //            "INSERT INTO Book (B_id, B_name, B_type,publisher,B_state,B_date) VALUES ('2' ,'동현일기','일상','황금나무',2,20240804)"
-                        pstmt.setInt(1,3);
-                        pstmt.setString(2,"동현일기");
-                        pstmt.setString(3,"일상");
-                        pstmt.setString(4,"황금나무");
-                        pstmt.setInt(5,2);
-                        pstmt.setObject(6,mydate);
+//                        pstmt.setInt(1,3);
+//                        pstmt.setString(2,"동현일기");
+//                        pstmt.setString(3,"일상");
+//                        pstmt.setString(4,"황금나무");
+//                        pstmt.setInt(5,2);
+//                        pstmt.setObject(6,mydate);
 
             pstmt.executeUpdate();
         }catch (Exception e){

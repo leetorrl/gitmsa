@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+<img src="../../../../../../KakaoTalk_20240722_142414914_03.jpg" alt="">
+<p><a href="test6.html" onclick="loadURL(this.href);return false">자세히보기</a></p>
+<!-- a링크 onclick은 onclick부터 시행후 href가 실행되지 않도록 리턴 false를 달아준다 -->
+
+</body>
+</html>
+<script>
+
+    function loadURL(url){
+window.opener.location = url; //로케이션 꼭 붙여야함
+window.close();
+    }
+</script>

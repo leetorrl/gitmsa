@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.sumdiv{
+background-color: #eee;
+}
+.aa{
+    display: inline;
+    cursor: pointer;
+}
+.bb{
+    display: inline;
+    cursor: pointer;
+}
+
+.pp{
+    display: inline;
+}
+.aa:hover, .bb:hover{
+    color: red;
+}
+
+</style>
+</head>
+<body>
+    
+    <div class="sumdiv">
+    <h1>버튼입력으로 더하기</h1>
+    <p class="aa" onclick="AA()">A의 값(클릭하시오)</p>
+    <p class="aaa">A</p>
+  
+    
+    <p class="bb" onclick="BB()">B의 값(클릭하시오)</p>
+    <p class="bbb">B</p>
+  
+<button class="cc" onclick="CC()">더하기</button>
+<div id="ccc">0</div>
+
+ 
+</div>
+
+</body>
+</html>
+<script>
+    function AA(){
+
+        const z = 1;
+       
+const A = prompt('A의'+z+'번째값을 입력하시오');
+
+const AAA = document.querySelector('.aaa')
+AAA.innerText = Number(A);
+return A;
+}
+
+
+        const z = 1;
+        function BB(){
+ const B = prompt('B의'+z+'번째값을 입력하시오');
+
+ const BBB = document.querySelector('.bbb')
+ 
+
+ const newP = document.createElement('p');
+        const newText = document.createTextNode(B);
+        const newtext = document.createTextNode("B의 "+z+"번째 입력값 = ")
+        newP.appendChild(newtext);
+        newP.appendChild(newText);
+        BBB.appendChild(newP);
+ 
+}
+
+function CC(){
+   
+    const sumP = document.getElementById('ccc');
+
+    let sum = sumP.innerText;
+
+    sum = parseInt(sum) + 10;
+
+    sumP.innerText = sum;
+    
+}
+
+
+
+</script>
+    
+
+

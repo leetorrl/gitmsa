@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #rect{
+            background-color: antiquewhite;
+         
+            width: 200px;
+            height: 200px;
+            transition: 1s;
+        }
+        #rect1{
+            background-color: red;
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            transition: 1s;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="rect"></div>
+<div id="rect1" onclick="rr()"></div>
+
+</body>
+</html>
+
+<script>
+function rr(){
+
+ const myRect1 = document.querySelector('#rect1')
+
+myRect1.style.backgroundColor = "green";
+myRect1.style.borderRadius = "50%";
+myRect1.style.transform = "rotate(180deg)";
+
+
+   const myRect2 = myRect1;
+
+    myRect2.style.backgroundColor = "";
+    myRect2.style.borderRadius = "";
+    myRect2.style.transform = "";
+
+    
+};
+
+
+
+// myRect2.addEventListener("click",function(){
+//     myRect2.style.backgroundColor = "";
+//     myRect2.style.borderRadius = "";
+//     myRect2.style.transform = "";
+
+//     let myRect1 = myRect2
+// });
+    
+
+
+let myRect = document.querySelector('#rect');
+myRect.addEventListener("mouseover", function(){
+myRect.style.backgroundColor = "green";
+myRect.style.borderRadius = "50%";
+myRect.style.transform = "rotate(180deg)";
+
+});
+myRect.addEventListener("mouseout",function(){
+    myRect.style.backgroundColor = "";
+    myRect.style.borderRadius = "";
+    myRect.style.transform = "";
+
+   
+});
+
+</script>

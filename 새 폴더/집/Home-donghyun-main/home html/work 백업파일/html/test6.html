@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+#btn{
+    cursor: pointer;
+    display: inline;
+    border: 1px solid black;
+}
+#btn:hover{
+    color: red;
+}
+
+.window{
+    display: inline;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+    <!-- 입력하여 합칠땐 자바처럼 배열 써먹는게 편함 -->
+<input type="text" class="sum" placeholder="숫자기입">
+
+<input type="text" class="sum" placeholder="숫자기입">
+
+<input type="text" class="sum" placeholder="숫자기입">
+
+<p id="btn" onclick="bb()">SUM</p>
+<p>총합 = "<span id="display">0</span>"</p>
+
+<div class="window">
+    <p onclick="ww()">클릭시 창이 열림</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+<script>
+// addEventListener() 이벤트 발생기
+const sum_input = document.getElementsByClassName('sum');
+const btn = document.getElementById('btn');
+const display = document.getElementById('display');
+
+console.log(sum_input);
+
+function bb(){ //온클릭 bb 실행시 totalsum메서드 불러오기
+
+    totalSum(); 
+
+};
+
+
+
+
+//totalsum 메서드
+function totalSum(){
+    let saveValue = [];//배열 빈칸 선언
+
+    for(let i = 0; i<sum_input.length; i++){
+        //배열 칸수 만큼 savevalue에 푸쉬 
+        //numder로 강제변환후 배열순서대로 주입(value)
+        saveValue.push(parseInt(sum_input[i].value))
+    };
+    console.log("totalsum의 첫번째값 = "+saveValue[0],"두번째값 = "+ saveValue[1],"세번째값 = "+saveValue[2]);
+    filterNaN(saveValue); //숫자 아닌값 걸러내기 메서드에 매개변수 보내기
+};
+
+
+function filterNaN(saveValue){
+
+let val = saveValue;    
+
+let notNan = [];
+
+val.forEach(function(value){ //배열에 배열값 주입할때 foreach사용...
+
+
+    if(!isNaN(value)){ //만약에 value값이 inNaN거쳐 false가 아니라면!
+        notNan.push(value); //notnan 배열에 주입
+        
+     }
+    
+    } 
+  );
+  console.log("filterNaN의 첫번째값 = "+notNan[0],"두번째값 = "+ notNan[1],"세번째값 = "+notNan[2]);
+  getTotalSum(notNan);
+}
+
+
+
+
+function getTotalSum(notNan){
+    
+
+ let sumVal = notNan;
+ let displaySum = 0; //합친값 넣을곳
+ let count = 0;
+
+ for(let i=0; i<sumVal.length; i++){
+      count++;
+      displaySum += sumVal[i];
+      console.log(count+"번째합 = "+displaySum);
+ };
+console.log('출력될 총합 = '+displaySum);
+ display.innerHTML = Number(displaySum);
+//doc q로 선언한 display의 내용(0)을 displaysum값으로 변경
+};
+//요소명.innertext = 내용 or 요소명.innerhtml = 내용
+// ex) document.getElementById("cyrrebt").innertext = 넣은 내용
+
+function ww(){
+   const t = window.open("test5.html","table","width=500,height=400,left=200,top=100");
+
+   if(t===null){
+    alert('팝업창 해제좀!')
+   }
+}
+</script>

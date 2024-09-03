@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {/*바디는 텍스트만 건들기로!!*/
+            font-size: 15px;
+            word-break: break-all;/*텍스트 자동 줄바꿈, 사이드는 별도라서 따로 지정*/
+        }
+
+        .container {/*전체의 부모, 전체 화면 너비 높이 지정용*/
+
+            background-color: blueviolet;
+            width: 1200px;
+        }
+
+        .header {/* container 자식, float시작점, 로고, 가이드블록*/
+            float: left;
+            background-color: darkkhaki;
+            width: 1200px;
+            height: 150px;
+        }
+
+        .side1 { /*부모없음, z-index 가장 우선권을 가지게 할것, 필요없으면 주석처리*/
+            background-color: brown;
+            position: fixed;
+            top: 200px;
+            left: 50px;
+            width: 200px;
+            height: 100px;
+            word-break: break-all;
+            z-index: 2; /*숫자가 높을수록 위에 표시
+                         만들생각 없었는데 그리드가 자꾸 가림 ㅡㅡ*/
+        }
+
+        .main {/*container 자식, base 부모, 그리드AA 부모, 헤더 다음 float,
+              베이스와 그리드 내용 추가시 높이 늘려줄것 */
+            background-color: chartreuse;
+            float: left;
+            width: 1200px;
+            height: 1000px;
+            position: relative; /* display 그리드 클래스 위치 지정을 위하여
+                                               main을포지션 relative지정*/
+        }
+
+        .base{/*main 자식, 주요내용 입력공간*/
+            margin: auto; /*귀찮아서 일단 마진오토로 가운데 정렬*/
+            width: 1000px;
+            background-color: darkorange;
+            
+        }
+        .footer {/*container 자식, float이 끝나는 clear 지점, 로고, 가이드블록*/
+            clear: both; 
+            background-color: darksalmon;
+            width: 1200px;
+            height: 150px;
+        }
+
+        .AA {/*main 자식, abcd 부모, 그리드 전용 div, side가려서 z-index 1로 표기,
+             이 구역에 내용넣지 말것...그리드 위치 일그러짐,
+            생성한 그리드 너비 높이 조절만, 위치 조절은 취향것*/
+
+            width: 1000px;
+
+            background-color: bisque;
+            display: grid;
+            grid-template-columns: 500px 500px; /*두개 합쳐 1000px이지만
+                                                 소문자abcd클래스들의 마진때문에 축소됨*/
+            grid-template-rows: 300px 300px;
+            
+            border: 1px solid black;
+
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%); /*센터 조절시 top letf50%에 50% 50% 셋팅*/
+            z-index: 1;
+            justify-content: center; /*가로정렬*/
+        }
+
+        .aa,
+        .bb,
+        .cc,
+        .dd {/*AA자식, 그리드 본체 마진은 요기서 줄것, 내용 오버시 스크롤 오토 
+             base랑 내용 겹치므로 메인크기 조절 알아서 */
+            
+            background-color: aqua;
+            border: 1px solid black;
+            overflow-y: auto;
+            margin: 10px 20px 10px 20px;
+            /* position: relative;
+            top : 50%;
+            left: 50%; */
+            /* transform: translate(25%, 0); */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="side1">
+        <caption>사이드</caption>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <caption>헤드</caption>
+        </div>
+
+        <div class="main">
+            <caption>메인</caption>
+          
+<div class="base">
+    <caption>베이스</caption>
+            <h1>dfafdaf</h1>
+            <p>dasffasdf</p>
+            <p>asdfasfasfsda<img src="../../../../18dfed0543f51de31.webp" alt=""></p>
+            <p>asdfasfasfsdaasdfasfasfsdaasdfasfasfsdaasdfasfasfsdaasdfasfasfsdaasdfasfasfsdaasdfasfasfsasdfasfasfsdaasdfasfasfsdaasdfasfasfsdaasdfasfasfsdadaasdfasfasfsdaasdfasfasfsdaasdfasfasfsda</p>
+            <p>asdfasfasfsda</p>
+            <p>asdfasfasfsda</p>
+            <p>asdfasfasfsda</p>
+            <p>asdfasfasfsda</p>
+           
+            <div class="AA">
+                
+                    <div class="aa">
+                        <caption>그리드 div aa</caption>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li>
+                            <li> Ducimus, totam quos, vitae laborum possimus iure, sapiente aspernaturDucimus, totam quos, vitae laborum possimus iure, sapiente aspernaturDucimus, totam quos, vitae laborum possimus iure, sapiente aspernaturDucimus, totam quos, vitae laborum possimus iure, sapiente aspernatur </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                            <li> dolore est mollitia rem doloribus tempore laudantium. Consequuntur porro </li>
+                        </ul>
+                    </div>
+                    <div class="bb">
+                        <caption>그리드 div bb</caption><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,
+                        Sint magnam ullam soluta veniam quam vero ut, quasi facere dolorem,
+                        veritatis aperiam quaerat, voluptatum quos ab debitis inventore
+                    </div>
+                    <div class="cc">
+                        <caption>그리드 div cc</caption>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Possimus quod, sed consectetur at doloremque, enim quaerat, odit quia
+                        architecto numquam hic officiis iusto cupiditate iure. Rem pariatur
+                    </div>
+                    <div class="dd">
+                        <caption>그리드 div dd</caption>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Possimus quod, sed consectetur at doloremque, enim quaerat, odit quia
+                        architecto numquam hic officiis iusto cupiditate iure. Rem pariatur
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <caption>푸터</caption>
+    </div>
+    
+</body>
+
+</html>

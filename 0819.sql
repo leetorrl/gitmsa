@@ -1,0 +1,1 @@
+INSERT INTO HelloJava (H_id,H_name,H_power) VALUES(?,?,?);

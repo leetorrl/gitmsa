@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  이름 : <input type="text" name="" id="name">
+  <div id="nameprint"></div>
+  타입 : <input type="text" name="" id="type">
+  <button id="btn">전송</button>
+  <div id="print"></div>
+</body>
+</html>
+<script>
+const name = document.getElementById('name');
+const type = document.getElementById('type');
+const print = document.getElementById('print');
+const nameprint = document.getElementById('nameprint');
+
+
+  document.getElementById('btn').addEventListener('click',()=>{
+
+    if(name.value == ''){
+      nameprint.innerHTML = "이름을 입력하세요";
+      return;
+    }
+
+    fetch(`http://127.0.0.1:8080/aa/insert?B_name=${name.value}&B_type=${type.value}`)
+    .then(res =>{
+      return res.text();
+    })
+    .then( data=>{
+      console.log(data);
+      name.value="";
+      type.value="";
+      print.innerHTML = data;
+    })
+  })
+  
+</script>

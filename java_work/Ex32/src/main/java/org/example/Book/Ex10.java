@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Ex10 {
     
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         skllPepository skll = new skllPepository();
+        entrytable en = new entrytable();
 
         Scanner scan = new Scanner(System.in);
         System.out.println("""
@@ -32,6 +33,8 @@ public class Ex10 {
                          """);
 
                 int num2 = scan.nextInt();
+
+
 
                 switch (num2) {
                     case 0: {
@@ -74,6 +77,8 @@ public class Ex10 {
             }
             break;
 
+
+
             case 2: {
                 System.out.println("Customer 테이블");
             }
@@ -81,6 +86,58 @@ public class Ex10 {
             case 3: {
 
                 System.out.println("entry 테이블");
+
+                System.out.println("""
+                         0 : 로그인(미구현)
+                         1 : 인설트
+                         2 : 셀렉트
+                         3 : 딜리트
+                         4 : 수정
+                         """);
+                int num2 = scan.nextInt();
+
+
+
+                switch (num2) {
+                    case 0: {
+                        System.out.println("로그인 진입");
+                        int c_id = scan.nextInt();
+                        skll.findByIdx(c_id);
+                        break;
+                    }
+
+                    case 1: {
+                        System.out.println("인설트 진입");
+                        skll.insert();
+                        break;
+                    }
+
+                    case 2: {
+                        System.out.println("셀렉트 진입");
+
+                        skll.select();
+                        break;
+                    }
+
+
+                    case 3: {
+                        System.out.println();
+                        System.out.println("딜리트 진입");
+                        System.out.println();
+                        skll.delete();
+                    }
+
+                    case 4: {
+                        System.out.println("업데이트");
+                        en.update();
+
+                    }
+                    default: {
+                        System.out.println("시스템 종류");
+                    }
+                }
+
+
             }
 
             case 4: {

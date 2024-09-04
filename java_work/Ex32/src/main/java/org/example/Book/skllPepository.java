@@ -108,27 +108,30 @@ public void delete(){
 
 public void update(){
 
+
+
         try{
 
     // DB 연결
     conn =  DriverManager.getConnection(
-            "jdbc:mysql://192.168.0.29:3307/SKLL_library",
+            "jdbc:mysql://192.168.0.85:3306/SKLL_Library",
             "root",
             "1234");
     //sql 생성
-    pstmt = conn.prepareStatement("UPDATE Book SET B_id=?, B_name=?, B_type=?,publisher=?, B_date=? WHERE B_id=?");
+    pstmt = conn.prepareStatement("UPDATE Book SET B_name=?, B_type=?,publisher=? WHERE B_id=?");
 
-    int B_id = Integer.parseInt(JOptionPane.showInputDialog("B_id(키)"));
-    pstmt.setInt(1,B_id);
 
     String B_name = JOptionPane.showInputDialog("이름");
-    pstmt.setString(2,B_name);
+    pstmt.setString(1,B_name);
 
-    int B_type = Integer.parseInt(JOptionPane.showInputDialog("장르"));
-    pstmt.setInt(3,B_type);
+    String B_type = JOptionPane.showInputDialog("장르");
+    pstmt.setString(2,B_type);
 
     String publisher = JOptionPane.showInputDialog("출판사");
-    pstmt.setString(4,publisher);
+    pstmt.setString(3,publisher);
+
+    int B_id = Integer.parseInt(JOptionPane.showInputDialog("B_id(키)"));
+    pstmt.setInt(4,B_id);
 
     // sql구문 실행
     pstmt.executeUpdate();

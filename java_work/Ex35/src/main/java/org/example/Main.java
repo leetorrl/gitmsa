@@ -1,0 +1,22 @@
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Runnable runnable = ()->{
+
+            for(int i = 0; i<1000; i++){
+                System.out.println(Thread.currentThread().getName()+" "+i);
+            }
+
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+
+        for(int i = 0; i<1000; i++){
+            System.out.println(Thread.currentThread().getName()+" "+i);
+        }
+
+    }
+}

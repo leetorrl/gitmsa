@@ -63,11 +63,13 @@ public class Ex10 {
                         System.out.println("딜리트 진입");
                         System.out.println();
                         skll.delete();
+                        break;
                     }
 
                     case 4: {
                         System.out.println("업데이트");
                         skll.update();
+                        break;
                     }
                     default: {
                         System.out.println("시스템 종류");
@@ -125,15 +127,17 @@ public class Ex10 {
                         System.out.println("딜리트 진입");
                         System.out.println();
                         skll.delete();
+                        break;
                     }
 
                     case 4: {
                         System.out.println("업데이트");
                         en.update();
-
+                        break;
                     }
                     default: {
                         System.out.println("시스템 종류");
+                        break;
                     }
                 }
 

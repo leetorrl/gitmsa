@@ -1,11 +1,10 @@
 package org.example.Book;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import javax.swing.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class skllPepository {
 
@@ -13,9 +12,16 @@ public class skllPepository {
     PreparedStatement pstmt = null;
     ResultSet rs = null;
 
-    LocalDateTime mydate = LocalDateTime.now();
+    Scanner scan = new Scanner(System.in);
 
     public void insert(){
+//        System.out.println("년도");
+//        int year = scan.nextInt();
+//        System.out.println("월");
+//        int month = scan.nextInt();
+//        System.out.println("일");
+//        int day = scan.nextInt();
+//        LocalDate mydate = LocalDate.of(year,month,day);
 
         try {
 
@@ -28,14 +34,16 @@ public class skllPepository {
 
             System.out.println("연결성공");
 
-            pstmt = conn.prepareStatement("INSERT INTO Book ( B_name, B_type,publisher,B_date) VALUES ('동현일기','일상','황금나무',20240804)");
-//            "INSERT INTO Book (B_id ,B_name, B_type,publisher,B_state,B_date) VALUES (?,?,?,?,?)"
+            pstmt = conn.prepareStatement("INSERT INTO Book (B_name, B_type,publisher,country) VALUES (?,?,?,?)");
+//
 //            "INSERT INTO Book (B_id, B_name, B_type,publisher,B_state,B_date) VALUES ('2' ,'동현일기','일상','황금나무',20240804)"
-//                        pstmt.setInt(1,3);
-//                        pstmt.setString(2,"동현일기");
-//                        pstmt.setString(3,"일상");
-//                        pstmt.setString(4,"황금나무");
-//      //                pstmt.setObject(5,mydate);
+//            "INSERT INTO Book ( B_name, B_type,publisher,B_date) VALUES ('동현일기','일상','황금나무',20240804)"
+
+                        pstmt.setString(1,"동현일기");
+                        pstmt.setString(2,"일상");
+                        pstmt.setString(3,"황금나무");
+                        pstmt.setString(4,"국내도서");
+//                      pstmt.setDate(5, Date.valueOf(mydate));
 
             pstmt.executeUpdate();
         }catch (Exception e){
@@ -50,7 +58,7 @@ public class skllPepository {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        conn = DriverManager.getConnection("jdbc:mysql://192.168.0.29:3307/SKLL_library","root","1234");
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.0.85:3306/SKLL_Library","root","1234");
 
         System.out.println("연결성공");
 
@@ -66,13 +74,13 @@ public class skllPepository {
                                 B_name = %s
                                 B_type = %s
                                 publisher = %s
-                                B_date = %s
+                                country = %s
                                 
                                 """.formatted(rs.getInt("B_id"),
                     rs.getString("B_name"),
                     rs.getString("B_type"),
                     rs.getString("publisher"),
-                    rs.getObject("B_date")
+                    rs.getString("country")
 
             ));
     }
@@ -88,7 +96,7 @@ public void delete(){
 
     // DB 연결
     conn =  DriverManager.getConnection(
-            "jdbc:mysql://192.168.0.29:3307/SKLL_library",
+            "jdbc:mysql://192.168.0.85:3306/SKLL_Library",
             "root",
             "1234");
     //sql 생성
@@ -108,8 +116,6 @@ public void delete(){
 
 public void update(){
 
-
-
         try{
 
     // DB 연결
@@ -118,7 +124,7 @@ public void update(){
             "root",
             "1234");
     //sql 생성
-    pstmt = conn.prepareStatement("UPDATE Book SET B_name=?, B_type=?,publisher=? WHERE B_id=?");
+    pstmt = conn.prepareStatement("UPDATE Book SET B_name=?, B_type=?,publisher=?, country=? WHERE B_id=?");
 
 
     String B_name = JOptionPane.showInputDialog("이름");
@@ -130,8 +136,11 @@ public void update(){
     String publisher = JOptionPane.showInputDialog("출판사");
     pstmt.setString(3,publisher);
 
+    String country = JOptionPane.showInputDialog("국내/해외");
+    pstmt.setString(4,country);
+
     int B_id = Integer.parseInt(JOptionPane.showInputDialog("B_id(키)"));
-    pstmt.setInt(4,B_id);
+    pstmt.setInt(5,B_id);
 
     // sql구문 실행
     pstmt.executeUpdate();

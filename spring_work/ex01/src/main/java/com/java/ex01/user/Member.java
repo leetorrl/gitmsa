@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 
-
 public class Member {
 private int B_id;
 private String B_name;

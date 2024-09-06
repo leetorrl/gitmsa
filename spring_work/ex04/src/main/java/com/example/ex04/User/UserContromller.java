@@ -9,6 +9,7 @@ import java.util.List;
 @RestController //url 맵핑하는 클래스
 @RequestMapping("user") //주소줄에 user로 시작하는거
 @RequiredArgsConstructor
+@CrossOrigin
 public class UserContromller {
 
     private final UserRepository userRepository;

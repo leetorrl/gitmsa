@@ -1,7 +1,6 @@
 <template>
   <div>
 <TheNav></TheNav>
-
 <AA></AA>
 <RouterView></RouterView>
   </div>
@@ -16,7 +15,6 @@ import TheNav from './views/TheNav.vue';
 export default {
   components : {
     
-    
     AA,
     RouterView,
     TheNav
@@ -26,11 +24,8 @@ export default {
    return{AA,RouterView, TheNav }
 
   }
-   
-
-  }
+}
 
 </script>
-
 <style lang="scss" scoped>
 </style>

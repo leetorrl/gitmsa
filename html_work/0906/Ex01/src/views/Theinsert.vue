@@ -10,10 +10,10 @@ export default {
   setup () {
 const mydata ={
 
-        "name": "천재인가봣ㅎㅎ",
-        "age": 1201,
-        "email": "cas@nevar.com",
-        "password": "486",
+        "name": "베테랑",
+        "age": 2,
+        "email": "9월15일",
+        "password": "대.개.봉",
         "wdate": "2024-09-06T11:32:44.718893"
 }
   

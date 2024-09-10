@@ -3,24 +3,23 @@ package com.example.ex04.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController //url 맵핑하는 클래스
-@RequestMapping("user") //주소줄에 user로 시작하는거
+@RequestMapping("book") //주소줄에 user로 시작하는거
 @RequiredArgsConstructor
 @CrossOrigin
-public class UserContromller {
+public class BookContromller {
 
-    private final UserRepository userRepository;
+    private BookRepository bookRepository;
 
     @GetMapping("select")
-    public List<user> select(){
-        return userRepository.findAll();
+    public List<book> select(){
+        return bookRepository.findAll();
     }
 
     @PostMapping("insert")
-    public String insert(@RequestBody user u){
+    public String insert(@RequestBody book u){
 
         System.out.println("실행");
         //save = insert실행..
@@ -30,7 +29,7 @@ public class UserContromller {
 //                .wdate(LocalDateTime.now())
 //                .build();
 
-        userRepository.save(u);
+        bookRepository.save(u);
         return "ok";
     }
 

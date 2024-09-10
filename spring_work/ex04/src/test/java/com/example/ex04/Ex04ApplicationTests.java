@@ -1,6 +1,6 @@
 package com.example.ex04;
 
-import com.example.ex04.User.UserRepository;
+import com.example.ex04.User.BookRepository;
 import com.example.ex04.User.user;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 class Ex04ApplicationTests {
 
 	@Autowired
-	UserRepository userRepository;
+	BookRepository bookRepository;
 
 	@Test
 	void contextLoads() {
@@ -24,12 +24,12 @@ class Ex04ApplicationTests {
 				.wdate(LocalDateTime.now())
 				.build();
 
-		userRepository.save(u);
+		bookRepository.save(u);
 	}
 
 	@Test
 	void selectTset(){
-		userRepository.findAll()
+		bookRepository.findAll()
 				.stream()
 				.forEach(System.out::println);
 	}

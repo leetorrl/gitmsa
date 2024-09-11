@@ -20,26 +20,26 @@ private final -> @RequiredArgsConstructor -> 객체 자동할당
  */
 
 @Entity
-@Table(name = "users")
+@Table(name = "book")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Getter
 @Setter
-public class user {
+public class book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUtoINCREMENT 이거 설정 요청
-    private Long idx;
+    private Long B_id;
 
-    private String name;
-    private int age;
+    private String B_name;
+    private int B_state;
 
-    private String email;
-    private String password;
+    private String publiser;
+    private String nationality;
 
-    private LocalDateTime wdate;
+
 
 
 

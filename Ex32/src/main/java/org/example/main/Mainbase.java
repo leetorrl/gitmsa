@@ -2,6 +2,7 @@ package org.example.main;
 
 import org.example.Book.skllPepository;
 import org.example.Customer.Customertable;
+import org.example.orders.Orderstabel;
 import org.example.entry.entrytable;
 import org.example.staff.Stafftable;
 
@@ -15,6 +16,8 @@ public class Mainbase {
         Customertable cus = new Customertable();
         entrytable en = new entrytable();
         Stafftable staf = new Stafftable();
+        Orderstabel ord = new Orderstabel();
+
 
         Scanner scan = new Scanner(System.in);
         System.out.println("""
@@ -91,6 +94,7 @@ public class Mainbase {
                          2 : 셀렉트
                          3 : 딜리트
                          4 : 수정
+                         5 : 연습
                          """);
 
                 int num2 = scan.nextInt();
@@ -126,6 +130,13 @@ public class Mainbase {
                     case 4: {
                         System.out.println("Customer 업데이트");
                         cus.update();
+                        break;
+                    }
+
+                    case 5 : {
+
+                        System.out.println("조인 연습");
+                        cus.select2();
                         break;
                     }
                     default: {
@@ -192,6 +203,57 @@ public class Mainbase {
 
             case 4: {
                 System.out.println("order 테이블");
+                System.out.println("""
+                        0 : 로그인(미구현)
+                        1 : 내용추가
+                        2 : 대여가능책 조회
+                        3 : 연장
+                        4 : 반납
+                        """);
+
+                int num2 = scan.nextInt();
+
+                switch (num2) {
+                    case 0: {
+                        System.out.println("orders 로그인 진입");
+                        int c_id = scan.nextInt();
+                        skll.findByIdx(c_id);
+                        break;
+                    }
+
+                    case 1: {
+                        System.out.println("orders 추가");
+                        ord.insert();
+                        break;
+                    }
+
+                    case 2: {
+                        System.out.println("orders 대여가능 도서조회");
+                        ord.select();
+                        break;
+                    }
+
+                    case 3: {
+                        System.out.println();
+                        System.out.println("orders 대여연장");
+                        System.out.println();
+                        ord.update1();
+                        break;
+                    }
+
+                    case 4: {
+                        System.out.println("orders 반납");
+                        ord.update2();
+                        break;
+                    }
+                    default: {
+                        System.out.println("시스템 종류");
+                        break;
+                    }
+
+
+                }break;
+
             }
             case 5: {
                 System.out.println("staff 테이블");

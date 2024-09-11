@@ -2,8 +2,7 @@ package org.example.staff;
 
 import java.time.LocalDate;
 
-
-public class staff {
+public class Staff {
     private int s_id;
     private String s_name;
     private String s_rank;
@@ -11,7 +10,7 @@ public class staff {
     private LocalDate s_enddate;
 
 
-    public staff(int s_id, String s_name, String s_rank, LocalDate s_startdate, LocalDate s_enddate) {
+    public Staff(int s_id, String s_name, String s_rank, LocalDate s_startdate, LocalDate s_enddate) {
         this.s_id = s_id;
         this.s_name =  s_name;
         this.s_rank = s_rank;

@@ -2,25 +2,19 @@ package org.example.entry;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
-@NoArgsConstructor
-
-public class entry {
+public class Entry {
     private int e_id;
-    private LocalDateTime insertdate;
-    private LocalDateTime updatedate;
-    private LocalDateTime deletedate;
+    private LocalDate insertdate;
+    private LocalDate updatedate;
+    private LocalDate deletedate;
     private String etc ;
     private int s_id;
     private int b_id;
     private int state;
 
-    public entry(int e_id, LocalDateTime insertdate, LocalDateTime updatedate, LocalDateTime deletedate, String etc, int s_id, int b_id, int state) {
+    public Entry(int e_id, LocalDate insertdate, LocalDate updatedate, LocalDate deletedate, String etc, int s_id, int b_id, int state) {
         this.e_id = e_id;
         this.insertdate = insertdate;
         this.updatedate = updatedate;
@@ -30,6 +24,7 @@ public class entry {
         this.b_id = b_id;
         this.state = state;
     }
+
 
     @Override
     public String toString() {
@@ -45,7 +40,7 @@ public class entry {
                 ", state" + state +
                 '}';
     }
-
-
-
 }
+
+
+

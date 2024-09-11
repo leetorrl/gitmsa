@@ -1,5 +1,7 @@
 package org.example.Customer;
 
+import lombok.*;
+
 import java.time.LocalDate;
 
 public class Customer {

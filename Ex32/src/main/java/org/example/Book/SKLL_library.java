@@ -1,12 +1,5 @@
 package org.example.Book;
 
-import lombok.*;
-
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
-@NoArgsConstructor
 
 public class SKLL_library {
     private int B_id;

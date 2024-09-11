@@ -2,8 +2,7 @@ package org.example.Book;
 
 import java.sql.*;
 import javax.swing.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.Scanner;
 
 public class skllPepository {
@@ -15,13 +14,6 @@ public class skllPepository {
     Scanner scan = new Scanner(System.in);
 
     public void insert(){
-//        System.out.println("년도");
-//        int year = scan.nextInt();
-//        System.out.println("월");
-//        int month = scan.nextInt();
-//        System.out.println("일");
-//        int day = scan.nextInt();
-//        LocalDate mydate = LocalDate.of(year,month,day);
 
         try {
 
@@ -35,15 +27,11 @@ public class skllPepository {
             System.out.println("연결성공");
 
             pstmt = conn.prepareStatement("INSERT INTO Book (B_name, B_type,publisher,country) VALUES (?,?,?,?)");
-//
-//            "INSERT INTO Book (B_id, B_name, B_type,publisher,B_state,B_date) VALUES ('2' ,'동현일기','일상','황금나무',20240804)"
-//            "INSERT INTO Book ( B_name, B_type,publisher,B_date) VALUES ('동현일기','일상','황금나무',20240804)"
 
                         pstmt.setString(1,"동현일기");
                         pstmt.setString(2,"일상");
                         pstmt.setString(3,"황금나무");
                         pstmt.setString(4,"국내도서");
-//                      pstmt.setDate(5, Date.valueOf(mydate));
 
             pstmt.executeUpdate();
         }catch (Exception e){

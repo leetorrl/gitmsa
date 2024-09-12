@@ -28,19 +28,23 @@ public class Orderstabel {
 
             System.out.println("연결성공");
 
-            pstmt = conn.prepareStatement("SELECT b_name FROM entry, Book where entry.b_id = Book.b_id and state =0 ");
+//            pstmt = conn.prepareStatement("SELECT b_name FROM entry, Book where entry.b_id = Book.b_id");
+            pstmt = conn.prepareStatement("SELECT b_name FROM Orders, Book where Orders.b_id = Book.b_id and end_date is null");
 
             rs = pstmt.executeQuery();
 
+
             while (rs.next()){
+
+
                 System.out.println("""
-                                  b_name = %s
+                                  o_id = %d
                                 """.formatted(
-                        rs.getString("b_name")
+                        rs.getInt("o_id")
                 ));
             }
         }catch (Exception e){
-            e.printStackTrace();
+
             System.out.println("오류발생");
         }
 
@@ -74,7 +78,7 @@ public class Orderstabel {
             pstmt.executeUpdate();
 
         }catch (Exception e){
-            e.printStackTrace();
+
             System.out.println("오류발생");
         }
 

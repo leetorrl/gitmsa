@@ -1,10 +1,9 @@
-package com.pmh.ex08.FreeBoard;
+package com.pmh.ex09.FreeBoard;
 
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +20,12 @@ public class FreeBoardController {
         List<FreeBoard> list = freeBoardRepository.findAll();
         return ResponseEntity.ok(list);
 
+    }
+
+    @PostMapping
+    public  ResponseEntity<FreeBoard> save(@RequestBody FreeBoardReqDto freeBoardReqDto){
+        FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto,FreeBoard.class);
+        System.out.println(freeBoard);
+        return ResponseEntity.status(200).body(freeBoard);
     }
 }

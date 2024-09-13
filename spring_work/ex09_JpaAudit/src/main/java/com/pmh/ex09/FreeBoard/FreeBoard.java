@@ -1,8 +1,11 @@
-package com.pmh.ex08.FreeBoard;
+package com.pmh.ex09.FreeBoard;
 
-import com.pmh.ex08.user.User;
+import com.pmh.ex09.user.User;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +16,7 @@ import java.time.LocalDateTime;
 @ToString
 @Getter
 @Setter
+@EntityListeners(AuditingEntityListener.class)
 public class FreeBoard {
 
     @Id
@@ -25,9 +29,13 @@ public class FreeBoard {
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
+    @CreatedDate
     private LocalDateTime regDate;
+
+    @LastModifiedDate
     private LocalDateTime modDate;
 
+    @Column(columnDefinition = "default 0")
     private int view_count;
 
 

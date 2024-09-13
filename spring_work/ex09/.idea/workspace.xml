@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b8e1dd1-0b3b-436d-8fb4-ee1097331277" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Ex32/out/production/classes/org/example/Book/skllPepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ex32/out/production/classes/org/example/Book/skllPepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ex32/out/production/classes/org/example/orders/Orderstabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ex32/out/production/classes/org/example/orders/Orderstabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ex32/src/main/java/org/example/Book/skllPepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ex32/src/main/java/org/example/Book/skllPepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ex32/src/main/java/org/example/orders/Orderstabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ex32/src/main/java/org/example/orders/Orderstabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/Ex07Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/error/BizException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/error/ErrorCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/error/ErrorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/error/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/user/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/user/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/user/UserReqDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/java/com/pmh/ex07/user/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/resources/static/aa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex07/src/test/java/com/pmh/ex07/Ex07ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex08_freeboard/src/main/java/com/pmh/ex08/FreeBoard/FreeBoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex08_freeboard/src/test/java/com/pmh/ex08/FreeBoard/FreeBoardRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex08_freeboard/src/test/java/com/pmh/ex08/FreeBoard/FreeBoardRepositoryTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ex06" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;suidori&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/leetorrl/gitmsa.git&quot;,
+    &quot;accountId&quot;: &quot;1ed221a3-1749-4b4b-856e-66474cf1371d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2lrcamRAPLQPVlz3wo3DTyFOWZD" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Ex07Application.executor": "Run",
+    "Application.Ex08Application.executor": "Run",
+    "Gradle.ex06 [:Ex06Application.main()].executor": "Run",
+    "Gradle.ex07 [:Ex07Application.main()].executor": "Run",
+    "JUnit.Ex08ApplicationTests.executor": "Run",
+    "JUnit.FreeBoardRepositoryTest.deleteTest.executor": "Run",
+    "JUnit.FreeBoardRepositoryTest.executor": "Run",
+    "JUnit.FreeBoardRepositoryTest.selectTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/Desktop/work/spring_work/ex09_JpaAudit",
+    "settings.editor.selected.configurable": "File.Encoding"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.pmh.ex08.FreeBoard" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ex09" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ex09" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b8e1dd1-0b3b-436d-8fb4-ee1097331277" name="Changes" comment="" />
+      <created>1725941704144</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725941704144</updated>
+    </task>
+    <servers />
+  </component>
+</project>

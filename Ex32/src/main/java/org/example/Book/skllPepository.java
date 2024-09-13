@@ -50,7 +50,7 @@ public class skllPepository {
 
         System.out.println("연결성공");
 
-        pstmt = conn.prepareStatement("SELECT* FROM Book");
+        pstmt = conn.prepareStatement("SELECT* FROM Book where b_id =1");
 
         rs = pstmt.executeQuery();
 

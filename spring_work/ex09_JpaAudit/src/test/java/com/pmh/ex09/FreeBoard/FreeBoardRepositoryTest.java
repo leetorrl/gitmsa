@@ -1,15 +1,13 @@
-package com.pmh.ex08.FreeBoard;
+package com.pmh.ex09.FreeBoard;
 
-import com.pmh.ex08.user.User;
-import com.pmh.ex08.user.UserRepository;
+import com.pmh.ex09.user.User;
+import com.pmh.ex09.user.UserRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class FreeBoardRepositoryTest {

@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("freeboard")
 @RequiredArgsConstructor
+@CrossOrigin
 public class FreeBoardController {
 
     private final FreeBoardRepository freeBoardRepository;
@@ -24,8 +25,12 @@ public class FreeBoardController {
 
     @PostMapping
     public  ResponseEntity<FreeBoard> save(@RequestBody FreeBoardReqDto freeBoardReqDto){
+
         FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto,FreeBoard.class);
-        System.out.println(freeBoard);
+
+
+        freeBoardRepository.save(freeBoard);
+
         return ResponseEntity.status(200).body(freeBoard);
     }
 }

@@ -1,5 +1,8 @@
 package com.pmh.ex09.error;
 
+import jakarta.validation.ConstraintDeclarationException;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Set;
 
 @ControllerAdvice
 public class ErrorController {
@@ -23,6 +27,7 @@ public class ErrorController {
                 .httpStatus(e.getErrorCode().getHttpStatus())
                 .localDateTime(LocalDateTime.now())
                 .build();
+
         return ResponseEntity
                 .status(errorResponse.getHttpStatus())
                 .body(errorResponse);
@@ -48,4 +53,46 @@ public class ErrorController {
                 .body(errorResponse);
 
     }
+
+
+    @ExceptionHandler(ConstraintDeclarationException.class)
+    public ResponseEntity<ErrorResponse> constraintException(ConstraintViolationException e){
+
+        e.getConstraintViolations()
+                .stream()
+                .map(constraintViolation -> constraintViolation.getMessage())
+                .reduce("",(s, s2)-> s+s2);
+
+//        String msg =(String) Arrays.stream(e.getMessage())
+//                .reduce("",(o,o2)-> o.toString()+o2.toString());
+
+
+
+//        Set<ConstraintViolation<?>> set = e.getConstraintViolations();
+//
+//
+//        오류가 다중으로 발생시 for부문으로 모두 출력 가능..
+//        String test = "";
+//        for(ConstraintViolation<?> item : set){
+//            System.out.println(item);
+//            System.out.println(item.getMessage());
+//            test = item.getMessage();
+//        }
+//
+//        System.out.println(test);
+
+
+
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .message(e.getMessage())
+                .localDateTime(LocalDateTime.now())
+                .build();
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(errorResponse);
+
+    }
+
 }

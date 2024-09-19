@@ -3,7 +3,9 @@ package com.pmh.ex09.FreeBoard;
 import com.pmh.ex09.user.User;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -16,9 +18,11 @@ public class FreeBoardReqDto {
     private Long idx;
 
     @Schema(example = "제목을 넣어주세여")
+    @Length(min = 2)
     private String title;
 
     @Schema(example = "제목을 넣어주세여")
+    @NotEmpty
     private String content;
 //    private User user;
 

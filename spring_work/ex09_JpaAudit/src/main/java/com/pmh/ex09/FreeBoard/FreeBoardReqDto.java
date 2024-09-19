@@ -1,6 +1,7 @@
 package com.pmh.ex09.FreeBoard;
 
 import com.pmh.ex09.user.User;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,11 +14,21 @@ public class FreeBoardReqDto {
     //유효성 검사
 
     private Long idx;
+
+    @Schema(example = "제목을 넣어주세여")
     private String title;
+
+    @Schema(example = "제목을 넣어주세여")
     private String content;
-    private User user;
+//    private User user;
+
+    @Schema(hidden = true)
     private LocalDateTime regDate;
+
+    @Schema(hidden = true)
     private LocalDateTime modDate;
+
+    @Schema(hidden = true)
     private int view_count;
 
 }

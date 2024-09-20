@@ -2,7 +2,7 @@
     <div>
 <h1 class="h1-red">FreeBoardinput</h1>
 
-{{ this.$route.params.aa }}
+
 
 <div class="p-5">
 
@@ -18,6 +18,13 @@ content = {{content}}
 <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300" @click="save">저장</button>
 </div>
 
+<div>
+    <ul>
+        <li v-for="num in totalPages" v-bind:key="num">{{num}}</li>
+    </ul>
+</div>
+
+
     </div>
 </template>
 
@@ -25,7 +32,13 @@ content = {{content}}
 import axios from 'axios';
 import { ref } from 'vue';
 
+
+
 import {useRouter} from 'vue-router';
+
+const arr = ref([]);
+
+const totalPages = 10;
 
 const title = ref('');
 const content = ref('');
@@ -39,7 +52,7 @@ const data = {
     content:content.value
 }
 // console.log(data);
-    axios.post('http://localhost:8080/freeboard',data)
+    axios.post('http://localhost:8080/freeboard',data) //데이터 가져오는명령어
         .then(res => {
             console.log(res);
             alert('저장하였습니다.')

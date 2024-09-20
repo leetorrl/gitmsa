@@ -13,7 +13,7 @@
             <th class="border">viewcount</th>
         </tr>
     </thead>
-<tbody class="p-5">
+<tbody>
     <tr v-for="item in arr" :key="item.idx">
         <td class="border text-center">{{item.idx}}</td>
         <td class="border text-center">{{item.title}}</td>
@@ -27,6 +27,14 @@
 {{ this.$route.params.aa }}
 
 </div>
+
+<div class="flex justify-center mt-5">
+    <ul class="flex space-x-5">
+        <li v-for="num in totalPages" v-bind:key="num">{{num}}</li>
+    </ul>
+</div>
+
+
     </div>
 </template>
 
@@ -36,6 +44,7 @@ import axios from 'axios';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
+const totalPages = 10;
 
 const route = useRoute();
 
@@ -48,8 +57,9 @@ console.log("route.params.bb = " + route.params.bb);
 
 axios.get('http://localhost:8080/freeboard')
     .then(res => {
-        console.log(res.data);
-        arr.value = res.data;
+          arr.value = res.data.content;
+        console.log(res.data.totalPages);
+      
     })
     .catch(e => {
         console.log(e);

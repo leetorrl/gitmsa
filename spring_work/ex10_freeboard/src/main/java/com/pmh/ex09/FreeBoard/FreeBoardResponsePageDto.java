@@ -13,11 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 public class FreeBoardResponsePageDto {
 
-    @Schema(hidden = true)//swagger 문서에서 안보여지게..
+//    @Schema(hidden = true)//swagger 문서에서 안보여지게..
     @JsonIgnore //포스트맨에서 안보이게..
     private List<FreeBoard> content;
-    private List<FreeBoardResponseDto> list;
 
+    private List<FreeBoardResponseDto> list;
     private  int totalElements;
     private  int totalpages;
     private  int size;

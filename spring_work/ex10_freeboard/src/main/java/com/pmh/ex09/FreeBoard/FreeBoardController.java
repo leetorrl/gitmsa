@@ -1,8 +1,13 @@
 package com.pmh.ex09.FreeBoard;
 
+import com.pmh.ex09.error.BizException;
+import com.pmh.ex09.error.ErrorCode;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -18,14 +23,18 @@ import java.util.List;
 @RequestMapping("freeboard")
 @RequiredArgsConstructor
 @CrossOrigin
+@Slf4j
 public class FreeBoardController {
 
+//    private static final Logger log = LoggerFactory.getLogger(FreeBoardController.class);
+
     private final FreeBoardRepository freeBoardRepository;
+private final ModelMapper modelMapper;
 
     @GetMapping
     public ResponseEntity<FreeBoardResponsePageDto> findAll(@RequestParam(name = "pageNum", defaultValue = "0") int pageNum,
-                                                            @RequestParam(name = "size", defaultValue = "10") int size){
-
+                                                            @RequestParam(name = "size", defaultValue = "5" ) int size){
+//        defaultValue = "5"
 //        List<FreeBoard> list = freeBoardRepository.findAll();
 
         Sort sort = Sort.by(Sort.Direction.DESC,"idx");
@@ -41,8 +50,7 @@ public class FreeBoardController {
         System.out.println("pages = "+page.getTotalPages());
 
         FreeBoardResponsePageDto freeBoardResponsePageDto
-                = new ModelMapper()
-                .map(page, FreeBoardResponsePageDto.class);
+                = modelMapper.map(page, FreeBoardResponsePageDto.class);
 
         List<FreeBoardResponseDto> list = new ArrayList<>();
 
@@ -51,8 +59,10 @@ public class FreeBoardController {
                     = new ModelMapper().map(freeBoard, FreeBoardResponseDto.class);
 
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy/MM/dd hh:mm");
+
             freeBoardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
             freeBoardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
+
             list.add(freeBoardResponseDto);
         }
         freeBoardResponsePageDto.setList(list);
@@ -62,17 +72,39 @@ public class FreeBoardController {
 
     }
 
-    @PostMapping
-    public  ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto){
 
-        FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto,FreeBoard.class);
+    @GetMapping("view/{idx}")
+    public ResponseEntity<FreeBoardResponseDto> findOne(@PathVariable(name = "idx") long idx){
+                                                  //한개 가져올때 findOne
+        FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
 
+        FreeBoardResponseDto freeBoardResponseDto = modelMapper.map(freeBoard, FreeBoardResponseDto.class);
 
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy/MM/dd hh:mm");
+
+        freeBoardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
+
+        freeBoardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
+
+        return ResponseEntity.ok(freeBoardResponseDto);
+    }
+
+@PostMapping
+    public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
+        FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
         freeBoardRepository.save(freeBoard);
-
         return ResponseEntity.status(200).body(freeBoard);
     }
 
 
+    @DeleteMapping("delete/{idx}")
+    public ResponseEntity<String> deleteByid(@PathVariable(name="idx") long idx){
+
+        freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.NOT_FOUND));
+        freeBoardRepository.deleteById(idx);
+
+
+        return ResponseEntity.ok("삭제되었습니다");
+    }
 
 }

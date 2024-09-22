@@ -31,6 +31,7 @@ public class book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUtoINCREMENT 이거 설정 요청
+
     private Long B_id;
 
     private String B_name;
@@ -38,7 +39,6 @@ public class book {
 
     private String publiser;
     private String nationality;
-
 
 
 

@@ -2,7 +2,6 @@ package com.pmh.ex05.user;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +19,7 @@ import java.time.LocalDateTime;
  */
 
 @Entity
-@Table(name = "free_board")
+@Table(name = "users")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,35 +30,18 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTOINCREMENT 이거 설정해줘...
-    private Long f_idx; //오토인크리먼트 프라이머리
+    private Long idx;
 
-    @Column(columnDefinition = "int default 1")
-    private int f_avail; //삭제된 게시글 처리 논리적 삭제
+    private String name;
+    private int age;
 
-    private String f_password; //프론트
+    @Column(length = 100, unique = true)
+    private String email;
 
-    private String f_nickname; //프론트
+    @Column(length = 100)
+    private String password;
 
-    private String f_title; //프론트
-
-    private String f_body; //프론트
-
-    @CreatedDate
-    private LocalDateTime f_timestamp; //로컬데이트 나우
-
-
-//    @LastModifiedDate
-//    private LocalDateTime modDate; //수정날짜
-
-//    private String name;
-//    private int age;
-//
-//    @Column(length = 100, unique = true)
-//    private String email;
-//
-//    @Column(length = 100)
-//    private String password;
-
+    private LocalDateTime wdate;
 
     // JPA CLASS -> talbe CREATE가 됩니다.
 

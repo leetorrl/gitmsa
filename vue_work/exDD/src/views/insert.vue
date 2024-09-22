@@ -35,10 +35,10 @@ const router = useRouter();
 const insert = () => {
 
     const data = {
-        b_idd: b_id.value,
-        b_passwordd: b_password.value,
-        titled: title.value,
-        textd: text.value,
+        b_id: b_id.value,
+        b_password: b_password.value,
+        title: title.value,
+        text: text.value,
 
     };
 
@@ -49,20 +49,20 @@ const insert = () => {
     console.log(`3. title = ${title.value}`);
     console.log(`4. text = ${text.value}`);
 
-    // axios.post('http://localhost:8080/테이블명',data)
-    //     .then(res => {
-    //         console.log(res);
-    //         alert('저장하였습니다.')
+    axios.post('http://localhost:8080/User',data)
+        .then(res => {
+            console.log(res);
+            alert('저장하였습니다.')
 
+    router.push({name:"home"});
+        })
+    // router.push({ name: "home" });
 
-    // router.push({name:"home"});
-    //     })
-    router.push({ name: "home" });
-
-    // .catch(e => {
-    //     console.log(e);
-    //     alert('에러'+e.response.data.message);
-    // })
+    .catch(e => {
+        console.log(e);
+        alert('에러'+e);
+        // alert('에러'+e.response.data.message);
+    })
 }
 
 </script>

@@ -20,13 +20,7 @@
     <div>
       <ul>
         <li
-          style="
-            cursor: pointer;
-            display: inline-block;
-            padding: 1px 5px;
-            margin: 2px;
-            border: 1px solid black;
-          "
+        id="list_btn"
           v-for="num in totalpages"
           v-bind:key="num"
           @click="setpageNum(num - 1)"
@@ -62,7 +56,7 @@ const list_page = (f_idx) => {
 const get_board = (pageNum) => {
   if (pageNum == undefined) pageNum = 0
   axios
-    .get(`http://localhost:8080/free_board?pageNum=${pageNum}`)
+    .get(`http://localhost:8080/free_board?pageNum=${pageNum}`) //백엔드 작성에 따라 바꿔주기
     .then((res) => {
       list_arr.value = res.data.list
       totalpages.value = res.data.totalpages

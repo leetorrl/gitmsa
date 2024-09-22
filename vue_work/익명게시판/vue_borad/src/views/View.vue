@@ -1,19 +1,22 @@
 <template>
   <div>
-    <h1>View</h1>
+    <div style="background-color: #eee">
+      <div style="border: 1px solid gray">
+        <h2 style="margin: 5px">글제목 드갈자리 = {{ f_title }}</h2>
+        <p style="margin: 10px">작성자 = {{ f_nickname }}</p>
+        <p style="margin: 10px">작성일자 = {{ f_timestamp }}</p>
+      </div>
+      <div style="border: 1px solid gray">
+        <div style="margin: 10px">
+          <h3>글내용들</h3>
+          <p>{{ f_body }}</p>
+        </div>
+      </div>
+    </div>
     <div>
-      <div>
-        <h1>글제목 = {{ f_title }}</h1>
-
-        <h1>글내용</h1>
-        <p>{{ f_body }}</p>
-        <h1>작성일자 = {{ f_timestamp }}</h1>
-        <h1>작성자 = {{ f_nickname }}</h1>
-      </div>
-      <div>
-        <button @click="pageMove(f_idx)">수정</button>
-        <button @click="doDelete(f_idx)">삭제</button>
-      </div>
+      <button @click="create()">글쓰기</button>
+      <button @click="pageMove(f_idx)">수정</button>
+      <button @click="doDelete(f_idx)">삭제</button>
     </div>
   </div>
 </template>
@@ -30,6 +33,11 @@ const f_body = ref('test')
 const f_timestamp = ref('test')
 const f_nickname = ref('test')
 const f_idx = ref(0)
+
+const create = () => {
+  console.log('글쓰기버튼')
+  router.push({ name: 'insert' })
+}
 
 const doDelete = (f_idx) => {
   axios

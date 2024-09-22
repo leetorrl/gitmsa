@@ -1,6 +1,6 @@
 <template>
   <div id="wrap">
-    <h1>글작성!</h1>
+    <h1>글쓰기</h1>
     <div>
       <label for="" style="display: inline-block; text-align: center; width: 80px"> 아이디 </label
       ><input style="width: 100px" v-model="f_nickname" type="text" name="" id="bid" />
@@ -23,7 +23,7 @@
     <p>내용</p>
     <div>
       <textarea
-        placeholder="싸우지 말고 서로서로 즐겁게 지내요^^."
+        placeholder="싸우지 말고 서로서로 즐겁게 지내요."
         v-model="f_body"
         name=""
         id="bte"
@@ -31,7 +31,7 @@
       ></textarea>
     </div>
 
-    <p id="btn" @click="insert">작성!</p>
+    <p id="btn" @click="insert">완료</p>
   </div>
 </template>
 

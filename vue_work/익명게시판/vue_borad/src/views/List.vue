@@ -9,12 +9,19 @@
         <li id="list_ul_list" style="width: 10%">조회</li>
         <li id="list_ul_list" style="width: 15%">날짜</li>
       </ul>
-      <ul v-for="item in list_arr" :key="item.f_idx" @click="list_page(item.f_idx)">
-        <li>{{ item.f_idx }}</li>
+
+      <!-- <ul v-for="item in list_arr" :key="item.f_idx" @click="list_page(item.f_idx)"> -->
+        <!-- <li>{{ item.f_idx }}</li>
         <li>{{ item.f_title }}</li>
         <li>{{ item.f_nickname }}</li>
         <li>{{ item.f_avail }}</li>
-        <li>{{ item.f_timestamp }}</li>
+        <li>{{ item.f_timestamp }}</li> -->
+        <ul v-for="item in arr" :key="item.idx"  @click="viewPage(item.idx)">
+        <li >{{ item.idx }}</li>
+            <li >{{ item.title }}</li>
+            <li >{{ item.creAuthor }}</li>
+            <li >{{ item.regDate }}</li>
+            <li >{{ item.viewCount }}</li>
       </ul>
     </div>
     <div>
@@ -37,34 +44,67 @@ import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const list_arr = ref([])
+// const list_arr = ref([])
+const arr = ref([]);
 const router = useRouter()
 const pageNum = ref(0)
 const totalpages = ref(10)
+
+
+
 
 const setpageNum = (num) => {
   pageNum.value = num
   get_board(num)
 }
 
-const list_page = (f_idx) => {
-  //게시글 보기
-  const data = { name: 'view', params: { f_idx } }
+
+
+const viewPage = (idx) => {
+  const data = { name: 'view', params: { idx } }
   router.push(data)
 }
+
+
+// const list_page = (f_idx) => { //
+//   //게시글 보기
+//   const data = { name: 'view', params: { f_idx } }
+//   router.push(data)
+// }
+
 
 const get_board = (pageNum) => {
   if (pageNum == undefined) pageNum = 0
   axios
-    .get(`http://localhost:8080/free_board?pageNum=${pageNum}`) //백엔드 작성에 따라 바꿔주기
+    .get(`http://localhost:8080/freeboard?pageNum=${pageNum}`)
     .then((res) => {
-      list_arr.value = res.data.list
+      arr.value = res.data.list
       totalpages.value = res.data.totalpages
       console.log(res.data.list)
+
     })
     .catch((e) => {
       console.log(e)
     })
+
+
+
+
+// const get_board = (pageNum) => {
+//   if (pageNum == undefined) pageNum = 0
+//   axios
+//   .get(`http://localhost:8080/free_board?pageNum=${pageNum}`) //백엔드 작성에 따라 바꿔주기
+
+//     .then((res) => {
+//       list_arr.value = res.data.list
+//       totalpages.value = res.data.totalpages
+//       console.log(res.data.list)
+
+
+//     })
+//     .catch((e) => {
+//       console.log(e)
+//     })
 }
 
 get_board()

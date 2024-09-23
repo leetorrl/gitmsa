@@ -15,8 +15,10 @@
     </div>
     <div>
       <button @click="create()">글쓰기</button>
-      <button @click="pageMove(f_idx)">수정</button>
-      <button @click="doDelete(f_idx)">삭제</button>
+      <!-- <button @click="pageMove(f_idx)">수정</button>
+      <button @click="doDelete(f_idx)">삭제</button> -->
+      <button @click="pageMove(idx)">수정</button>
+      <button @click="doDelete(idx)">삭제</button>
     </div>
   </div>
 </template>
@@ -32,16 +34,22 @@ const f_title = ref('test')
 const f_body = ref('test')
 const f_timestamp = ref('test')
 const f_nickname = ref('test')
-const f_idx = ref(0)
+// const f_idx = ref(0)
+const idx = ref(0);
 
 const create = () => {
   console.log('글쓰기버튼')
   router.push({ name: 'insert' })
 }
 
-const doDelete = (f_idx) => {
+
+
+
+
+const doDelete = (idx) => { //f_idx
   axios
-    .delete(`http://localhost:8080/free_board/delete/${f_idx}`)
+    // .delete(`http://localhost:8080/free_board/delete/${f_idx}`)
+    .delete(`http://localhost:8080/freeboard/delete/${idx}`)
     .then((res) => {
       alert(res.data)
       if (res.status == '200') {
@@ -52,19 +60,45 @@ const doDelete = (f_idx) => {
 }
 
 const pageMove = () => {
-  router.push({ name: 'insert', query: { f_idx: f_idx.value } })
+  router.push({ name: 'insert', query: { f_idx: idx.value } }) //f_idx
 }
+
+
+
+
+
+// const get_board = () => {
+//     axios.get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
+//         .then(res => {
+//             console.log(res);
+//             title.value = res.data.title;
+//             content.value = res.data.content;
+//             regDate.value = res.data.regDate;
+//             creAuthor.value = res.data.creAuthor;
+//             idx.value = res.data.idx;
+//         })
+//         .catch(e => {
+//             console.log(e);
+//             alert(e.response.data.message);
+//             router.push({ name: "freeboardlist" });
+//         })
+
+
+
+
 
 const get_board = () => {
   axios
-    .get(`http://localhost:8080/free_board/view/${route.params.f_idx}`)
+    // .get(`http://localhost:8080/free_board/view/${route.params.f_idx}`)
+    .get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
     .then((res) => {
       console.log(res)
       f_title.value = res.data.f_title
       f_body.value = res.data.f_body
       f_timestamp.value = res.data.f_timestamp
       f_nickname.value = res.data.f_nickname
-      f_idx.value = res.data.f_idx
+      // f_idx.value = res.data.f_idx
+      idx.value = res.data.idx;
     })
     .catch((e) => {
       console.log(e)

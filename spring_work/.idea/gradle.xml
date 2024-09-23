@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex01" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex01" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex04" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex04" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex05" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex05" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex06" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex06" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex07_errorCode" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex07_errorCode" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex08_freeboard" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex08_freeboard" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex09_JpaAudit" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex09_JpaAudit" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex10_freeboard" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex10_freeboard" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ex11" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ex11" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

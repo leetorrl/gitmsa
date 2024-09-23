@@ -66,7 +66,8 @@ const insert = () => {
   }
 
   axios
-    .post('http://localhost:8080/user/insert', data)
+    // .post('http://localhost:8080/user/insert', data)
+    .post(`http://localhost:8080/freeboard`, data) //학원꺼
     .then((res) => {
       console.log(res)
       alert('저장하였습니다.')

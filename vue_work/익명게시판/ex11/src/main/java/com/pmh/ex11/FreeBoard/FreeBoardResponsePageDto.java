@@ -14,7 +14,7 @@ public class FreeBoardResponsePageDto {
 
 //    @Schema(hidden = true)//swagger 문서에서 안보여지게..
     @JsonIgnore //포스트맨에서 안보이게..
-    private List<FreeBoard> f_body;
+    private List<FreeBoard> content;
 
     private List<FreeBoardResponseDto> list;
     private  int totalElements;

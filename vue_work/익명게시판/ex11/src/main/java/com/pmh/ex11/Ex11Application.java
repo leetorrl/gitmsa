@@ -18,8 +18,8 @@ public class Ex11Application {
 		ApplicationContext applicationContext = SpringApplication.run(Ex11Application.class, args);
 //		Arrays.stream(applicationContext.getBeanDefinitionNames()).forEach(System.out::println);
 
-		Arrays.stream(applicationContext.getBeanDefinitionNames())
-				.forEach(System.out::println);
+//		Arrays.stream(applicationContext.getBeanDefinitionNames())
+//				.forEach(System.out::println);
 	}
 
 	@Bean

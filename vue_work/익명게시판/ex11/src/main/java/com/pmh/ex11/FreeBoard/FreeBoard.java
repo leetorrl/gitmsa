@@ -25,7 +25,8 @@ public class FreeBoard {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private Long f_idx;
+    @Column(name = "f_idx")
+    private Long id;
 
     private String f_nickname;
 

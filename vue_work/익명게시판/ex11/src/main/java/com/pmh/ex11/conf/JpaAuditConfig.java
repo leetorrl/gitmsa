@@ -13,7 +13,7 @@ public class JpaAuditConfig {
     public AuditorAware<String> auditorAware(){
 
         AuditorAware<String> auditorAware =
-                () -> Optional.of("괴도길동");
+                () -> Optional.of("길동");
         return auditorAware;
     }
 

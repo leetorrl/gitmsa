@@ -45,7 +45,7 @@ public class FreeBoardController {
 //        defaultValue = "5"
 //        List<FreeBoard> list = freeBoardRepository.findAll();
 
-        Sort sort = Sort.by(Sort.Direction.DESC,"f_idx");
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
 
 //        int pageNum = 0;
 //        int size = 10;
@@ -62,7 +62,7 @@ public class FreeBoardController {
 
         List<FreeBoardResponseDto> list = new ArrayList<>();
 
-        for (FreeBoard freeBoard : freeBoardResponsePageDto.getF_body()){
+        for (FreeBoard freeBoard : freeBoardResponsePageDto.getContent()){
             FreeBoardResponseDto freeBoardResponseDto
                     = new ModelMapper().map(freeBoard, FreeBoardResponseDto.class);
 

@@ -10,18 +10,18 @@
         <li id="list_ul_list" style="width: 15%">날짜</li>
       </ul>
 
-      <!-- <ul v-for="item in list_arr" :key="item.f_idx" @click="list_page(item.f_idx)"> -->
-        <!-- <li>{{ item.f_idx }}</li>
+      <ul v-for="item in arr" :key="item.f_idx" @click="list_page(item.f_idx)">
+      <li>{{ item.f_idx }}</li>
         <li>{{ item.f_title }}</li>
         <li>{{ item.f_nickname }}</li>
         <li>{{ item.f_avail }}</li>
-        <li>{{ item.f_timestamp }}</li> -->
-        <ul v-for="item in arr" :key="item.idx"  @click="viewPage(item.idx)">
+        <li>{{ item.f_timestamp }}</li>
+        <!-- <ul v-for="item in arr" :key="item.idx"  @click="viewPage(item.idx)">
         <li >{{ item.idx }}</li>
             <li >{{ item.title }}</li>
             <li >{{ item.creAuthor }}</li>
             <li >{{ item.regDate }}</li>
-            <li >{{ item.viewCount }}</li>
+            <li >{{ item.viewCount }}</li> -->
       </ul>
     </div>
     <div>
@@ -60,17 +60,17 @@ const setpageNum = (num) => {
 
 
 
-const viewPage = (idx) => {
-  const data = { name: 'view', params: { idx } }
-  router.push(data)
-}
-
-
-// const list_page = (f_idx) => { //
-//   //게시글 보기
-//   const data = { name: 'view', params: { f_idx } }
+// const viewPage = (idx) => {
+//   const data = { name: 'view', params: { idx } }
 //   router.push(data)
 // }
+
+
+const list_page = (f_idx) => { //
+  //게시글 보기
+  const data = { name: 'view', params: { f_idx } }
+  router.push(data)
+}
 
 
 const get_board = (pageNum) => {

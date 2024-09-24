@@ -44,7 +44,7 @@ const f_nickname = ref('ㅇㅇ')
 const f_password = ref('1234')
 const f_title = ref('')
 const f_body = ref('')
-const f_timestamp = new Date()
+// const f_timestamp = new Date()
 
 const router = useRouter()
 
@@ -55,14 +55,14 @@ const insert = () => {
   console.log(`2. f_password = ${f_password.value}`)
   console.log(`3. f_title = ${f_title.value}`)
   console.log(`4. f_body = ${f_body.value}`)
-  console.log(`5.f_timestamp = ${f_timestamp}`)
+  // console.log(`5.f_timestamp = ${f_timestamp}`)
 
   const data = {
     f_nickname: f_nickname.value,
     f_password: f_password.value,
     f_title: f_title.value,
     f_body: f_body.value,
-    f_timestamp: f_timestamp
+    // f_timestamp: f_timestamp
   }
 
   axios

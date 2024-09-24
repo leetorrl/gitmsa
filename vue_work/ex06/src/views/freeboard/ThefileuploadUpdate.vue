@@ -27,7 +27,8 @@ return;
 
     const formData = new FormData();
 formData.append("file",myfile.value);
-formData.append("fileDto",{"name":"filename"});
+formData.append("fileDto",
+new Blob({"name":"filename"},{type:"application/json"}));
 
 
     axios.post(`http://localhost:8080/file/upload`,formData, {

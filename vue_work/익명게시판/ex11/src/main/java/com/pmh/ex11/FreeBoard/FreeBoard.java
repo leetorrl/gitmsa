@@ -37,6 +37,7 @@ public class FreeBoard {
     private String f_password;
 
     @CreatedDate
+    @Column(updatable = false)  //데이트값이 null이면 안됨
     private LocalDateTime f_timestamp;
 
     private int f_avail;

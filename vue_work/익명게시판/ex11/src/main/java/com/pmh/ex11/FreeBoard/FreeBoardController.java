@@ -80,16 +80,14 @@ public class FreeBoardController {
     }
 
 
-    @GetMapping("view/{idx}")
-    public ResponseEntity<FreeBoardResponseDto> findOne(@PathVariable(name = "f_idx") long f_idx){
+    @GetMapping("view/{id}")
+    public ResponseEntity<FreeBoardResponseDto> findOne(@PathVariable(name = "id") long id){
                                                   //한개 가져올때 findOne
-        FreeBoard freeBoard = freeBoardRepository.findById(f_idx).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
+        FreeBoard freeBoard = freeBoardRepository.findById(id).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
 
         FreeBoardResponseDto freeBoardResponseDto = modelMapper.map(freeBoard, FreeBoardResponseDto.class);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy/MM/dd hh:mm");
-
-
 
         freeBoardResponseDto.setF_timestamp(dateTimeFormatter.format(freeBoard.getF_timestamp()));
 
@@ -104,11 +102,11 @@ public class FreeBoardController {
     }
 
 
-    @DeleteMapping("delete/{f_idx}")
-    public ResponseEntity<String> deleteByid(@PathVariable(name="f_idx") long f_idx){
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<String> deleteByid(@PathVariable(name="id") long id){
 
-        freeBoardRepository.findById(f_idx).orElseThrow(()-> new BizException(ErrorCode.NOT_FOUND));
-        freeBoardRepository.deleteById(f_idx);
+        freeBoardRepository.findById(id).orElseThrow(()-> new BizException(ErrorCode.NOT_FOUND));
+        freeBoardRepository.deleteById(id);
 
 
         return ResponseEntity.ok("삭제되었습니다");

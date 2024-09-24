@@ -5,6 +5,7 @@ import insertt from '@/views/insert.vue'
 import App from '@/App.vue'
 import Listt from '@/views/List.vue'
 import View from '@/views/View.vue'
+import Update from '@/views/Update.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -30,10 +31,15 @@ const router = createRouter({
       component: Listt
     },
     {
-      path: '/View',
+      path: '/View/:id',
       name: 'view',
       component: View
-    }
+    },
+    {
+      path: '/Update',
+      name: 'update',
+      component: Update
+    },
   ]
 })
 

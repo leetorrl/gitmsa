@@ -104,6 +104,9 @@ public class FreeBoardController {
         return ResponseEntity.status(200).body(freeBoard);
     }
 
+@PostMapping("/upload")
+
+
 
     @DeleteMapping("delete/{idx}")
     public ResponseEntity<String> deleteByid(@PathVariable(name="idx") long idx){

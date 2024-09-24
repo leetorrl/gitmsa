@@ -46,9 +46,10 @@ const create = () => {
 
 
 
-const doDelete = (f_idx) => { //f_idx
+const doDelete = (id) => { //f_idx
+ 
   axios
-    .delete(`http://localhost:8080/free_board/delete/${f_idx}`)
+    .delete(`http://localhost:8080/freeboard/delete/${id}`)
     // .delete(`http://localhost:8080/freeboard/delete/${idx}`)
     .then((res) => {
       alert(res.data)
@@ -60,7 +61,7 @@ const doDelete = (f_idx) => { //f_idx
 }
 
 const pageMove = () => {
-  router.push({ name: 'insert', query: { f_idx: f_idx.value } }) //f_idx
+  router.push({ name: 'update', query: { f_idx: f_idx.value } }) //f_idx
 }
 
 
@@ -88,8 +89,9 @@ const pageMove = () => {
 
 
 const get_board = () => {
+  
   axios
-    .get(`http://localhost:8080/free_board/view/${route.params.f_idx}`)
+    .get(`http://localhost:8080/freeboard/view/${route.params.id}`)
     // .get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
     .then((res) => {
       console.log(res)
@@ -97,7 +99,8 @@ const get_board = () => {
       f_body.value = res.data.f_body
       f_timestamp.value = res.data.f_timestamp
       f_nickname.value = res.data.f_nickname
-      f_idx.value = res.data.f_idx
+      f_idx.value = res.data.id
+      console.log("id값 = "+res.data.id);
       // idx.value = res.data.idx;
     })
     .catch((e) => {

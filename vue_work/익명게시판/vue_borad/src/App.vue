@@ -7,7 +7,7 @@
     <p id="btn" @click="main()">메인</p>
     <p id="btn" @click="List()">게시판</p>
     <p id="btn" @click="create()">글쓰기</p>
-    <p id="btn" @click="viw()">작성글예시</p>
+    <!-- <p id="btn" @click="viw()">작성글예시</p> -->
 
     <RouterView />
   </div>
@@ -35,10 +35,10 @@ const List = () => {
   router.push({ name: 'list' })
 }
 
-const viw = () => {
-  console.log('게시글보기버튼')
-  router.push({ name: 'view' })
-}
+// const viw = () => {
+//   console.log('게시글보기버튼')
+//   router.push({ name: 'view' })
+// }
 </script>
 
 <style lang="scss" scoped></style>

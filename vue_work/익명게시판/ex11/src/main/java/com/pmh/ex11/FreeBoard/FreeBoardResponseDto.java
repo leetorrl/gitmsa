@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class FreeBoardResponseDto {
 
 
-    private Long f_idx;
+    private Long id;
 
     private String f_nickname;
 

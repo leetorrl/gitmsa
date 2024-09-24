@@ -3,19 +3,19 @@
     <h1>게시글 리스트</h1>
     <div id="div_ul">
       <ul id="list_ul">
-        <li id="list_ul_list" style="width: 10%">f_id</li>
+        <li id="list_ul_list" style="width: 10%">id</li>
         <li id="list_ul_list" style="width: 50%">제목</li>
         <li id="list_ul_list" style="width: 15%">글쓴이</li>
         <li id="list_ul_list" style="width: 10%">조회</li>
         <li id="list_ul_list" style="width: 15%">날짜</li>
       </ul>
 
-      <ul v-for="item in arr" :key="item.f_idx" @click="list_page(item.f_idx)">
-      <li>{{ item.f_idx }}</li>
-        <li>{{ item.f_title }}</li>
-        <li>{{ item.f_nickname }}</li>
-        <li>{{ item.f_avail }}</li>
-        <li>{{ item.f_timestamp }}</li>
+      <ul id="list_ul" style="background-color: #eee;" v-for="item in arr" :key="item.id" @click="list_page(item.id)" >
+        <li id="list_ul_list" style="width: 10%; color: black; ">{{ item.id}}</li>
+        <li id="list_ul_list" style="width: 50%; color: black;">{{ item.f_title }}</li>
+        <li id="list_ul_list" style="width: 15%; color: black; ">{{ item.f_nickname }}</li>
+        <li id="list_ul_list" style="width: 10%; color: black;">{{ item.f_avail }}</li>
+        <li id="list_ul_list" style="width: 15%; color: black;">{{ item.f_timestamp }}</li>
         <!-- <ul v-for="item in arr" :key="item.idx"  @click="viewPage(item.idx)">
         <li >{{ item.idx }}</li>
             <li >{{ item.title }}</li>
@@ -66,9 +66,9 @@ const setpageNum = (num) => {
 // }
 
 
-const list_page = (f_idx) => { //
+const list_page = (id) => { //
   //게시글 보기
-  const data = { name: 'view', params: { f_idx } }
+  const data = { name: 'view', params: { id } }
   router.push(data)
 }
 

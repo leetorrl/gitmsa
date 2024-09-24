@@ -5,6 +5,7 @@ import TheUser from '@/views/TheUser.vue'
 import TheFreeBoardinput from '../views/freeboard/TheFreeBoardinput.vue'
 import TheFreeBoardList from '../views/freeboard/TheFreeBoardList.vue'
 import TheFreeBoardView from '@/views/freeboard/TheFreeBoardView.vue'
+import ThefileuploadUpdate from '@/views/freeboard/ThefileuploadUpdate.vue'
 import TheFreeBoardUpdate from '@/views/freeboard/TheFreeBoardUpdate.vue'
 
 const router = createRouter({
@@ -38,9 +39,14 @@ const router = createRouter({
       component: TheFreeBoardView
     },
     {
-      path: '/freeboardUpdate',
+      path: '/freeboardupdate',
       name: 'freeboardupdate',
       component: TheFreeBoardUpdate
+    },
+    {
+      path: '/fileuploadUpdate',
+      name: 'fileuploadUpdate',
+      component: ThefileuploadUpdate
     },
   ]
 });

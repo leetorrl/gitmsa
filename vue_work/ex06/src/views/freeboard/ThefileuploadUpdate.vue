@@ -25,14 +25,20 @@ alert("파일을 선택하세욯ㅎ");
 return;
 }
 
-    if(myfile)
-    axios.post(`http://localhost:8080/file/upload`)
+    const formData = new FormData();
+formData.append("file",myfile.value);
+formData.append("fileDto",{"name":"filename"});
+
+
+    axios.post(`http://localhost:8080/file/upload`,formData, {
+    headers: {'content-Type':'multipart/form-data'}
+});
 
 }
 
 const onFileChange = (e) => {
 
-myfile.value = e.target.value;
+myfile.value = e.target.files[0];
 
 }
 

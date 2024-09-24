@@ -75,7 +75,8 @@ const data = {
     .then(res => {
       console.log(res)
       alert('수정하였습니다.')
-
+      
+// console.log("수정된id = "+f_idx)
       router.push({ name: 'list',params: { pagenum: 0 } })
     })
     // router.push({ name: 'home' })
@@ -92,7 +93,9 @@ const get_board = () => {
 axios.get(`http://localhost:8080/freeboard/view/${route.query.f_idx}`)
 .then((res) => {
     console.log(res)
-    f_idx.value - res.data.f_idx;
+    console.log("id값2 = "+res.data.id)
+    console.log("닉값 = "+res.data.f_nickname)
+    f_idx.value = res.data.id;
     f_nickname.value = res.data.f_nickname;
     f_password.value = res.data.f_password;
     f_title.value = res.data.f_title;

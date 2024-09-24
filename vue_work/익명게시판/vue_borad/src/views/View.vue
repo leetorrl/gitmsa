@@ -15,7 +15,7 @@
     </div>
     <div>
       <button @click="create()">글쓰기</button>
-      <button @click="pageMove(f_idx)">수정</button>
+      <button @click="pageMove()">수정</button>
       <button @click="doDelete(f_idx)">삭제</button>
       <!-- <button @click="pageMove(idx)">수정</button>
       <button @click="doDelete(idx)">삭제</button> -->
@@ -43,13 +43,12 @@ const create = () => {
 }
 
 
+// const doDelete = (id) => {
 
+  const doDelete = (id) => {
 
-
-const doDelete = (id) => { //f_idx
- 
-  axios
-    .delete(`http://localhost:8080/freeboard/delete/${id}`)
+    axios
+    .delete(`http://localhost:8080/freeboard/delete/${id}`) //딜리트 명령문
     // .delete(`http://localhost:8080/freeboard/delete/${idx}`)
     .then((res) => {
       alert(res.data)
@@ -59,6 +58,11 @@ const doDelete = (id) => { //f_idx
     })
     .catch((e) => console.log(e))
 }
+  // router.push({ name: 'deletecheck', query: { f_idx: f_idx.value } })
+  
+
+
+  
 
 const pageMove = () => {
   router.push({ name: 'update', query: { f_idx: f_idx.value } }) //f_idx

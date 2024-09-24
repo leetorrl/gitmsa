@@ -71,17 +71,21 @@ const insert = () => {
     .then((res) => {
       console.log(res)
       alert('저장하였습니다.')
-
       router.push({ name: 'list' })
-    })
-    // router.push({ name: 'home' })
-    // alert('저장되었습니다.')
-    .catch((e) => {
+      }
+    ).catch((e) => {
       console.log(e)
       alert('에러' + e)
       // alert('에러' + e.response.data.message)
-    })
-}
+    }
+  )
+
+
+  
+
+      // router.push({ name: 'view', query: { f_idx: f_idx.value }})
+    
+    } 
 </script>
 
 <style lang="scss" scoped></style>

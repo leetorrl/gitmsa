@@ -94,7 +94,7 @@ public class FreeBoardController {
         return ResponseEntity.ok(freeBoardResponseDto);
     }
 
-@PostMapping
+@PostMapping("insert")
     public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
         System.out.println(freeBoardReqDto);
 

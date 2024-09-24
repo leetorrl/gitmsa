@@ -69,7 +69,7 @@ const insert = () => {
 
   axios
     // .post('http://localhost:8080/user/insert', data)
-    .post(`http://localhost:8080/freeboard`, data) //학원꺼
+    .post(`http://localhost:8080/freeboard/insert`, data) //학원꺼
     .then((res) => {
       console.log(res)
       alert('수정하였습니다.')

@@ -5,6 +5,7 @@ import TheUser from '@/views/TheUser.vue'
 import TheFreeBoardinput from '../views/freeboard/TheFreeBoardinput.vue'
 import TheFreeBoardList from '../views/freeboard/TheFreeBoardList.vue'
 import TheFreeBoardView from '@/views/freeboard/TheFreeBoardView.vue'
+import TheFreeBoardUpdate from '@/views/freeboard/TheFreeBoardUpdate.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/freeboardview/:idx', //idx값을 받음 params 사용방법
       name: 'freeboardview',
       component: TheFreeBoardView
+    },
+    {
+      path: '/freeboardUpdate',
+      name: 'freeboardupdate',
+      component: TheFreeBoardUpdate
     },
   ]
 });

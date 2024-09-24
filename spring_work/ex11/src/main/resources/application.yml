@@ -5,20 +5,18 @@ spring:
   application:
     name: ex11
     #spl문 실행하여라
-  sql:
-    init:
-      mode: always
+#  sql:
+#    init:
+#      mode: always
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
 #    url: jdbc:mariadb://192.168.0.40:3306/pmh
+#    url: jdbc:mariadb://192.168.0.40:3306/mypmhdb
     url: jdbc:mariadb://192.168.0.40:3306/mypmhdb
-#    url: jdbc:mariadb://192.168.0.49:3307/mymariadb
 
     username: root
     password: 1234
-
-
 
   jpa:
     hibernate:
@@ -30,7 +28,7 @@ spring:
     show-sql: true
     open-in-view: false
 
-    defer-datasource-initialization: true
+#    defer-datasource-initialization: true
 
 my:
   value: "welcome to my value"

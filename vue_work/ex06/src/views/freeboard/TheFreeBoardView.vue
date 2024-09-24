@@ -40,7 +40,7 @@ const creAuthor = ref('초기값');
 const idx = ref(0);
 
 const doDelete = (idx) => {
-    axios.delete(`http://localhost:10000/freeboard/delete/${idx}`)
+    axios.delete(`http://localhost:8080/freeboard/delete/${idx}`)
         .then(res => {
             alert(res.data);
             if (res.status == '200') {
@@ -52,12 +52,12 @@ const doDelete = (idx) => {
 
 
 const pageMove = () => {
-    router.push({ name: "freeboardinput", query: { idx: idx.value } });
+    router.push({ name: "freeboardupdate", query: { idx: idx.value } });
 }
 
 
 const getFreeBoard = () => {
-    axios.get(`http://localhost:10000/freeboard/view/${route.params.idx}`)
+    axios.get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
         .then(res => {
             console.log(res);
             title.value = res.data.title;

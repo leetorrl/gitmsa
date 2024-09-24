@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="h1-red">FreeBoardinput</h1>
+        <h1 class="h1-red">FreeBoardUpdate</h1>
 
 
 
@@ -18,7 +18,7 @@
 
             <button
                 class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                @click="save">저장</button>
+                @click="save">수정</button>
         </div>
 
 
@@ -29,19 +29,44 @@
 <script setup>
 import axios from 'axios';
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute ,useRouter } from 'vue-router';
 // import { useRoute } from 'vue-router';
 // const arr = ref([]);
 
 
 const title = ref('');
 const content = ref('');
-// const regDate = ref('');
-// const creAuthor = ref('');
-// const idx = ref(0);
+const regDate = ref('');
+const creAuthor = ref('');
+const idx = ref(0);
 
 const router = useRouter();
-// const route = useRoute();
+const route = useRoute();
+
+
+
+
+const getFreeBoard = () => {
+
+    axios.get(`http://localhost:8080/freeboard/view/${route.query.idx}`)
+        .then(res => {
+            console.log(res);
+            title.value = res.data.title;
+            content.value = res.data.content;
+            regDate.value = res.data.regDate;
+            creAuthor.value = res.data.creAuthor;
+            idx.value = res.data.idx;
+        })
+        .catch(e => {
+            console.log(e);
+            alert(e.response.data.message);
+            router.push({ name: "freeboardlist" });
+
+
+
+        })
+
+    }
 
 // const getFreeBoard = () => {
 //     axios.get(`http: //localhost:8080/freeboard/view/${route.params.idx}`)
@@ -60,15 +85,18 @@ const router = useRouter();
 //         })
 // }
 
+
+
+
 const save = () => {
 
     const data = {
-
+        idx: idx.value,
         title: title.value,
         content: content.value
     }
     // console.log(data);
-    axios.post('http://localhost:10000/freeboard', data) //데이터 가져오는명령어
+    axios.post('http://localhost:8080/freeboard', data) //데이터 가져오는명령어
         .then(res => {
             console.log(res);
             alert('저장하였습니다.')
@@ -79,6 +107,8 @@ const save = () => {
             alert('에러' + e.response.data.message);
         })
 }
+
+getFreeBoard()
 
 </script>
 

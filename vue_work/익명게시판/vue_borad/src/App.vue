@@ -1,5 +1,5 @@
 <template>
-  <div id="wrap" style="background-color: aquamarine">
+  <div id="wrap" style="background-color: rgb(10, 4, 135); color: #eee;">
     <h1>-그린게시판-</h1>
     <!-- <RouterLink to="/Home">글쓰기</RouterLink> -->
 

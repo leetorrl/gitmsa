@@ -11,8 +11,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -97,16 +99,22 @@ public class FreeBoardController {
         return ResponseEntity.ok(freeBoardResponseDto);
     }
 
-@PostMapping
-    public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
+
+
+    @PostMapping(
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+    )
+    public ResponseEntity<FreeBoard> save(
+            @Valid @RequestPart(name = "data") FreeBoardReqDto freeBoardReqDto,
+            @RequestPart(name = "file")MultipartFile file) {
+
         FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
         freeBoardRepository.save(freeBoard);
         return ResponseEntity.status(200).body(freeBoard);
     }
 
-@PostMapping("/upload")
-
-
+    
 
     @DeleteMapping("delete/{idx}")
     public ResponseEntity<String> deleteByid(@PathVariable(name="idx") long idx){

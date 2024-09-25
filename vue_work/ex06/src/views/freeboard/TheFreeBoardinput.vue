@@ -16,6 +16,10 @@
                 class="m-4 w-11/12 h-40 p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2  focus:ring-blue-400 focus:border-transparent resize-none text-gray-700 placeholder-gray-400  bg-white "
                 placeholder="Enter your title here" name="" id="" cols="30" rows="10"></textarea>
 
+                <div class="my-3">
+                    <input type="file" @change="onFileChange">
+                </div>
+
             <button
                 class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 @click="save">저장</button>
@@ -33,6 +37,7 @@ import { useRouter } from 'vue-router';
 // import { useRoute } from 'vue-router';
 // const arr = ref([]);
 
+const myfile = ref(null);
 
 const title = ref('');
 const content = ref('');
@@ -60,7 +65,19 @@ const router = useRouter();
 //         })
 // }
 
+
+const onFileChange = (e) => {
+myfile.value = e.target.files[0];
+}    
+
+
 const save = () => {
+    const formData = new FormData();
+    formData.append("data",new Blob([JSON.stringify(data)],
+    {type:'application/json'}
+)
+);
+formData.append("file",myfile.value);
 
     const data = {
 
@@ -68,7 +85,13 @@ const save = () => {
         content: content.value
     }
     // console.log(data);
-    axios.post('http://localhost:10000/freeboard', data) //데이터 가져오는명령어
+
+    //인설트와 파일 업데이트 동시에....
+    axios.post('http://localhost:10000/freeboard', formData,{
+        headers:{
+            'Content-Type':'multipart/form-data'
+        }
+    }) //데이터 가져오는명령어
         .then(res => {
             console.log(res);
             alert('저장하였습니다.')

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div style="background-color: #eee">
-      <div style="border: 1px solid gray">
+    <div style="background-color: #eee; color: black;">
+      <div style="border: 1px solid gray; color: black; ">
         <h2 style="margin: 5px">글제목 드갈자리 = {{ f_title }}</h2>
         <p style="margin: 10px">작성자 = {{ f_nickname }}</p>
         <p style="margin: 10px">작성일자 = {{ f_timestamp }}</p>

@@ -11,6 +11,11 @@
                 <h1>작성일자 {{ regDate }}</h1>
                 <h1>작성자 {{ creAuthor }}</h1>
             </div>
+            <div v-for="item in list" :key="item">
+                <img :src="`http://localhost:8080/file/download/${item.name}`" width="300" alt="">
+        {{ item.name }}
+        {{list}}
+      </div>
             <div class="flex justify-between mt-5">
                 <button class="px-4 py-2 bg-blue-500 text-white 
                     font-semibold rounded-lg shadow-md
@@ -33,11 +38,13 @@ import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
+
 const title = ref('초기값');
 const content = ref('초기값');
 const regDate = ref('초기값');
 const creAuthor = ref('초기값');
 const idx = ref(0);
+const list = ref([]);  //배열에 이미지 담을꺼
 
 const doDelete = (idx) => {
     axios.delete(`http://localhost:8080/freeboard/delete/${idx}`)
@@ -65,6 +72,10 @@ const getFreeBoard = () => {
             regDate.value = res.data.regDate;
             creAuthor.value = res.data.creAuthor;
             idx.value = res.data.idx;
+            
+            list.value = res.data.list;
+
+            console.log(res.data.list);
         })
         .catch(e => {
             console.log(e);

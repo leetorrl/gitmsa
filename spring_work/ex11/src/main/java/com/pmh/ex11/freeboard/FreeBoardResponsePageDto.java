@@ -1,4 +1,4 @@
-package com.pmh.ex11.FreeBoard;
+package com.pmh.ex11.freeboard;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

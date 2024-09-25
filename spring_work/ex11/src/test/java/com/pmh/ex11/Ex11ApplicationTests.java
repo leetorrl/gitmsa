@@ -1,7 +1,7 @@
 package com.pmh.ex11;
 
-import com.pmh.ex11.FreeBoard.FreeBoard;
-import com.pmh.ex11.FreeBoard.FreeBoardRepository;
+import com.pmh.ex11.freeboard.FreeBoard;
+import com.pmh.ex11.freeboard.FreeBoardRepository;
 import com.pmh.ex11.user.User;
 import com.pmh.ex11.user.UserRepository;
 import org.junit.jupiter.api.Test;

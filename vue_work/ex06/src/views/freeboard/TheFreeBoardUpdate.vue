@@ -86,8 +86,6 @@ const getFreeBoard = () => {
 // }
 
 
-
-
 const save = () => {
 
     const data = {

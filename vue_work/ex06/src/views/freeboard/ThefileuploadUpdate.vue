@@ -11,10 +11,10 @@
 
 <script setup>
 import axios from 'axios';
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 
-const router = useRouter();
+// const router = useRouter();
 const myfile = ref(null);
 
   const save = () => {
@@ -29,8 +29,8 @@ const myfile = ref(null);
         formData.append("file",myfile.value);
         formData.append("fileDto",
         new Blob(
-            [JSON.stringify({name:'filename',aaa : 'aValue'})],
-            {"type":"application/json"}
+            [JSON.stringify({name:'filename' , desc: 'aValue'})],
+            {type:'application/json'}
         )
     );  
     //http통신규약에 의해 실물로 보여줄 바디
@@ -38,7 +38,14 @@ const myfile = ref(null);
 
         axios.post(`http://localhost:8080/file/upload`,formData, {  //http통신규약에 의해 보여줄 헤더
         headers: {'content-Type':'multipart/form-data'}
-        });
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((e) => {
+            console.log(e);
+        })
+        ;
 
     }
 

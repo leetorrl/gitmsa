@@ -1,4 +1,4 @@
-package com.pmh.ex11.FreeBoard;
+package com.pmh.ex11.freeboard;
 
 import com.pmh.ex11.user.User;
 import com.pmh.ex11.user.UserRepository;

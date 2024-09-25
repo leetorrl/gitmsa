@@ -11,17 +11,17 @@ spring:
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mariadb://192.168.0.40:3306/pmh
-#    url: jdbc:mariadb://192.168.0.40:3306/mypmhdb
-    url: jdbc:mariadb://192.168.0.40:3306/mypmhdb
-
+    url: jdbc:mariadb://192.168.0.35:3307/db
     username: root
     password: 1234
+
+#    url: jdbc:mariadb://192.168.0.40:3306/pmh
+#    url: jdbc:mariadb://192.168.0.40:3306/mypmhdb
 
   jpa:
     hibernate:
       ddl-auto: none
-#      ddl-auto: create
+#      ddl-auto: none
 #      ddl-auto: update
 
     properties:
@@ -29,14 +29,14 @@ spring:
     show-sql: true
     open-in-view: false
 
-#    defer-datasource-initialization: true
+    defer-datasource-initialization: true
 
   servlet:           #파일 업로드 자동완성 안됨....
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB  #파일 용량 사이즈
       file-size-threshold: 0  #파일 등록갯수 0일시 에러
-
+      enabled: true
 
 my:
   value: "welcome to my value"

@@ -15,8 +15,9 @@ import java.util.Arrays;
 public class Ex11Application {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = SpringApplication.run(Ex11Application.class, args);
-//		Arrays.stream(applicationContext.getBeanDefinitionNames()).forEach(System.out::println);
+
+		ApplicationContext applicationContext
+				= SpringApplication.run(Ex11Application.class, args);
 
 //		Arrays.stream(applicationContext.getBeanDefinitionNames())
 //				.forEach(System.out::println);
@@ -26,11 +27,5 @@ public class Ex11Application {
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
-
-
-//	@Bean
-//	public AA aa(){
-//		return new AA();
-//	}
 
 }

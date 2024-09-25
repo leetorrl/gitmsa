@@ -1,6 +1,6 @@
 package com.pmh.ex11.file;
 
-import com.pmh.ex11.FreeBoard.FreeBoard;
+import com.pmh.ex11.freeboard.FreeBoard;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -8,9 +8,6 @@ import lombok.Data;
 class FileReqDto {
     private String name;
     private String path;
+    private String desc;
 
-    private String fileDesc;
-
-    @ManyToOne
-    private FreeBoard freeBoard;
 }

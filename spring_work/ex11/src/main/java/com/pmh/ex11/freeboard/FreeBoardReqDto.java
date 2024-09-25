@@ -1,4 +1,4 @@
-package com.pmh.ex11.FreeBoard;
+package com.pmh.ex11.freeboard;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;

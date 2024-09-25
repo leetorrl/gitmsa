@@ -1,4 +1,4 @@
-package com.pmh.ex11.FreeBoard;
+package com.pmh.ex11.freeboard;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

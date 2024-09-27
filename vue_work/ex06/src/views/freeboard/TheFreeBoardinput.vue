@@ -76,6 +76,9 @@ const onFileChange = (e) => {
 }
 
 const save = () => {
+
+
+
   const data = {
     title: title.value,
     content: content.value
@@ -102,8 +105,8 @@ const save = () => {
     .catch((e) => {
       console.log(e)
       alert('에러' + e.response.data.message)
-    })
-}
+    })}
+
 </script>
 
 <style lang="scss" scoped></style>

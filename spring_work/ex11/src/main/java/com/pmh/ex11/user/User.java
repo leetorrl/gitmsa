@@ -1,10 +1,13 @@
 package com.pmh.ex11.user;
 
+import com.pmh.ex11.freeboard.FreeBoard;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -33,6 +36,9 @@ public class User {
     private String password;
 
     private LocalDateTime wdate;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<FreeBoard> list = new ArrayList<>(); //프리보드와 양방향 맵핑
 
     // JPA CLASS -> talbe CREATE가 됩니다.
 

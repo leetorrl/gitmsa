@@ -24,7 +24,7 @@ public class FileEntity {
 
     @ManyToOne
 //    @JoinColumn(name = "free_Board_idx")
-    @JsonIgnore
+    @JsonIgnore //양방향 지명할때 n+1 이슈가 안뜨도록 루프 안되게 해줌...
     private FreeBoard freeBoard;
 
     @Override

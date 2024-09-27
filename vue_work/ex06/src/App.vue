@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav class="flex space-x-5">
         <h1 class="border-2 inline"> 동현네비</h1>
 <div>
+  <h1>안녕안녕d~~~~~</h1>
         <RouterLink to="/">Home</RouterLink>
 </div>
 <div>

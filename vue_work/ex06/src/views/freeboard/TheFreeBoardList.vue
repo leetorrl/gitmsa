@@ -14,13 +14,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in arr" :key="item.idx" class="cursor-pointer hover:bg-slate-200" @click="viewPage(item.idx)">
+          <template v-if="arr && arr.length>0">
+            
+              <tr v-for="item in arr" :key="item.idx" class="cursor-pointer hover:bg-slate-200" @click="viewPage(item.idx)">
             <td class="border text-center text-lg p-1">{{ item.idx }}</td>
             <td class="border text-center text-lg p-1">{{ item.title }}</td>
             <td class="border text-center text-lg p-1">{{ item.creAuthor }}</td>
             <td class="border text-center text-lg p-1">{{ item.regDate }}</td>
             <td class="border text-center text-lg p-1">{{ item.viewCount }}</td>
-          </tr>
+            <template v-if="item.list[0]"> 
+              <!-- 값이 있으면 true , 아니면 false로 인식 -->
+                <td class="border text-center text-lg p-1">
+                  <img :src="`http://localhost:8080/file/download/${item.list[0].name}`" alt="" srcset="" width="150">
+                </td>
+              </template>
+           
+            </tr>
+          </template>
+  
         </tbody>
       </table>
 
@@ -31,11 +42,17 @@
           </li>
         </ul>
       </div>
+      <div v-if="temp" @click="aadd">
+<h1>나올수도?</h1>
+</div>
+
+
     </div>
   </div>
 </template>
 
 <script setup>
+
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -45,6 +62,14 @@ const arr = ref([]);
 const totalpages = ref(10);
 const router = useRouter();
 const pageNum = ref(0);
+const viewCount = ref(0);
+
+const temp = ref(null);
+
+const aadd = () => {
+  temp.value = true;
+}
+
 
 // const route = useRoute();
 
@@ -66,8 +91,10 @@ const getFreeBoard = (pageNum) => {
   axios.get(`http://localhost:8080/freeboard?pageNum=${pageNum}`)
     .then(res => {
 
+
       arr.value = res.data.list;
       totalpages.value = res.data.totalpages;
+      viewCount.value = res.data.viewCount;
       console.log(res.data.list);
 
     })

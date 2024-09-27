@@ -83,7 +83,10 @@ public class FreeBoardController {
     @GetMapping("view/{idx}")
     public ResponseEntity<FreeBoardResponseDto> findOne(@PathVariable(name = "idx") long idx) {
 
+
         FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
+        freeBoard.setView_count(freeBoard.getView_count());
+        freeBoardRepository.save(freeBoard);
 
         System.out.println(freeBoard.getList());
 
@@ -105,27 +108,28 @@ public class FreeBoardController {
             @Valid @RequestPart(name = "data") FreeBoardReqDto freeBoardReqDto,
             @RequestPart(name = "file", required = false) MultipartFile file) {
 
-        System.out.println(freeBoardReqDto);
-        if (file != null) {
+//        System.out.println(freeBoardReqDto);
+
+        FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
+        freeBoardRepository.save(freeBoard);   //글수정 로직
+
+
+        if (file != null) { //파일저장
             String myFilePath = Paths.get("images/file/").toAbsolutePath() + "\\" + file.getOriginalFilename();
+
             try {
                 File destFile = new File(myFilePath);
                 file.transferTo(destFile);
             }catch (Exception e){
                 e.printStackTrace();
             }
-        }
 
-        FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
-        freeBoardRepository.save(freeBoard);
-
-        FileEntity fileEntity = new FileEntity();
-        fileEntity.setName(file.getOriginalFilename());
-        fileEntity.setPath( Paths.get("images/file/").toAbsolutePath().toString() );
-        fileEntity.setFreeBoard(freeBoard);
-
-        fileRepository.save(fileEntity);
-
+    FileEntity fileEntity = new FileEntity();             //파일 엔티티 만드는 구간...파일 행 저장
+    fileEntity.setName(file.getOriginalFilename());
+    fileEntity.setPath(Paths.get("images/file/").toAbsolutePath().toString());
+    fileEntity.setFreeBoard(freeBoard);
+    fileRepository.save(fileEntity);
+}
         return ResponseEntity.status(200).body(freeBoard);
     }
 

@@ -11,12 +11,14 @@
                 <div v-for="item in list" :key="item">
                 <img :src="`http://localhost:8080/file/download/${item.name}`" width="300" alt="">
         {{ item.name }}
-        {{list}}
+    
       </div>
+
                 <h1>작성일자 {{ regDate }}</h1>
                 <h1>작성자 {{ creAuthor }}</h1>
             </div>
-   
+            
+
             <div class="flex justify-between mt-5">
                 <button class="px-4 py-2 bg-blue-500 text-white 
                     font-semibold rounded-lg shadow-md

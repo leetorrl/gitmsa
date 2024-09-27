@@ -31,11 +31,8 @@ spring:
     hibernate:
 
 #      ddl-auto: create
-
-
-      ddl-auto: create
+      ddl-auto: none
 #      ddl-auto: none
-
 #      ddl-auto: update
 
     properties:

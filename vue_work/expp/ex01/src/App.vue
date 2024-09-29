@@ -25,10 +25,15 @@
 <!-- <div v-for="item in arr" :key="item"> -->
 <div class="inline-block"><h1>{{scrr}}</h1></div>
 <div class="inline-block"><h1>{{curr}}</h1></div>
-
-
+<br>
+<br>
+<br>
 
 <h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="text">클릭!</h1>
+<!-- <h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="GGchild">클릭!!</h1> -->
+
+
+
 <RouterView />
 
 </div>
@@ -223,7 +228,11 @@ console.log(" cur = "+cur.value)
   // output.value = this.cur;
   }
 
-  
+  // GGchild = () => {
+
+  //   router.push({name:'child'})
+  // }
+
   
   // console.log(this.cur)
   // output = this.cur;

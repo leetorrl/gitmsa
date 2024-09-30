@@ -36,16 +36,21 @@
           <h1>email = {{ item.email }}</h1>
           <h1>가입날짜 = {{ item.wdate }}</h1>
           <h1>작성한글 = {{ item.list.length }}</h1>
+          <button @click.stop="dodelete(item.idx)" >삭제</button>
         </div>
       </div>
     </div>
   </template>
   <script setup>
+  //악시오스 안써서 빨간줄..
   import axios from 'axios';
-import { getUsers, saveUser } from '../api/userApi';
+  import { getUsers, saveUser } from '../api/userApi';
   import { ref, watchEffect } from 'vue';
-  
-  const arr = ref([]);
+  import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const arr = ref([]);
 const isModal = ref(false);
 const isView = ref(false)
 
@@ -54,21 +59,27 @@ const name = ref('')
 const email = ref('')
 const wdate = ref('')
 
-
-  const modalUser = (item)=>{
+  const modalUser = async (item)=>{
 
     isModal.value = !isModal.value
     isView.value = !isView.value
 
 
-    if(item==='save'){
-      saveUser('');
+    if(item=='save'){
       
-      axios.put
+//result값 안써서 빨간줄...
+     const result = await saveUser( {idx:idx.value, 
+                                    name:name.value,
+                                    email:email.value,
+                                    password:'임시'
+                                    } ); //userApi.js의 saveUser메서드 호출
 
       alert('수정이 완료되었습니다.')
+       router.push({name:'userlint'}) // router써도 같은 주소라 새로고침 안됨
+      const retValue = await getUsers();
+      arr.value = retValue.data; //새로고침이됨
       return;
-    
+  
     }
 
 idx.value = item.idx;
@@ -77,6 +88,8 @@ wdate.value = item.wdate;
 email.value = item.email;
 
     console.log(isModal.value)
+
+   
 
   }
   
@@ -89,6 +102,12 @@ email.value = item.email;
     arr.value = retValue.data;
     console.log(arr.value);
   });
+
+
+  const dodelete = () => {
+    console.log('삭제되었습니다.')
+  }
+
   </script>
 
   <style scoped>

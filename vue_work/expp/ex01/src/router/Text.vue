@@ -48,6 +48,14 @@
 <h1>ref = {{stattee.count}}</h1>
 <p>이 방법쓰면 알 수 있음</p>
 <button @click="stattee.count++" class="border border-red-400">ref 증가</button>
+<br>
+<br>
+<div>
+    <input v-model="messageee" placeholder="메시지를 입력하세요." type="text" name="" id="">
+    <p ref="messageParagraph">{{messageee}}</p>
+</div>
+
+
     </div>
 </template>
 
@@ -55,6 +63,7 @@
 import Child from '@/components/Child.vue';
 
 import { ref } from 'vue';
+import { watchPostEffect } from 'vue';
 import { reactive } from 'vue';
 import { computed } from 'vue';
 import { watch } from 'vue';
@@ -177,6 +186,23 @@ const stattee = reactive({
 watch(()=>stattee.count,(currentValue, prevValue)=> {
     console.log(`객체의 지금값 = ${currentValue}, 객체의 앞의값 = ${prevValue}`)
 } )
+
+
+const messageee =ref('')
+const messageParagraph = ref(null)
+watch(messageee, ()=> {
+    if(messageee.value){
+        console.log(`watch:${messageParagraph.value.innerText}`);
+    }
+});
+watchPostEffect(()=> {
+    if(messageee.value){
+        console.log(`watchPostEffect:${messageParagraph.value.innerText}`);
+    }
+
+} )
+
+
 </script>
 
 <style lang="scss" scoped>

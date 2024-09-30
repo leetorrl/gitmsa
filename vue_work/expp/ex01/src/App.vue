@@ -61,7 +61,7 @@ const scrr = ref('')
 const curr = ref('')
 const count = ref(1)
 const arr = ref([])
-const stt = ref('')
+// const stt = ref('')
 
 const CC = () => {
   router.push({name:'app'})

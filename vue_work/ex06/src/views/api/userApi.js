@@ -1,5 +1,9 @@
 import axios from 'axios';
-const URL = 'http://localhost:8080/user';
+import { GLOBAL_URL } from './util.js';
+
+const URL = `${GLOBAL_URL}/user`;
+
+
 export const getUsers = async () => {
   try {
     const res = await axios.get(`${URL}/select`); //통신될때까지 대기했다 통신되면 실행됨

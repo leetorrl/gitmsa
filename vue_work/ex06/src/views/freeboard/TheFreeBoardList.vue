@@ -25,7 +25,8 @@
             <template v-if="item.list[0]"> 
               <!-- 값이 있으면 true , 아니면 false로 인식 -->
                 <td class="border text-center text-lg p-1">
-                  <img :src="`http://localhost:8080/file/download/${item.list[0].name}`" alt="" srcset="" width="150">
+                  <img :src="`
+                  ${GLOBAL_URL}/file/download/${item.list[0].name}`" alt="" srcset="" width="150">
                 </td>
               </template>
            
@@ -53,16 +54,18 @@
 
 <script setup>
 
-import axios from 'axios';
-import { ref } from 'vue';
+
+import { ref, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
+import { GLOBAL_URL } from '../api/util';
 // import { useRoute } from 'vue-router';
+import { getFreeBoard } from '../api/freeboardApi';
 
 const arr = ref([]);
 const totalpages = ref(10);
 const router = useRouter();
 const pageNum = ref(0);
-const viewCount = ref(0);
+// const viewCount = ref(0);
 
 const temp = ref(null);
 
@@ -73,11 +76,15 @@ const aadd = () => {
 
 // const route = useRoute();
 
-const setpageNum = (num) => {
+const setpageNum = async (num) => {
 
-  pageNum.value = num;
-  getFreeBoard(num);
 
+  
+pageNum.value = num;
+   const res = await getFreeBoard(num);
+
+   arr.value = res.data.list;
+   totalpages.value = res.data.totalpages
 }
 
 const viewPage = (idx) => {
@@ -86,23 +93,35 @@ const viewPage = (idx) => {
   router.push(data); //위에꺼랑 같음
 }
 
-const getFreeBoard = (pageNum) => {
-  if (pageNum == undefined) pageNum = 0;
-  axios.get(`http://localhost:8080/freeboard?pageNum=${pageNum}`)
-    .then(res => {
+
+watchEffect(async() => {
+ const res = await getFreeBoard();
+
+ arr.value = res.data.list
+ totalpages.value = res.data.totalpages;
+
+})
 
 
-      arr.value = res.data.list;
-      totalpages.value = res.data.totalpages;
-      viewCount.value = res.data.viewCount;
-      console.log(res.data.list);
 
-    })
-    .catch(e => {
-      console.log(e);
-    })
-}
+//freeboardApi.js로...
+// const getFreeBoard = (pageNum) => {
+//   if (pageNum == undefined) pageNum = 0;
+//   axios.get(`http://localhost:8080/freeboard?pageNum=${pageNum}`)
+//     .then(res => {
+
+
+//       arr.value = res.data.list;
+//       totalpages.value = res.data.totalpages;
+//       viewCount.value = res.data.viewCount;
+//       console.log(res.data.list);
+
+//     })
+//     .catch(e => {
+//       console.log(e);
+//     })
+// }
 
 //page 호출되면 자동실행
-getFreeBoard();
+
 </script>

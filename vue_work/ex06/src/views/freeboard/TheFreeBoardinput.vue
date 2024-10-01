@@ -37,11 +37,13 @@
 </template>
 
 <script setup>
-import axios from 'axios'
+
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 // import { useRoute } from 'vue-router';
 // const arr = ref([]);
+import { saveFreeboard } from '../api/freeboardApi';
+
 
 const myfile = ref(null)
 
@@ -75,8 +77,7 @@ const onFileChange = (e) => {
   myfile.value = e.target.files[0]
 }
 
-const save = () => {
-
+const save = async () => {
 
 
   const data = {
@@ -90,22 +91,38 @@ const save = () => {
   formData.append('file', myfile.value)
   // console.log(data);
 
+  const res = await saveFreeboard(formData);
+
+  if(res.status==200){
+
+    console.log(res)
+    alert("저장하였습니다.")
+    router.push({name:'freeboardlist'})
+    return;
+  }
+
+  alert("에러 = "+res.response.data.message)
+}
+
+
+  //해당 내용은 freeboardApi로 대처
   //인설트와 파일 업데이트 동시에....
-  axios
-    .post('http://localhost:8080/freeboard', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }) //데이터 가져오는명령어
-    .then((res) => {
-      console.log(res)
-      alert('저장하였습니다.')
-      router.push({ name: 'freeboardlist', params: { pagenum: 0 } })
-    })
-    .catch((e) => {
-      console.log(e)
-      alert('에러' + e.response.data.message)
-    })}
+  // axios
+  //   .post('http://localhost:8080/freeboard', formData, {
+  //     headers: {
+  //       'Content-Type': 'multipart/form-data'
+  //     }
+  //   }) //데이터 가져오는명령어
+  //   .then((res) => {
+  //     console.log(res)
+  //     alert('저장하였습니다.')
+  //     router.push({ name: 'freeboardlist', params: { pagenum: 0 } })
+  //   })
+  //   .catch((e) => {
+  //     console.log(e)
+  //     alert('에러' + e.response.data.message)
+  //   })
+// }
 
 </script>
 

@@ -30,7 +30,8 @@
 <br>
 
 <h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="text">클릭!</h1>
-<!-- <h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="GGchild">클릭!!</h1> -->
+<h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="text2(scr)">클릭!!</h1>
+<h1 class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" @click="text3(scr)">클릭!!!</h1>
 
 
 
@@ -236,6 +237,36 @@ console.log(" cur = "+cur.value)
   
   // console.log(this.cur)
   // output = this.cur;
+
+  
+
+  const text2 = (list) =>{ //index에서 지명한 path를 메개변수로 받을때 변수명은 path내부의 /:list와 동일하게
+
+if(list==2){ router.push({name:'text2', params:{list}})
+}else{
+  
+  scr.value = null
+
+
+
+}
+  }
+
+  
+const text3 = (list) =>{
+if(list==3){
+      router.push({name:'text3', params:{list}})
+    }
+    else{
+      alert("숫자를 눌러주세요 ㅎㅎ")
+ 
+
+      scr.value = null
+    }
+
+   
+  }
+  
 
 
 

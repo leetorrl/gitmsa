@@ -51,16 +51,15 @@ public class FileController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public String upload(
-            @RequestPart(name = "file") MultipartFile file,
-            @RequestPart(name = "fileDto") FileReqDto fileReqDto) {
-        try {
-            String myFilePath = imagePath.toAbsolutePath() + "\\" + file.getOriginalFilename();
-
-            File saveFile = new File(myFilePath);
-            file.transferTo(saveFile);
-
-            FileEntity fileEntity = modelMapper.map(fileReqDto, FileEntity.class);
-            fileRepository.save(fileEntity);
+            @RequestPart(name = "file")  MultipartFile[] files,
+            @RequestPart(name = "fileDto") HashMap<String, String> map) {
+        try{
+            for (MultipartFile file : files) {
+                String fileName = file.getOriginalFilename();
+                String filePath = imagePath.toString()+File.separator+fileName;
+                File dest = new File(filePath);
+                file.transferTo(dest);
+            }
 
         }catch (Exception e){
             e.printStackTrace();

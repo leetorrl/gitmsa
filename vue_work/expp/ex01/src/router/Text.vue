@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="bbtn" class="bg-blue-600" >뒤로버튼</button>
 <h1>gdgd</h1>
 <p @click="hello" class="cursor-pointer inline-block border border-red-600 hover:bg-red-600" >눌러보셈</p>
 <br>
@@ -67,6 +68,7 @@ import { watchPostEffect } from 'vue';
 import { reactive } from 'vue';
 import { computed } from 'vue';
 import { watch } from 'vue';
+import router from '.';
 
 const componentRef = ref(null)
 
@@ -202,6 +204,11 @@ watchPostEffect(()=> {
 
 } )
 
+const bbtn= () => {
+    alert("뒤로갑니다.")
+    router.back()
+    
+}
 
 </script>
 

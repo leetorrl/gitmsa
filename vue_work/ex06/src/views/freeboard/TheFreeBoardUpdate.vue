@@ -30,12 +30,12 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import { watchEffect } from 'vue';
 import { ref } from 'vue';
 import { useRoute ,useRouter } from 'vue-router';
 // import { useRoute } from 'vue-router';
 // const arr = ref([]);
-
+import { getFreeBoardView, saveFreeboard } from '../api/freeboardApi';
 
 const title = ref('');
 const content = ref('');
@@ -49,33 +49,35 @@ const route = useRoute();
 const myfile = ref(null);
 
 
+
+
+
+watchEffect( async () => {
+
+const res = await getFreeBoardView(route.query.idx);
+if(res.status==200){
+    title.value = res.data.title;
+    content.value = res.data.content;
+    regDate.value = res.data.regDate;
+    creAuthor.value = res.data.creAuthor;
+    idx.value = res.data.idx;
+}else{
+    alert(res.response.data.message)
+    router.push({name:'freeboardlist'})
+}
+});
+
+
+
+
+
 const onFileChange = (e) => {
 
     myfile.value = e.target.files[0]
 
 }
 
-const getFreeBoard = () => {
 
-    axios.get(`http://localhost:8080/freeboard/view/${route.query.idx}`)
-        .then(res => {
-            console.log(res);
-            title.value = res.data.title;
-            content.value = res.data.content;
-            regDate.value = res.data.regDate;
-            creAuthor.value = res.data.creAuthor;
-            idx.value = res.data.idx;
-        })
-        .catch(e => {
-            console.log(e);
-            alert(e.response.data.message);
-            router.push({ name: "freeboardlist" });
-
-
-
-        })
-
-    }
 
 // const getFreeBoard = () => {
 //     axios.get(`http: //localhost:8080/freeboard/view/${route.params.idx}`)
@@ -95,50 +97,61 @@ const getFreeBoard = () => {
 // }
 
 
-const save = () => {
+const save = async () => {
 
     const data = {
-        idx: idx.value,
+        idx: route.query.idx,
         title: title.value,
         content: content.value
 
     }
     const formData = new FormData()
-  formData.append('data', new Blob([JSON.stringify(data)],
-   { type: 'application/json' }))
-  formData.append('file', myfile.value)
-  axios
-    .post('http://localhost:8080/freeboard', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }) //데이터 가져오는명령어
-    .then((res) => {
-      console.log(res)
-      alert('저장하였습니다.')
-      router.push({ name: 'freeboardlist', params: { pagenum: 0 } })
-    })
-    .catch((e) => {
-      console.log(e)
-      alert('에러' + e.response.data.message)
-    })
+    formData.append("data", new Blob(
+                            [JSON.stringify(data)],
+                            { type:'application/json'}
+                          )
+                        );
+  formData.append("file", myfile.value);
 
+  const res = await saveFreeboard(formData);
 
-    // console.log(data);
-    axios.post('http://localhost:8080/freeboard', data) //데이터 가져오는명령어
-        .then(res => {
-            console.log(res);
-            alert('저장하였습니다.')
-            router.push({ name: "freeboardlist", params: { pagenum: 0 } });
-        })
-        .catch(e => {
-            console.log(e);
-            alert('에러' + e.response.data.message);
-        })
+if(res.status==200){
+    alert('수정되었습니다.')
+    router.push({name:"freeboardlist"})
 }
 
-getFreeBoard()
+//   axios
+//     .post('http://localhost:8080/freeboard', formData, {
+//       headers: {
+//         'Content-Type': 'multipart/form-data'
+//       }
+//     }) //데이터 가져오는명령어
+//     .then((res) => {
+//       console.log(res)
+//       alert('저장하였습니다.')
+//       router.push({ name: 'freeboardlist', params: { pagenum: 0 } })
+//     })
+//     .catch((e) => {
+//       console.log(e)
+//       alert('에러' + e.response.data.message)
+//     })
 
+
+//     // console.log(data);
+//     axios.post('http://localhost:8080/freeboard', data) //데이터 가져오는명령어
+//         .then(res => {
+//             console.log(res);
+//             alert('저장하였습니다.')
+//             router.push({ name: "freeboardlist", params: { pagenum: 0 } });
+//         })
+//         .catch(e => {
+//             console.log(e);
+//             alert('에러' + e.response.data.message);
+//         })
+// }
+
+
+}
 </script>
 
 <style lang="scss" scoped></style>

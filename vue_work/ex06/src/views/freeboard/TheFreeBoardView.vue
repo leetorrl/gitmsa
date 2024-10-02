@@ -9,10 +9,10 @@
                 <h1 class="font-bold">글내용</h1>
                 <p class="h-64">{{ content }}</p>
                 <div v-for="item in list" :key="item">
-                <img :src="`http://localhost:8080/file/download/${item.name}`" width="300" alt="">
-        {{ item.name }}
+                    <img :src="`http://localhost:8080/file/download/${item.name}`" width="300" alt="">
+                    {{ item.name }}
     
-      </div>
+                </div>
 
                 <h1>작성일자 {{ regDate }}</h1>
                 <h1>작성자 {{ creAuthor }}</h1>
@@ -34,9 +34,10 @@
 </template>
 
 <script setup>
-import axios from 'axios';
-import { ref } from 'vue';
+// import axios from 'axios';
+import { ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { freeboardDelete, getFreeBoardView } from '../api/freeboardApi';
 
 
 const route = useRoute();
@@ -49,44 +50,61 @@ const creAuthor = ref('초기값');
 const idx = ref(0);
 const list = ref([]);  //배열에 이미지 담을꺼
 
-const doDelete = (idx) => {
-    axios.delete(`http://localhost:8080/freeboard/delete/${idx}`)
-        .then(res => {
-            alert(res.data);
-            if (res.status == '200') {
-                router.push({ name: "freeboardlist" })
-            }
-        })
-        .catch(e => console.log(e));
-}
+const doDelete = async (idx) => {
+  const res = await freeboardDelete(idx)
+
+  if(res.status==200){
+    alert('삭제되었습니다.')
+    router.push({name:'freeboardlist'})}
+
+    else{
+        alert('삭제실패')
+        router.push({name:'freeboardlist'})}
+    }
+
 
 
 const pageMove = () => {
     router.push({ name: "freeboardupdate", query: { idx: idx.value } });
+    
 }
 
 
-const getFreeBoard = () => {
-    axios.get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
-        .then(res => {
-            console.log(res);
-            title.value = res.data.title;
-            content.value = res.data.content;
-            regDate.value = res.data.regDate;
-            creAuthor.value = res.data.creAuthor;
-            idx.value = res.data.idx;
+watchEffect( async () => {
+    const res = await getFreeBoardView(route.params.idx);
+    if(res.status==200){
+        title.value = res.data.title;
+        content.value = res.data.content;
+        regDate.value = res.data.regDate;
+        creAuthor.value = res.data.creAuthor;
+        idx.value = res.data.idx;
+        list.value = res.data.list; //실수로 지움;; 이미지 표시에 필요한 리스트
+    }else{
+        alert(res.response.data.message)
+        router.push({name:'freeboardlist'})
+    }
+});
+
+    // const res = await axios.get(`view/${route.params.idx}`)
+    //     .then(res => {
+    //         console.log(res);
+    //         title.value = res.data.title;
+    //         content.value = res.data.content;
+    //         regDate.value = res.data.regDate;
+    //         creAuthor.value = res.data.creAuthor;
+    //         idx.value = res.data.idx;
             
-            list.value = res.data.list;
+    //         list.value = res.data.list;
 
-            console.log(res.data.list);
-        })
-        .catch(e => {
-            console.log(e);
-            alert(e.response.data.message);
-            router.push({ name: "freeboardlist" });
-        })
-}
+    //         console.log(res.data.list);
+    //     })
+    //     .catch(e => {
+    //         console.log(e);
+    //         alert(e.response.data.message);
+    //         router.push({ name: "freeboardlist" });
+    //     })
+
 //페이지 열게되면 자동실행
-getFreeBoard();
+// getFreeBoard();
 </script>
 <style lang="scss" scoped></style>

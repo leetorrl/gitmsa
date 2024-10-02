@@ -43,8 +43,8 @@
   </template>
   <script setup>
   //악시오스 안써서 빨간줄..
-  import axios from 'axios';
-  import { getUsers, saveUser } from '../api/userApi';
+  // import axios from 'axios';
+  import { deleteUser, getUsers, saveUser } from '../api/userApi';
   import { ref, watchEffect } from 'vue';
   import { useRouter } from 'vue-router';
 
@@ -52,7 +52,7 @@ const router = useRouter();
 
 const arr = ref([]);
 const isModal = ref(false);
-const isView = ref(false)
+// const isView = ref(false)
 
 const idx = ref('')
 const name = ref('')
@@ -62,13 +62,13 @@ const wdate = ref('')
   const modalUser = async (item)=>{
 
     isModal.value = !isModal.value
-    isView.value = !isView.value
+    // isView.value = !isView.value
 
 
     if(item=='save'){
       
 //result값 안써서 빨간줄...
-     const result = await saveUser( {idx:idx.value, 
+     await saveUser( {idx:idx.value, 
                                     name:name.value,
                                     email:email.value,
                                     password:'임시'
@@ -92,8 +92,6 @@ email.value = item.email;
    
 
   }
-  
-
 
 
   watchEffect( async() => {
@@ -104,9 +102,17 @@ email.value = item.email;
   });
 
 
-  const dodelete = () => {
-    console.log('삭제되었습니다.')
+  const dodelete = async (idx) => {
+    
+await deleteUser(idx)
+
+const retValue = await getUsers();
+arr.value = retValue.data;
+console.log('삭제되었습니다.'+ idx)
+return;
   }
+
+
 
   </script>
 

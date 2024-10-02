@@ -1,5 +1,6 @@
 package com.pmh.ex11.freeboard;
 
+import com.pmh.ex11.user.User;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
@@ -20,6 +21,8 @@ public class FreeBoardReqDto {
     private String content;
 
 //    private User user;
+
+
 
     @Schema(hidden = true)
     private String regDate;

@@ -1,10 +1,13 @@
 <template>
     <div>
-<h1>AboutView</h1>
+<h1 class="bg-blue-500 inline-block " >쨔잔</h1>
     </div>
 </template>
 
 <script setup>
+
+
+
 
 </script>
 

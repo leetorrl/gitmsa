@@ -1,5 +1,6 @@
 package com.pmh.ex11;
 
+import com.pmh.ex11.file.FileEntity;
 import com.pmh.ex11.freeboard.FreeBoard;
 import com.pmh.ex11.freeboard.FreeBoardRepository;
 import com.pmh.ex11.user.User;
@@ -72,6 +73,26 @@ FreeBoardRepository freeBoardRepository;
 
 
 
+
+        @Test
+    void saveFreeBoardTest(){
+User user = userRepository.findById(1l).orElseThrow();
+
+List<FileEntity> list = Arrays.asList(
+        FileEntity.builder().name("afile").build(),
+        FileEntity.builder().name("bfile").build()
+);
+
+            FreeBoard freeBoard = FreeBoard.builder()
+                    .idx(10l)
+                    .title("제목1234")
+                    .content("내용ㅁㄹ4444")
+                    .list(null)
+                    .user(user)
+                    .build();
+
+            freeBoardRepository.save(freeBoard);
+        }
 
 
 //	@Autowired

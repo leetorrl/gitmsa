@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+//@ToString
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
@@ -36,6 +36,7 @@ public class FreeBoard {
 
 
     @CreatedBy
+    @Column(updatable = false)
     private String creAuthor;
 
     @LastModifiedBy
@@ -51,11 +52,27 @@ public class FreeBoard {
     @Column(columnDefinition = "int default 0")
     private int view_count;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "freeBoard", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "freeBoard", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FileEntity> list = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     private User user; // User와 양방향 맵핑
 
+
+    @Override
+    public String toString() {
+        return "FreeBoard{" +
+                "idx=" + idx +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", creAuthor='" + creAuthor + '\'' +
+                ", modAuthor='" + modAuthor + '\'' +
+                ", regDate=" + regDate +
+                ", modDate=" + modDate +
+                ", view_count=" + view_count +
+                ", list=" + list +
+
+                '}';
+    }
 }

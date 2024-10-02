@@ -5,9 +5,9 @@ import TheHome from '@/views/TheHome.vue'
 import TheFreeBoardinput from '../views/freeboard/TheFreeBoardinput.vue'
 import TheFreeBoardList from '../views/freeboard/TheFreeBoardList.vue'
 import TheFreeBoardView from '@/views/freeboard/TheFreeBoardView.vue'
-import ThefileuploadUpdate from '@/views/freeboard/ThefileuploadUpdate.vue'
+import ThefileuploadUpdate from '@/views/file/ThefileuploadUpdate.vue'
 import TheFreeBoardUpdate from '@/views/freeboard/TheFreeBoardUpdate.vue'
-
+import ThefileDownload from '@/views/file/ThefileDownload.vue'
 
 
 // import TheUserinput from '@/views/users/TheUserinput.vue'
@@ -72,6 +72,12 @@ const router = createRouter({
     //   name: 'userview',
     //   component: TheUserview
     // },
+    {
+      path: '/FileDownload',
+      name: 'filedownload',
+      component: ThefileDownload
+    },
+
   ]
 });
 

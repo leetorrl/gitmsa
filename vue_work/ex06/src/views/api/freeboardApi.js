@@ -6,7 +6,6 @@ export const URL = `${GLOBAL_URL}/freeboard`
 
 export const saveFreeboard = async (FormData) => {
 
-
     try{
         const res = await axios.post(`${URL}`, FormData, {
             headers:{
@@ -22,8 +21,6 @@ export const saveFreeboard = async (FormData) => {
     
 }
 
-
-
 export const getFreeBoard = async (pageNum) => {
     if (pageNum == undefined) pageNum = 0;
 
@@ -37,3 +34,30 @@ export const getFreeBoard = async (pageNum) => {
     }
 
 }
+
+
+export const getFreeBoardView = async (idx) => {
+   console.log(`${URL}/view/${idx}`)
+    try{
+   const res = await axios.get(`${URL}/view/${idx}`)
+   return res;
+
+    }catch(e){
+        console.log(e)
+        return e;
+    }
+
+}
+
+export const freeboardDelete = async  (idx) => {
+
+    try{
+    const res = await axios.delete(`${URL}/delete/${idx}`)
+
+    return res;
+    }catch(e){
+        console.log(e)
+        return e;
+    };
+}
+       

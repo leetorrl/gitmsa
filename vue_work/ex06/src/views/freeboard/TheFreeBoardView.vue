@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <h1 class="h1-red">TheFreeBoardView</h1>
         <div class="p-5">
             <div class="border border-b-slate-400 rounded p-3">
@@ -18,7 +17,6 @@
                 <h1>작성자 {{ creAuthor }}</h1>
             </div>
             
-
             <div class="flex justify-between mt-5">
                 <button class="px-4 py-2 bg-blue-500 text-white 
                     font-semibold rounded-lg shadow-md
@@ -38,7 +36,6 @@
 import { ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { freeboardDelete, getFreeBoardView } from '../api/freeboardApi';
-
 
 const route = useRoute();
 const router = useRouter();
@@ -62,13 +59,10 @@ const doDelete = async (idx) => {
         router.push({name:'freeboardlist'})}
     }
 
-
-
 const pageMove = () => {
     router.push({ name: "freeboardupdate", query: { idx: idx.value } });
     
 }
-
 
 watchEffect( async () => {
     const res = await getFreeBoardView(route.params.idx);

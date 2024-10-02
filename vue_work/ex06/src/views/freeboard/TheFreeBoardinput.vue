@@ -92,18 +92,14 @@ const save = async () => {
   // console.log(data);
 
   const res = await saveFreeboard(formData);
-
   if(res.status==200){
-
     console.log(res)
     alert("저장하였습니다.")
     router.push({name:'freeboardlist'})
     return;
   }
-
   alert("에러 = "+res.response.data.message)
 }
-
 
   //해당 내용은 freeboardApi로 대처
   //인설트와 파일 업데이트 동시에....
@@ -123,7 +119,6 @@ const save = async () => {
   //     alert('에러' + e.response.data.message)
   //   })
 // }
-
 </script>
 
 <style lang="scss" scoped></style>

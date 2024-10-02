@@ -32,9 +32,7 @@ export const getFreeBoard = async (pageNum) => {
         console.log(e)
         return e;
     }
-
 }
-
 
 export const getFreeBoardView = async (idx) => {
    console.log(`${URL}/view/${idx}`)
@@ -46,7 +44,6 @@ export const getFreeBoardView = async (idx) => {
         console.log(e)
         return e;
     }
-
 }
 
 export const freeboardDelete = async  (idx) => {

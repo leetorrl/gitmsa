@@ -5,9 +5,9 @@ spring:
   application:
     name: ex11
 #    spl문 실행하여라
-#  sql:
-#    init:
-#      mode: always
+  sql:
+    init:
+      mode: always
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
@@ -30,8 +30,8 @@ spring:
   jpa:
     hibernate:
 
-#      ddl-auto: create
-      ddl-auto: none
+      ddl-auto: create
+#      ddl-auto: none
 #      ddl-auto: update
 
     properties:

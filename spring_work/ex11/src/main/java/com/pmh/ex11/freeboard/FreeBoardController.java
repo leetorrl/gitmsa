@@ -114,12 +114,14 @@ public class FreeBoardController {
 
         FreeBoard freeBoard = modelMapper.map(freeBoardReqDto, FreeBoard.class);
 
+        //idx값이 null값이면 오토인크리먼트 적용되면서 자동 글 작성
         if(freeBoardReqDto.getIdx()==null) {
             freeBoardRepository.save(freeBoard);
         }
         else{
+            //select from free_board where = idx 1
             FreeBoard dbFreeBoard = freeBoardRepository.findById(freeBoard.getIdx()).orElseThrow();
-            dbFreeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
+            dbFreeBoard = modelMapper.map(freeBoardReqDto, FreeBoard.class);
             freeBoardRepository.save(dbFreeBoard);
         }
 
@@ -128,7 +130,7 @@ public class FreeBoardController {
 //        freeBoardRepository.save(freeBoard);
         // Todo...
         // 1번 사용자가 무조건 작성 한걸로..
-        // jwt 로그인 하면 ... 로그인한 사용자를 넣을꺼예요
+        // jwt 로그인 하면 ... 로그인한 사용자를 넣음 freeboard entt와 user entt연결
         User user = userRepository.findById(1l).orElse(new User());
         freeBoard.setUser(user);
 
@@ -136,6 +138,8 @@ public class FreeBoardController {
             String myFilePath = Paths.get("images/file/").toAbsolutePath() + File.separator + file.getOriginalFilename();
             try {
                 File destFile = new File(myFilePath);
+
+                //프론트에서 업로드한 파일을 destFile경로가 지정되 있는곳으로 transfer
                 file.transferTo(destFile);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -146,7 +150,9 @@ public class FreeBoardController {
             fileEntity.setPath(Paths.get("images/file/").toAbsolutePath().toString());
             fileEntity.setFreeBoard(freeBoard);
             fileRepository.save(fileEntity);
+
             freeBoard.setList(Arrays.asList(fileEntity));
+
             freeBoardRepository.save(freeBoard);
         } else {
             List<FileEntity> list = fileRepository.findByFreeBoardIdx(freeBoard.getIdx());
@@ -212,9 +218,31 @@ public class FreeBoardController {
 
         @DeleteMapping("delete/{idx}")
         public ResponseEntity<String> deleteById ( @PathVariable(name = "idx") long idx){
-            freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
-            freeBoardRepository.deleteById(idx);
+
+            FreeBoard freeBoard = freeBoardRepository.findById(idx)
+                    .orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
+
+//            freeBoard.setList(new ArrayList<>());
+            //부모객체를 끊고 고아객체로 만듬
+
+            freeBoard.setUser(null);
+            freeBoardRepository.save(freeBoard);
+            freeBoardRepository.delete(freeBoard);
+
+//            fileRepository.findByFreeBoardIdx(freeBoard.getIdx()).forEach(fileEntity -> {
+//                fileRepository.deleteById(fileEntity.getIdx());
+//            });
+//
+//            freeBoardRepository.cusDeleteByIdx(idx);
+
             return ResponseEntity.ok("삭제되었습니다.");
+
+
+
+//
+//            freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.NOT_FOUND));
+//            freeBoardRepository.deleteById(idx);
+//            return ResponseEntity.ok("삭제되었습니다.");
         }
 
 

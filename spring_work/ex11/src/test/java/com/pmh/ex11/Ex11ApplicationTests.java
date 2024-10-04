@@ -72,6 +72,11 @@ FreeBoardRepository freeBoardRepository;
         }
 
 
+    @Test
+    void deleteJOQLTest(){
+        freeBoardRepository.deleteById(4l);
+    }
+
 
 
         @Test

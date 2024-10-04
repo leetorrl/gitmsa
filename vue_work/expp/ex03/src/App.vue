@@ -2,31 +2,17 @@
   <div>
 <h1>APPvue</h1>
 <h1>count = {{count}}</h1>
-<h1>doublecount = {{doublecount}}</h1>
+<button @click="inerment" > inerment</button>
 
-<button @click="increment" class="border border-red-500 inline-block" > increment</button>
-<button @click="unincrement" class="border border-red-500 inline-block" >unincrement </button>
-<h1>usecc 의 name = {{name}}</h1>
   </div>
 </template>
 
 <script setup>
-import { useCounterStore } from './stores/counter';
-import { useCCSStore } from './stores/counter';
-// import { ref } from 'vue';
+import { useCountStore } from './stores/counter';
 
-const usecounter = useCounterStore();
+const usecountstore = useCountStore();
 
-const usecc = useCCSStore();
-
-const {count,doublecount, increment, unincrement} = usecounter;
-const {name} = usecc
-
-setTimeout(()=> {
-
-  usecc.name = 'BB'
-
-},3000)
+const {count, inerment} = usecountstore;
 
 </script>
 

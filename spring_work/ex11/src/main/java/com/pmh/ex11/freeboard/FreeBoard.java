@@ -52,7 +52,7 @@ public class FreeBoard {
     @Column(columnDefinition = "int default 0")
     private int view_count;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "freeBoard", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "freeBoard", cascade = CascadeType.ALL, orphanRemoval = true) //orp는 고아객체가 될시 삭제되도록..
     private List<FileEntity> list = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)

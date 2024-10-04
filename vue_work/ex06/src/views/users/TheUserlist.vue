@@ -22,9 +22,9 @@
       <h1 class="h1-blue">UserList</h1>
       <div class="flex flex-wrap">
         <div 
-            @click="modalUser(item)"
+           
             class="
-            cursor-pointer
+            
           bg-slate-500 
             p-5 
             m-5
@@ -36,7 +36,10 @@
           <h1>email = {{ item.email }}</h1>
           <h1>가입날짜 = {{ item.wdate }}</h1>
           <h1>작성한글 = {{ item.list.length }}</h1>
-          <button @click.stop="dodelete(item.idx)" >삭제</button>
+          <button class="border border-red-500 hover:bg-red-500 " @click.stop="modalUser(item)">수정</button>
+
+          <button class="border border-red-500 hover:bg-red-500 " @click.stop="dodelete(item.idx)" >삭제</button>
+        
         </div>
       </div>
     </div>
@@ -102,14 +105,38 @@ email.value = item.email;
   });
 
 
-  const dodelete = async (idx) => {
+const dodelete = async (idx) => {
     
-await deleteUser(idx)
+if(!confirm('진짜 삭제할거임?')){ //경고창 상위호환 취소 누를시..
+  if(!confirm("쫄?")){
 
-const retValue = await getUsers();
-arr.value = retValue.data;
-console.log('삭제되었습니다.'+ idx)
+alert("zz")
+    return
+  }else{
+    await deleteUser(idx) //userApi의 딜리트 메서드 호출
+
+const retValue = await getUsers(); //새로고침 기능
+arr.value = retValue.data; //갯유저 데이터를 arr배열에 넣음 이러면 자동 새로고침이 구현됨
+console.log('삭제되고 갯유저 불러와서 새로고침완료'+ idx)
 return;
+
+
+  }
+
+
+  
+
+}else{ //확인누를시..
+  await deleteUser(idx) //userApi의 딜리트 메서드 호출
+
+  const retValue = await getUsers(); //새로고침 기능
+arr.value = retValue.data; //갯유저 데이터를 arr배열에 넣음 이러면 자동 새로고침이 구현됨
+console.log('삭제되고 갯유저 불러와서 새로고침완료'+ idx)
+return;
+}
+
+
+
   }
 
 

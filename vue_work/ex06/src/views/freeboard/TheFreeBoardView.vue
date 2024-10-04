@@ -10,7 +10,6 @@
                 <div v-for="item in list" :key="item">
                     <img :src="`http://localhost:8080/file/download/${item.name}`" width="300" alt="">
                     {{ item.name }}
-    
                 </div>
 
                 <h1>작성일자 {{ regDate }}</h1>

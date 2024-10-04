@@ -11,6 +11,7 @@
             <th class="border">author</th>
             <th class="border">regdate</th>
             <th class="border">viewcount</th>
+            <th class="border">img</th>
           </tr>
         </thead>
         <tbody>

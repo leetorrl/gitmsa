@@ -70,10 +70,14 @@ public class FreeBoardController {
                     freeBoardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
                     freeBoardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
 
-                    freeBoardResponseDto.setCreAuthor(freeBoard.getUser().getName());
-                    freeBoardResponseDto.setModAuthor(freeBoard.getUser().getName());
-                    freeBoardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
-
+                    if(freeBoard.getUser()!=null) {
+                        freeBoardResponseDto.setCreAuthor(freeBoard.getUser().getName());
+                        freeBoardResponseDto.setModAuthor(freeBoard.getUser().getName());
+                        freeBoardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
+                    }else{
+                        freeBoardResponseDto.setCreAuthor("탈퇴한 회원");
+                        freeBoardResponseDto.setModAuthor("탈퇴한 회원");
+                    }
                     return freeBoardResponseDto;
                 }).toList();
 
@@ -94,10 +98,14 @@ public class FreeBoardController {
         freeBoardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
         freeBoardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
 
-        freeBoardResponseDto.setCreAuthor(freeBoard.getUser().getName());
-        freeBoardResponseDto.setModAuthor(freeBoard.getUser().getName());
-        freeBoardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
-
+        if(freeBoard.getUser()!=null) {
+            freeBoardResponseDto.setCreAuthor(freeBoard.getUser().getName());
+            freeBoardResponseDto.setModAuthor(freeBoard.getUser().getName());
+            freeBoardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
+        }else{
+            freeBoardResponseDto.setCreAuthor("탈퇴한 회원");
+            freeBoardResponseDto.setModAuthor("탈퇴한 회원");
+        }
         return ResponseEntity.ok(freeBoardResponseDto);
     }
 

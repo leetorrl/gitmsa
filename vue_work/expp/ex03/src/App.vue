@@ -1,19 +1,29 @@
 <template>
   <div>
     <br>
-<h1 class=" font-bold">상품 목록</h1>
+<h1 class=" font-bold">App뷰</h1>
 <br>
-<RouterView></RouterView>
+<button @click="gohome" > 클릭</button>
+<RouterView/>
 
   </div>
 </template>
 
 <script setup>
-import { RouterView , RouterLink } from 'vue-router';
+import { RouterView} from 'vue-router';
+
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const gohome =() => {
+
+  router.push({name:'homeview'})
+
+}
 
 </script>
 
 <style lang="scss" scoped>
-
 
 </style>

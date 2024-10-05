@@ -4,18 +4,18 @@
 <p>밑에 라우터뷰</p>
 <br>
 
-
 <RouterView/>
   </div>
 </template>
 
 <script setup>
 import {  RouterView } from 'vue-router';
-
-
+// import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+// const pageNum = ref(0)
 
 const Mainhome = () => {
 

@@ -26,6 +26,7 @@ import { storeToRefs } from 'pinia';
 const cartStore = useCartStore();
 
 const {item} = storeToRefs(cartStore); //storeToRefs 를 써야 반응형 함수가 실시간으로 바뀜
+// const {item} = cartStore;
 
 console.log(item)
 

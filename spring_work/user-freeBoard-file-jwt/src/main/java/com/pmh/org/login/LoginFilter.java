@@ -31,9 +31,6 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         System.out.println("로그인 시도");
 //        return null;
 
-
-
-
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 

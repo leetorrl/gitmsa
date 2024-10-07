@@ -1,0 +1,30 @@
+#server:
+#  port: 10000
+
+spring:
+  application:
+    name: ex11
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://192.168.0.40:3306/pmh
+#    url: jdbc:mariadb://192.168.0.49:3307/mymariadb
+#    url: jdbc:mariadb://172.30.1.85:3307/Board
+    url: jdbc:mariadb://192.168.0.69:3307/mymariadb
+
+
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+#      ddl-auto: none
+#      ddl-auto: update
+      ddl-auto: create
+    properties:
+      hibernate.format_sql: true
+    show-sql: true
+    open-in-view: false
+
+my:
+  value: "welcome to my value"

@@ -25,13 +25,22 @@
             <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">회원가입</button>
         </form>
 
-        <p class="mt-4 text-center text-sm text-gray-600">이미 계정이 있으신가요? <a href="#" class="text-blue-600 hover:underline">로그인</a></p>
+        <p class="mt-4 text-center text-sm text-gray-600">이미 계정이 있으신가요? <a href="#" @click="gologin" class="text-blue-600 hover:underline">로그인</a></p>
     </div>
     </div>
 </template>
 
 <script setup>
 import { doJoin } from '../api/loginApi';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const gologin = () => {
+
+    router.push({name:'login'})
+
+}
 
 const dosubmit = async (event) => {
     // event.stopPropagation(); //이벤트 전파 막기
@@ -46,6 +55,8 @@ const dosubmit = async (event) => {
     })
     console.log(res)
     
+    alert("회원가입 완료")
+    router.push({name:'login'})
 
     
 }

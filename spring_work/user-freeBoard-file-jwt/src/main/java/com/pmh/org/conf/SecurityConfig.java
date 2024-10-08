@@ -35,8 +35,6 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
-
-
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -60,14 +58,13 @@ public class SecurityConfig {
                 .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated());
 
-        http.addFilterBefore(new JWTFilter(), LoginFilter.class);
+        http.addFilterBefore(new JWTFilter(jwtManager),
+                LoginFilter.class);
         http.addFilterAt(new LoginFilter(
                 authenticationManager(authenticationConfiguration),
                         jwtManager),
 
                 UsernamePasswordAuthenticationFilter.class);
-
-
 
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 

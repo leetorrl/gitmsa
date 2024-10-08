@@ -15,7 +15,7 @@
             <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">로그인</button>
         </form>
 
-        <p class="mt-4 text-center text-sm text-gray-600">계정이 없으신가요? <a href="#" class="text-blue-600 hover:underline">회원가입</a></p>
+        <p class="mt-4 text-center text-sm text-gray-600">계정이 없으신가요? <a href="#" @click="gojoin" class="text-blue-600 hover:underline">회원가입</a></p>
     </div>
     </div>
 </template>
@@ -23,10 +23,18 @@
 <script setup>
 import { ref } from 'vue';
 import { doLogin } from '../api/loginApi';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 
 const email = ref('aaa@naver.com')
 const password = ref('1234')
+
+
+const gojoin = () => {
+
+    router.push({name:'join'})
+}
 
 const submitdoLogin= async() => {
 
@@ -36,8 +44,11 @@ const submitdoLogin= async() => {
     }
 
     const res = await doLogin(data)
+    localStorage.setItem('token',res.data)
+
     console.log(res)
 
+    alert("임시 로그인됨")
 }
 
 

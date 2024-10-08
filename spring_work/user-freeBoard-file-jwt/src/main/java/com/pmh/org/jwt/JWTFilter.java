@@ -11,6 +11,11 @@ import java.io.IOException;
 
 public class JWTFilter extends OncePerRequestFilter {
 
+    private final JWTManager jwtManager;
+
+    public JWTFilter(JWTManager jwtManager) {
+        this.jwtManager = jwtManager;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -20,6 +25,8 @@ public class JWTFilter extends OncePerRequestFilter {
 
         String auth = request.getHeader(HttpHeaders.AUTHORIZATION);
         System.out.println(auth);
+
+//        jwtManager.validJWT(auth);
 
         // 여기서 무조건 지나가는
         filterChain.doFilter(request,response);

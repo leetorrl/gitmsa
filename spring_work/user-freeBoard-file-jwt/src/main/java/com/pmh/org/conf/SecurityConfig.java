@@ -1,6 +1,7 @@
 package com.pmh.org.conf;
 
 import com.pmh.org.jwt.JWTFilter;
+import com.pmh.org.jwt.JWTManager;
 import com.pmh.org.login.LoginFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -22,9 +23,12 @@ public class SecurityConfig {
 
     private final AuthenticationConfiguration authenticationConfiguration;
 
+    private final JWTManager jwtManager;
+
 //    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration) {
 //        this.authenticationConfiguration = authenticationConfiguration;
 //    }
+
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
@@ -42,7 +46,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.csrf(httpSeurityCsrfConfigurer -> httpSeurityCsrfConfigurer.disable());
+        http.csrf(csrf -> csrf.disable());
         http.formLogin(form -> form.disable());
         http.httpBasic(basic -> basic.disable());
 
@@ -57,7 +61,10 @@ public class SecurityConfig {
                 .anyRequest().authenticated());
 
         http.addFilterBefore(new JWTFilter(), LoginFilter.class);
-        http.addFilterAt(new LoginFilter( authenticationManager(authenticationConfiguration)),
+        http.addFilterAt(new LoginFilter(
+                authenticationManager(authenticationConfiguration),
+                        jwtManager),
+
                 UsernamePasswordAuthenticationFilter.class);
 
 

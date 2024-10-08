@@ -25,11 +25,6 @@ public class LoginService implements UserDetailsService {
     public void join(JoinDto joinDto){
 
         User user = modelMapper.map(joinDto, User.class);
-
-
-
-        //username -> name
-        user.setName(joinDto.getUsername());
         //암호화..
         user.setPassword(passwordEncoder.encode(joinDto.getPassword()));
 
@@ -45,7 +40,8 @@ public class LoginService implements UserDetailsService {
     //비밀번호를 1234로 하면 ADMIN으로 로그인...
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+    public UserDetails loadUserByUsername(String username)
+            throws UsernameNotFoundException{
 
         //해당되는 이메일이 있는 지 데이터베이스에서 확인..
         //없으면 throw로 usernamenotfoundException을 실행..

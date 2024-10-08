@@ -49,8 +49,8 @@ spring:
       enabled: true
 
   jwt:
-    secret: abcdefghijk
-
+    secret: abcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijk
+#jwt 코드는 좀 길게 짜야됨
 my:
   value: "welcome to my value"
 

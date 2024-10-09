@@ -12,19 +12,19 @@
     veniam sunt dicta adipisci vero iste voluptate non
      veritatis aut cumque!</div>
 </div>
-<button class="border border-red-500 cursor-pointer" @click="GoBoardInput">새글작성</button>
-<button class="border border-red-500" @click="cancle" >목록버튼</button>
+<button class="border border-red-500 cursor-pointer" @click="GoBoardInput">요청접수</button>
+<button class="border border-red-500" @click="cancle" >마이페이지</button>
 <br>
 <br>
-<div>
+<!-- <div>
     <h1>댓글</h1>
     <div>
         <ul class="flex border-2 w-100% bg-gray-200">
-            <!-- <ul v-for="Item in arr" :key="Item.Cid?" > -->
+             <ul v-for="Item in arr" :key="Item.Cid?" > -->
             <!-- <li>{{Item.Cid}}</li>
             <li>{{{Item.Ccontent}}</li>
             <li>{{{Item.Cwdate}}</li> -->
-            <li class="bg-gray-200 w-1/12 m-auto" >{{Cid}}</li>
+            <!-- <li class="bg-gray-200 w-1/12 m-auto" >{{Cid}}</li>
             <li class="w-10/12 m-auto bg-slate-50 " >{{Ccontent}}</li>
             <li class=" w-1/12 m-auto bg-slate-50 " >{{Cwdate}}</li>
         </ul>
@@ -33,7 +33,7 @@
         <textarea placeholder="댓글내용입력" name="" id="" class="w-10/12 border-2 resize-none" ></textarea>
         <button class="bg-yellow-200 w-2/12 h-full" @click="Cinsert" >댓글등록</button>
     </div>
-</div>
+</div> --> 
 
     </div>
 </template>
@@ -60,7 +60,7 @@ const Ccontent = ref('get Ccontent')
 const Cwdate = ref('get Cwdate')
 
 const cancle = () => {
-router.push({name:'home'})
+router.push({name:'mypage'})
 
 }
 const GoBoardInput = () => {

@@ -23,10 +23,24 @@ public class JWTFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
+        System.out.println("요기에 무조건 지나간다");
+
         String auth = request.getHeader(HttpHeaders.AUTHORIZATION);
-        System.out.println(auth);
+        System.out.println(" auth ="+auth);
+
+        //인증 토큰인 JWT가 NULL이거나 Bearer로 시작하는 토큰이 아니면...
+        if(auth == null || !auth.startsWith("Bearer")){
+            filterChain.doFilter(request, response);
+            return; //리턴 빼먹었음
+        }
 
 //        jwtManager.validJWT(auth);
+
+//        String token = auth.substring(7); //7번째 뛰어쓰기 삭제하고 토큰으로 인식
+        String token = auth.split(" ")[1]; //공백 제거 둘중 하나쓸것..뛰어쓰기 해야됨
+
+        String  email = jwtManager.getEmail(token);
+        System.out.println("암호화된 토큰 로그인 진행중인 계정의 email = "+email);
 
         // 여기서 무조건 지나가는
         filterChain.doFilter(request,response);

@@ -38,9 +38,10 @@ public class JWTManager {
         return jwt;
     }
 
+
     // JWT 유효한지 검사 .... 우리가 설정한 비밀번호까지...
     public String validJWT(String jwt){
-        String secreKey = environment.getProperty("spring.jwt.secreKey");
+        String secreKey = environment.getProperty("spring.jwt.secret");
         try {
             SecretKey secretKey
 
@@ -57,5 +58,33 @@ public class JWTManager {
             return "fail";
         }
         return "success";
+    }
+
+
+    public String getEmail(String jwt){
+        String secreKey = environment.getProperty("spring.jwt.secret");
+
+
+        try {
+            //비밀번호 설정
+            SecretKey secretKey
+                    = new SecretKeySpec(secreKey.getBytes(),
+                    Jwts.SIG.HS256.key().build().getAlgorithm());
+
+            //해당 비밀번호로 jwt토큰 복호화 해서 claims 가져오기
+            Jws<Claims> cliams = Jwts.parser()
+                    .verifyWith(secretKey)
+                    .build()
+                    .parseSignedClaims(jwt);
+            
+//claims 안에서  email값 가져오기
+            return  cliams.getPayload().get("email").toString();
+
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return "";
+        }
+
     }
 }

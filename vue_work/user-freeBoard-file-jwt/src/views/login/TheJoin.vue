@@ -1,5 +1,5 @@
 <template>
-    <div class="my-5 bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="my-5 bg-gray-100 flex items-center justify-center min-height-100{">
 
 <div class="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 class="text-2xl font-bold mb-6 text-center">회원가입</h2>
@@ -53,11 +53,19 @@ const dosubmit = async (event) => {
         "age":"11",
         "email":"aaa@naver.com",
     })
-    console.log(res)
+
+    if(res.status === 200){
+        
+        console.log(res)
     
     alert("회원가입 완료")
     router.push({name:'login'})
 
+    }else{
+        console.log(res)
+        alert("회원가입 실패 "+res.response.data.message);
+    }
+    
     
 }
 

@@ -45,10 +45,17 @@ const submitdoLogin= async() => {
 
     const res = await doLogin(data)
     localStorage.setItem('token',res.data)
-
+if(res.status===200){
     console.log(res)
 
-    alert("임시 로그인됨")
+alert("로그인됨")
+
+console.log(localStorage)
+
+router.push({name:'freeboardlist'})
+
+}
+   
 }
 
 

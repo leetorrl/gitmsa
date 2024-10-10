@@ -2,23 +2,25 @@ package com.pmh.org.login;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 public class LoginController {
-
 
     private final LoginService loginService;
 
     @PostMapping("/join")
-    public String join(@RequestBody JoinDto joinDto) {
-        System.out.println(joinDto);
+    public ResponseEntity<String> join(@RequestBody JoinDto joinDto) {
+//        System.out.println(joinDto);
 
         loginService.join(joinDto);
-        return "success";
+
+        return ResponseEntity.ok("success");
     }
 
     @GetMapping("/login")

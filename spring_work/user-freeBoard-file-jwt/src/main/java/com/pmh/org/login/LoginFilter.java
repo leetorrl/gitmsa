@@ -1,12 +1,10 @@
 package com.pmh.org.login;
 
-import com.pmh.org.jwt.JWTManager;
-import com.pmh.org.user.User;
+import com.pmh.org.login.jwt.JWTManager;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -14,7 +12,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class LoginFilter extends UsernamePasswordAuthenticationFilter {

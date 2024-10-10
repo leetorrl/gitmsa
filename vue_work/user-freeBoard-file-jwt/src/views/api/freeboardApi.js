@@ -12,8 +12,9 @@ const token = localStorage.getItem('token')
         const res = await axios.post(`${URL}`, FormData, {
 
             headers:{
-'Content-Type':'multipart/form-data',
-'Authorization': 'Bearer'+ token
+
+'Content-Type':'multipart/form-data', //포스트타입 data값 보낼때 헤더 컨텍스트 타입 지명해줘야함
+'Authorization':'Bearer'+token
             }
         })
 

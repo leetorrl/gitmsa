@@ -15,8 +15,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,6 +27,8 @@ import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.springframework.web.servlet.function.ServerResponse.status;
 
 @RestController
 @RequestMapping("freeboard")
@@ -51,7 +55,21 @@ public class FreeBoardController {
     @GetMapping
     public ResponseEntity<FreeBoardResponsePageDto> findALl(@RequestParam(name = "pageNum", defaultValue = "0") int pageNum
             , @RequestParam(name = "size", defaultValue = "5") int size) {
+
+
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println("email = "+ email);
+
+        if((email == null && email.equals("")) || email.equals("anonymousUser")){
+
+            System.out.println("로그인 하여야 합니다.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }else {
+            System.out.println("로그인 성공");
+        }
+
         // select * from freeboard oder by idx desc, name desc,
+
         Sort sort = Sort.by(Sort.Direction.DESC, "idx");
         Pageable pageable = PageRequest.of(pageNum, size, sort);
 

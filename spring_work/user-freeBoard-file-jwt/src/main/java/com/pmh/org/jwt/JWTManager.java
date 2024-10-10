@@ -61,7 +61,7 @@ public class JWTManager {
     }
 
 
-    public String getEmail(String jwt){
+    public Jws<Claims> getClaims(String jwt){
         String secreKey = environment.getProperty("spring.jwt.secret");
 
 
@@ -78,12 +78,12 @@ public class JWTManager {
                     .parseSignedClaims(jwt);
             
 //claims 안에서  email값 가져오기
-            return  cliams.getPayload().get("email").toString();
+            return cliams;
 
         }catch (Exception e){
             e.printStackTrace();
-            System.out.println(e.getMessage());
-            return "";
+
+            return null;
         }
 
     }

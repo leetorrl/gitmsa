@@ -58,6 +58,19 @@ public class FreeBoardController {
             , @RequestParam(name = "size", defaultValue = "5") int size) {
 
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        String role = SecurityContextHolder.getContext().getAuthentication()
+                        .getAuthorities().stream()
+                            .map(grantedAuthority -> grantedAuthority.getAuthority().toString()).toString();
+        SecurityContextHolder.getContext()
+        .getAuthentication().getAuthorities()
+        .stream().forEach(
+                grantedAuthority -> {
+                    System.out.println(grantedAuthority.toString());
+                    System.out.println("getAuthority role = "+grantedAuthority.getAuthority().toString());
+                }
+        );
+
+        System.out.println(email + " " +role);
 
         if((email == null && email.equals("")) || email.equals("anonymousUser")){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
@@ -65,6 +78,10 @@ public class FreeBoardController {
         else{
             System.out.println("로그인 했네");
         }
+
+//        if(!role.equals("ROLE_ADMIN"))
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+
 
         Sort sort = Sort.by(Sort.Direction.DESC, "idx");
         Pageable pageable = PageRequest.of(pageNum, size, sort);

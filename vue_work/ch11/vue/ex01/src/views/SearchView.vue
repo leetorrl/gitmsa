@@ -50,7 +50,14 @@ import { watch } from 'vue';
 import { onBeforeMount } from 'vue';
 
 const weatherStore = useWeatherStore();
+
+
+
+
+
 const {searchData} = storeToRefs(weatherStore);
+
+
 
 const city= ref('')
 const searchWeather = async () => {

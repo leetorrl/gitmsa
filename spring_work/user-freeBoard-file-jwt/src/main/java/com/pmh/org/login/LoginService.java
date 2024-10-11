@@ -45,20 +45,26 @@ public class LoginService implements UserDetailsService {
 
         //해당되는 이메일이 있는 지 데이터베이스에서 확인..
         //없으면 throw로 usernamenotfoundException을 실행..
+
+
         User user = userRepository.findByEmail(username).orElseThrow(
                 ()-> new UsernameNotFoundException(username));
 
 
 //        log.info("username = {}", username);
 
-        return org.springframework.security.core.userdetails
-                .User
-                .builder()
-                .username(user.getEmail())
-                .password(user.getPassword())
-//                .password(passwordEncoder.encode("1234"))
-                .roles("ADMIN")
-                .build();
+//        return org.springframework.security.core.userdetails
+//                .User
+//                .builder()
+//                .username(user.getEmail())
+//                .password(user.getPassword())
+////                .password(passwordEncoder.encode("1234"))
+//                .roles("ADMIN")
+//                .build();
+
+        return new LoginUserDetails(user.getEmail(),
+                user.getPassword(),
+                user.getRole());
     }
 
 }

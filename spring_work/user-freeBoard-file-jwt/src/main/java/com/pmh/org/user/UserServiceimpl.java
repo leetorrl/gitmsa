@@ -21,7 +21,7 @@ public class UserServiceimpl implements UserService {
     public void insert(UserReqDto userReqDto){
 
         Optional<User> optionalUser = userRepository.findByEmail(userReqDto.getEmail());
-        optionalUser.ifPresent(user -> {
+        optionalUser.ifPresent(user -> { //중복 확인
             throw new BizException(ErrorCode.DUPLICATE_USERS);
         });
 

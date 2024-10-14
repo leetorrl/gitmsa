@@ -48,7 +48,7 @@ const dosubmit = async (event) => {
     console.log("연결? = "+ event)
 
     const res = await doJoin({
-        "name":"홍길동",
+        "name":"괴도길동",
         "password":"1234",
         "age":"11",
         "email":"aaa@naver.com",

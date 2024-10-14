@@ -47,7 +47,7 @@
 
 <template v-if="loginPinia.loginCheck">
     <div>
-      <div>{{loginPinia.name}}로그인중</div>
+      <div>{{loginPinia.name}} 로그인됨</div>
         <div>
           <div><button @click="logout" class="border-2" >Logout</button></div>
       </div>
@@ -78,13 +78,19 @@ import { useLoginStore } from '@/store/loginPinia';
 import { useRouter } from 'vue-router';
 
 
+
 const router = useRouter();
 
 const loginPinia = useLoginStore();
 
+
+
+
 const logout = () => {
-localStorage.removeItem('token')
-loginPinia.logout
+localStorage.removeItem('token') //로컬토큰값을 제거(로그인 해체)
+loginPinia.logout();
+alert("로그아웃함 ㅎㅎ")
+
 router.push({name:'login'})
 
 }
@@ -98,9 +104,12 @@ watchEffect (async()=> {
 
  }else{
 
+  console.log(result)
+
   if(result.status !==200){
-    loginPinia.logout()
+    
     localStorage.removeItem('token')
+    loginPinia.logout()
   }
   else{
 

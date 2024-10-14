@@ -62,15 +62,15 @@ private  final JWTManager jwtManager;
         }else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("이메일과 패스워드 확인 부탁");
         }
-
     }
-
 
     @GetMapping("/check")
     public ResponseEntity<User> check(
             @RequestParam("jwt") String jwt,
             // 1234원래글자
             HttpServletResponse response) throws IOException {
+
+        System.out.println(jwt);
 
         //jwt 가 유효한지..유효하지 않으면 exception발생
         Jws<Claims> claimsJws = jwtManager.getClaims(jwt);
@@ -85,6 +85,4 @@ private  final JWTManager jwtManager;
 
         return ResponseEntity.ok(user);
     }
-
-
 }

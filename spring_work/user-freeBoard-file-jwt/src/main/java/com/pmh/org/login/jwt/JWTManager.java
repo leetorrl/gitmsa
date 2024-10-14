@@ -1,5 +1,6 @@
 package com.pmh.org.login.jwt;
 
+import com.pmh.org.error.JWTAuthException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -24,7 +25,9 @@ public class JWTManager {
 
     // JWT 생성
     public String createJWT(String email, String role){
+
         String secreKey = environment.getProperty("spring.jwt.secret");
+
 
         String jwt = Jwts.builder()
                 .claim("email",email)
@@ -76,14 +79,14 @@ public class JWTManager {
                     .verifyWith(secretKey)
                     .build()
                     .parseSignedClaims(jwt);
-            
+
+
 //claims 안에서  email값 가져오기
             return cliams;
 
         }catch (Exception e){
-            e.printStackTrace();
+            throw new JWTAuthException("JWT TOKEN 문제 = "+e.getMessage());
 
-            return null;
         }
 
     }

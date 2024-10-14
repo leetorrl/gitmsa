@@ -42,12 +42,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { doLogin, doLogincheck } from '../api/loginApi'
 import { useRouter } from 'vue-router'
 import { useLoginStore } from '@/store/loginPinia';
 
 const loginPinia = useLoginStore();
+
+
 const router = useRouter()
 
 const email = ref('aaa@naver.com')
@@ -68,13 +70,27 @@ const submitdoLogin = async () => {
   if (res.status === 200) {
     console.log(res)
 
+    const data = await doLogincheck();
+
+    loginPinia.login(data)
+    router.push({name:'freeboardlist'})
+
     alert('로그인됨')
 
-const result = await doLogincheck();
 
-    console.log(localStorage)
-loginPinia.login(result.data)
-    router.push({ name: 'freeboardlist' })
+
+ watchEffect(async()=> {
+
+  const result = await doLogincheck();
+
+  console.log(localStorage)
+  loginPinia.login(result.data)
+  router.push({ name: 'freeboardlist' })
+
+    })
+  }
+  else{
+    loginPinia.logout();
   }
 }
 </script>

@@ -50,6 +50,7 @@
   import { deleteUser, getUsers, saveUser } from '../api/userApi';
   import { ref, watchEffect } from 'vue';
   import { useRouter } from 'vue-router';
+import Swal from "sweetalert2"
 
 const router = useRouter();
 
@@ -77,7 +78,9 @@ const wdate = ref('')
                                     password:'임시'
                                     } ); //userApi.js의 saveUser메서드 호출
 
-      alert('수정이 완료되었습니다.')
+                                    Swal.fire('수정됨');
+
+      // alert('수정이 완료되었습니다.')
        router.push({name:'userlint'}) // router써도 같은 주소라 새로고침 안됨
       const retValue = await getUsers();
       arr.value = retValue.data; //새로고침이됨

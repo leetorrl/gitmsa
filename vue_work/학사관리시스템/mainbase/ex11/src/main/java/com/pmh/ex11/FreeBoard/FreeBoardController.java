@@ -1,22 +1,15 @@
 package com.pmh.ex11.FreeBoard;
 
-import com.pmh.ex11.error.BizException;
-import com.pmh.ex11.error.ErrorCode;
+import com.pmh.ex11.constant.FreeBoardConstant;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("freeboard")
@@ -28,15 +21,7 @@ public class FreeBoardController {
 //    private static final Logger log = LoggerFactory.getLogger(FreeBoardController.class);
 
     private final FreeBoardRepository freeBoardRepository;
-    private final ModelMapper modelMapper;
-
-    @Value("${my.value}") //롬복 value가 아님 프레임워크꺼임
-    private String welcome;
-
-    @GetMapping("test")
-    public String test(){
-        return welcome;
-    }
+//    private final ModelMapper modelMapper;
 
 //
 //    @GetMapping
@@ -94,12 +79,16 @@ public class FreeBoardController {
 //        return ResponseEntity.ok(freeBoardResponseDto);
 //    }
 
-@PostMapping("insert")
+    @PostMapping("insert")
     public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
         System.out.println(freeBoardReqDto);
 
         FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
-        freeBoard.setId(freeBoardReqDto.getF_idx());
+        freeBoard.setIdx(freeBoardReqDto.getIdx());
+
+        freeBoard.setWdate(LocalDateTime.now());
+
+        System.out.println(freeBoard.getTextbody());
 
         System.out.println(freeBoard);
         freeBoardRepository.save(freeBoard);
@@ -108,18 +97,13 @@ public class FreeBoardController {
 
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<String> deleteByid(@PathVariable(name="id") long id){
+    public ResponseEntity<String> deleteByid(@PathVariable(name = "id") long id) {
 
-        freeBoardRepository.findById(id).orElseThrow(()-> new BizException(ErrorCode.NOT_FOUND));
+//        freeBoardRepository.findById(id).orElseThrow(()-> new BizException(ErrorCode.NOT_FOUND));
         freeBoardRepository.deleteById(id);
-
 
         return ResponseEntity.ok("삭제되었습니다");
     }
-
-
-
-
 
 
 }

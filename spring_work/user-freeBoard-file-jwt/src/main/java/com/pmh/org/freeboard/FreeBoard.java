@@ -60,6 +60,8 @@ public class FreeBoard {
     private User user; // User와 양방향 맵핑
 
 
+
+
     @Override
     public String toString() {
         return "FreeBoard{" +

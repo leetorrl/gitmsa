@@ -1,7 +1,6 @@
 package com.pmh.ex11.FreeBoard;
 
 import com.pmh.ex11.user.User;
-import com.pmh.ex11.user.UserRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,10 @@
 package com.pmh.ex11.FreeBoard;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotEmpty;
+import com.pmh.ex11.constant.FreeBoardConstant;
+import com.pmh.ex11.constant.FreeBoardStateConstant;
+import com.pmh.ex11.user.User;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.CreatedDate;
+
 
 import java.time.LocalDateTime;
 
@@ -15,13 +12,19 @@ import java.time.LocalDateTime;
 public class FreeBoardReqDto {
     //유효성 검사
 
+    private Long idx;
+//
+//    private User user;
 
-    private Long f_idx;
+    private String state;
 
-    private String title;
+//    private FreeBoardConstant freeBoardConstant;
 
-    private String content;
+    private String textbody;
 
+//    private FreeBoardStateConstant freeBoardStateConstant;
+
+//    private LocalDateTime wdate;
 //    private String f_nickname;
 //
 //    private String f_body;

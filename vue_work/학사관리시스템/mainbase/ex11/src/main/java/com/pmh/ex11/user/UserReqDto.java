@@ -1,5 +1,7 @@
 package com.pmh.ex11.user;
 
+import com.pmh.ex11.FreeBoard.FreeBoard;
+import com.pmh.ex11.constant.UserConstant;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -26,4 +28,5 @@ public class UserReqDto {
 
     private LocalDateTime wdate;
 
+    private UserConstant userConstant;
 }

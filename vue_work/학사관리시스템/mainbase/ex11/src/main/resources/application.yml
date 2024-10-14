@@ -10,7 +10,7 @@ spring:
 #    url: jdbc:mariadb://192.168.0.40:3306/pmh
 #    url: jdbc:mariadb://192.168.0.49:3307/mymariadb
 #    url: jdbc:mariadb://172.30.1.85:3307/Board
-    url: jdbc:mariadb://192.168.0.69:3307/mymariadb
+    url: jdbc:mariadb://192.168.0.69:3307/test?characterEncoding=UTF-8
 
 
     username: root

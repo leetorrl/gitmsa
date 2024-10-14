@@ -49,7 +49,8 @@ const myfile = ref(null)
 
 const title = ref('')
 const content = ref('')
-// const regDate = ref('');
+
+
 // const creAuthor = ref('');
 // const idx = ref(0);
 
@@ -82,7 +83,8 @@ const save = async () => {
 
   const data = {
     title: title.value,
-    content: content.value
+    content: content.value,
+    regDate
   }
 
   const formData = new FormData()

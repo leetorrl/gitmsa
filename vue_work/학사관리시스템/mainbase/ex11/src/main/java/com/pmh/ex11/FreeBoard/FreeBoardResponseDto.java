@@ -1,5 +1,7 @@
 package com.pmh.ex11.FreeBoard;
 
+import com.pmh.ex11.constant.FreeBoardConstant;
+import com.pmh.ex11.constant.FreeBoardStateConstant;
 import com.pmh.ex11.user.User;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,16 +14,22 @@ import org.springframework.data.annotation.CreatedDate;
 import java.time.LocalDateTime;
 
 @Data
-@Getter
-@Setter
 public class FreeBoardResponseDto {
 
 
-    private Long id;
+    private Long idx;
 
-    private String title;
+//    private User user;
 
-    private String content;
+//    private FreeBoardConstant freeBoardConstant;
+
+    private String state;
+
+    private String textbody;
+
+    private FreeBoardStateConstant freeBoardStateConstant;
+
+    private LocalDateTime wdate;
 //
 //    private String f_nickname;
 //

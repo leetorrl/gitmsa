@@ -1,10 +1,14 @@
 package com.pmh.ex11.user;
 
+import com.pmh.ex11.FreeBoard.FreeBoard;
+import com.pmh.ex11.constant.UserConstant;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -34,6 +38,11 @@ public class User {
 
     private LocalDateTime wdate;
 
+//    @OneToMany(fetch = FetchType.LAZY)
+//    private List<FreeBoard> freeBoardList = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    private UserConstant userConstant;
     // JPA CLASS -> talbe CREATE가 됩니다.
 
 }

@@ -1,12 +1,11 @@
 package com.pmh.ex11.FreeBoard;
 
+import com.pmh.ex11.constant.FreeBoardConstant;
+import com.pmh.ex11.constant.FreeBoardStateConstant;
 import com.pmh.ex11.user.User;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
@@ -16,21 +15,31 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
-@Getter
-@Setter
 @EntityListeners(AuditingEntityListener.class)
+@Data
 public class FreeBoard {
 
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "f_idx")
-    private Long id;
+//    @Column(name = "f_idx")
+    private Long idx;
 
-    private String title;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private User user;
 
-    private String content;
+    private String state;
+
+//    @Enumerated(EnumType.STRING)
+//    private FreeBoardConstant freeBoardConstant;
+
+    private String textbody;
+
+    @Enumerated(EnumType.STRING)
+    private FreeBoardStateConstant freeBoardStateConstant;
+
+    @CreatedDate
+    private LocalDateTime wdate;
 
 //    private String f_nickname;
 //

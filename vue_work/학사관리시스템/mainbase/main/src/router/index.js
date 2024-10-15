@@ -4,6 +4,7 @@ import BoardView from '@/components/BoardView.vue'
 import BoardInput from '@/components/BoardInput.vue'
 
 import Mypage from '@/components/Mypage.vue'
+import Quirylist from '@/components/Quirylist.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,7 +15,7 @@ const router = createRouter({
       component: home
     },
     {
-      path: '/BoardView/:id',
+      path: '/BoardView',
       name: 'boardview',
       component: BoardView
     },
@@ -28,6 +29,11 @@ const router = createRouter({
       name: 'mypage',
       component: Mypage
     },
+    {
+      path: '/Quirylist',
+      name: 'quirylist',
+      component: Quirylist
+    }
   ]
 })
 

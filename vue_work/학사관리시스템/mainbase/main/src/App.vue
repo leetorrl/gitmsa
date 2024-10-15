@@ -1,38 +1,43 @@
 <template>
   <div>
-<h1 class="bg-red-500">시작!</h1>
-<p>밑에 라우터뷰</p>
-<button class="border border-red-500 float-right" @click="goMypage" >마이페이지(조퇴요청 조회기능)</button>
-<br>
+    <h1 class="bg-red-500">시작!</h1>
+    <p>밑에 라우터뷰</p>
+    <button class="border border-red-500 float-right" @click="goQuiry">문의게시판</button>
+    <button class="border border-red-500 float-right" @click="goMypage()">
+      마이페이지(조퇴요청 조회기능)
+    </button>
+    <br />
 
-<RouterView/>
+    <RouterView />
   </div>
 </template>
 
 <script setup>
-import {  RouterView } from 'vue-router';
-// import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { RouterView } from 'vue-router'
 
-const router = useRouter();
+import { useRouter } from 'vue-router'
+import { useBoardlistStore } from './stores/Boardlist'
+import { storeToRefs } from 'pinia'
+
+const Boardlist = useBoardlistStore()
+
+// const { tsetidx } = storeToRefs(Boardlist)
+const router = useRouter()
 
 // const pageNum = ref(0)
 
-const goMypage = ()=> {
-
-  router.push({name:'mypage'})
-
+const goMypage = () => {
+  router.push({ name: 'mypage' })
 }
 
-const Mainhome = () => {
-
-  router.push({name:'home'})
+const goQuiry = () => {
+  router.push({ name: 'quirylist' })
+}
+const Mainhome = (tsetidx) => {
+  router.push({ name: 'home', params: { tsetidx } })
 }
 
-Mainhome();
-
+Mainhome()
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

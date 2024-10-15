@@ -1,11 +1,10 @@
 <template>
-    <div>
-        
-<h1 class="bg-blue-500" >출결관리(임시)</h1>
-<div style="height: 500px;" class="bg-green-300">
-    금일 날짜와 출결 유무 체크 및 날짜별 출결 기록, 일수 조회 가능하도록...
-</div>
-<!-- <p>-학원생 요청사항-</p>
+  <div>
+    <h1 class="bg-blue-500">출결관리(임시)</h1>
+    <div style="height: 500px" class="bg-green-300">
+      금일 날짜와 출결 유무 체크 및 날짜별 출결 기록, 일수 조회 가능하도록...
+    </div>
+    <!-- <p>-학원생 요청사항-</p>
 <div class="w-1280 bg-slate-300">
 <ul class="flex w-full ">
     <li class=" w-1/4 text-center border border-black">Bid</li>
@@ -14,8 +13,8 @@
     <li class=" w-1/4 text-center border border-black" >작성일</li>
     <li class=" w-1/4 text-center border border-black" >요청현황</li>
 </ul>
-<ul class="flex w-full bg-slate-50 hover:cursor-pointer" @click="GoBoardView(Bid)" > --> 
-<!-- <ul v-for="item in arr" key="item.Bid" > -->
+<ul class="flex w-full bg-slate-50 hover:cursor-pointer" @click="GoBoardView(Bid)" > -->
+    <!-- <ul v-for="item in arr" key="item.Bid" > -->
     <!-- <li class=" w-1/4 text-center border border-black" >{{item.Bid}}</li>
     <li class=" w-1/4 text-center border border-black" >{{item.Uid}}</li>
     <li class=" w-1/4 text-center border border-black" >{{item.title}}</li>
@@ -29,30 +28,30 @@
 </ul>
 </div>
 <button class="border border-red-500 cursor-pointer" @click="GoBoardInput">글작성</button> -->
-    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue';
-import { useRouter } from 'vue-router';
-import axios from 'axios';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
 
-const router = useRouter();
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
 
 const arr = ref([])
 const totalpages = ref(10)
 
-const Bid = ref(1)
-const Uid = ref('get uid')
-const title = ref('get title')
-const wdate = ref('get wdate')
-const state = ref('get state')
+// const Bid = ref()
+// const Uid = ref('get uid')
+// const title = ref('get title')
+// const wdate = ref('get wdate')
+// const state = ref('get state')
 
-
-
-const GoBoardView =(id) => {
-
-    router.push({name:'boardview', params:{id}})
+const GoBoardView = () => {
+  router.push({ name: 'boardview' })
 }
 
 // watchEffect( async() => {
@@ -61,31 +60,22 @@ const GoBoardView =(id) => {
 // })
 
 const GoBoardInput = () => {
-
-    router.push({name:'boardinput'})
-
+  router.push({ name: 'boardinput' })
 }
 
-const Viewlist = async() => {
-
-    try{
+const Viewlist = async () => {
+  try {
     const res = await axios.get(`http://localhost:8080/Board`)
 
     arr.value = res.data.list
     totalpages.value = res.data.totalpages
-
-    }catch(e){
-        console.log(e)
-        return e;
-    }
-
+  } catch (e) {
+    console.log(e)
+    return e
+  }
 }
 
 // Viewlist();
-
-
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

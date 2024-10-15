@@ -84,7 +84,7 @@ const save = async () => {
   const data = {
     title: title.value,
     content: content.value,
-    regDate
+    
   }
 
   const formData = new FormData()

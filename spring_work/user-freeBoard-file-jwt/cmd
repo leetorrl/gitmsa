@@ -1,0 +1,14 @@
+# maria_container network 연결
+docker network connect nginx-spring-maria maria_container
+
+
+docker run -d -p 8080:8080 --network nginx-spring-maria --name freeboard_container leetorrl/freeboard
+
+
+docker run -p 8080:8080 \
+-e SPRING_DATASOURCE_URL=jdbc:mariadb://maria_container:3307/pmh?serverTimezone=Asia/Seoul \
+-e SPRING_DATASOURCE_PASSWORD=1234 \
+-d --network nginx-spring-maria \
+--name java-container \
+leetorrl/breeboard
+

@@ -46,7 +46,7 @@
 
     <div>
       <textarea
-        v-model="textbody"
+        v-model="body"
         name=""
         id=""
         cols="30"
@@ -65,14 +65,27 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import { useBoardlistStore } from '@/stores/Boardlist'
+
+const boardlist = useBoardlistStore()
 
 const router = useRouter()
 
-const textbody = ref('')
+const body = ref('')
+
+const title = ref('ㅇㅇ')
 
 const state = ref('early')
 
 const conn = ref('병가')
+
+const idx = ref(tsetidx)
+
+const { tsetidx } = boardlist
+
+const user = {
+  idx: idx.value
+}
 
 const cancle = () => {
   router.push({ name: 'mypage' })
@@ -83,16 +96,19 @@ const insert = () => {
   //   router.push({ name: 'home' })
 
   const data = {
-    state: state.value,
-    textbody: textbody.value
-
+    // state: state.value,
+    body: body.value,
+    title: title.value,
+    user: user //유저 객체안의 id값을 일단 넘김
     // state: state.value
   }
   console.log(state.value)
-  console.log(textbody.value)
+  console.log(body.value)
 
   axios
-    .post(`http://localhost:8080/freeboard/insert`, data)
+    // .post(`http://localhost:8080/freeboard/insert`, data)
+    .post(` http://192.168.0.67:8080/question/save`, data)
+
     .then((res) => {
       console.log(res)
       alert('요청이 접수되었습니다.')

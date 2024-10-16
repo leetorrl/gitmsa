@@ -9,6 +9,9 @@ import ThefileuploadUpdate from '@/views/file/ThefileuploadUpdate.vue'
 import TheFreeBoardUpdate from '@/views/freeboard/TheFreeBoardUpdate.vue'
 import ThefileDownload from '@/views/file/ThefileDownload.vue'
 
+import ttest from '@/views/freeboard/ttest.vue'
+
+
 import TheJoin from '@/views/login/TheJoin.vue'
 import TheLogin from '@/views/login/TheLogin.vue'
 
@@ -52,7 +55,11 @@ const router = createRouter({
       name: 'fileuploadUpdate',
       component: ThefileuploadUpdate
     },
-
+    {
+      path: '/ttest',
+      name: 'ttest',
+      component: ttest
+    },
 
 
     // {

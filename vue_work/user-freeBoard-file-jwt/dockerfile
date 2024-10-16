@@ -1,0 +1,20 @@
+# 이미지 node 16버전 이미지를 만들고...
+FROM node:16
+
+# app폴더를 생산한뒤...
+WORKDIR /app
+
+# 패키지 json파일 복사
+COPY package*.json ./
+
+# 디펜던시 설치
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# port 5173을 다른 pc에서 접속 할 수 있도록 명령
+EXPOSE 5173
+
+# 마지막 명령어로 npm run dev를 실행
+CMD ["npm", "run", "dev"]

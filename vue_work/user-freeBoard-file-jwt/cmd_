@@ -1,0 +1,17 @@
+#ci cd 명령어 한번에 실행해보기(명령어 모아놓고 한꺼번에 실행.)
+
+#컨테이너 중지
+docker stop freeboardvue
+
+#컨테이너 삭제(-f 추가시 강제삭제)
+docker rm -f freeboardvue
+
+#이미지 삭제
+docker rmi leetorrl/freeboardvue
+
+
+#이미지 생성
+docker build - t leetorrl/freeboardvue .
+
+#컨테이너 생성
+docker run -d -p 5173:5173 --name freeboardvue leetorrl/freeboardvue

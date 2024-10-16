@@ -11,7 +11,7 @@ docker rmi leetorrl/freeboardvue
 
 
 #이미지 생성
-docker build - t leetorrl/freeboardvue .
+docker build -t leetorrl/freeboardvue .
 
 #컨테이너 생성
 docker run -d -p 5173:5173 --name freeboardvue leetorrl/freeboardvue

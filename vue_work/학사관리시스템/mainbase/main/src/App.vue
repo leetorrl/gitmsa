@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="bg-red-500 md:w-32 lg:w-48">시작!</h1>
+    <h1 class="bg-red-500 sm:390px">시작!</h1>
     <p>밑에 라우터뷰</p>
     <p>2xl xl lg md sm 테일윈드 미디아 크기</p>
     <button class="border border-red-500 float-right" @click="goQuiry">문의게시판</button>

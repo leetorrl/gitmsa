@@ -7,6 +7,8 @@ import Mypage from '@/components/Mypage.vue'
 import Quirylist from '@/components/Quirylist.vue'
 
 import tttest from '@/components/tttest.vue'
+import requestlist from '@/components/requestlist.vue'
+import freeBoardinput from '@/components/freeBoardinput.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,7 +42,17 @@ const router = createRouter({
       path: '/tttest',
       name: 'tttest',
       component: tttest
-    }
+    },
+    {
+      path: '/requestlist',
+      name: 'requestlist',
+      component: requestlist
+    },
+    {
+      path: '/freeBoardinput',
+      name: 'freeboardinput',
+      component: freeBoardinput
+    },
   ]
 })
 

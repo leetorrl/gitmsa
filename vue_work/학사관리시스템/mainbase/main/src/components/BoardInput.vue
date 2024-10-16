@@ -79,9 +79,11 @@ const state = ref('early')
 
 const conn = ref('병가')
 
-const idx = ref(tsetidx)
+
 
 const { tsetidx } = boardlist
+
+const idx = ref(tsetidx)
 
 const user = {
   idx: idx.value
@@ -92,21 +94,17 @@ const cancle = () => {
 }
 
 const insert = () => {
-  //   alert('요청접수가 되었습니다')
-  //   router.push({ name: 'home' })
-
+ 
   const data = {
     // state: state.value,
     body: body.value,
     title: title.value,
     user: user //유저 객체안의 id값을 일단 넘김
-    // state: state.value
   }
   console.log(state.value)
   console.log(body.value)
 
   axios
-    // .post(`http://localhost:8080/freeboard/insert`, data)
     .post(` http://192.168.0.67:8080/question/save`, data)
 
     .then((res) => {

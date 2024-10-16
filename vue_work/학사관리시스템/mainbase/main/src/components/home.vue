@@ -2,7 +2,7 @@
   <div>
     <h1 class="bg-blue-500">출결관리(임시)</h1>
 
-    <div style="height: 500px" class="bg-green-300">
+    <div style="height: 500px" class="">
       금일 날짜와 출결 유무 체크 및 날짜별 출결 기록, 일수 조회 가능하도록...
     </div>
 

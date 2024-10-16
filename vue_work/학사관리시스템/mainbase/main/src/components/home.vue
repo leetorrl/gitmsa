@@ -1,9 +1,11 @@
 <template>
   <div>
     <h1 class="bg-blue-500">출결관리(임시)</h1>
+
     <div style="height: 500px" class="bg-green-300">
       금일 날짜와 출결 유무 체크 및 날짜별 출결 기록, 일수 조회 가능하도록...
     </div>
+
     <!-- <p>-학원생 요청사항-</p>
 <div class="w-1280 bg-slate-300">
 <ul class="flex w-full ">

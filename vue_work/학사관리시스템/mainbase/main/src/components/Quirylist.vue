@@ -46,14 +46,26 @@
       </div>
       <button class="border border-red-500 cursor-pointer hover:bg-red-500">문의접수</button>
     </div>
+
+    <ul class="flex space-x-2">
+      <li
+        class="cursor-pointer p-3"
+        v-for="num in totalpages"
+        v-bind:key="num"
+        @click="setpageNum(num - 1)"
+      >
+        {{ num }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 // import { useRouter } from 'vue-router'
-// import axios from 'axios'
+import axios from 'axios'
 
+import { watchEffect } from 'vue'
 // const router = useRouter()
 
 const arr = ref([])
@@ -64,6 +76,8 @@ const user = ref('작성자')
 const wdate = new Date()
 const response = ref('요청사항')
 
+const pageNum = ref(0)
+const totalpages = ref(5)
 // const GoBoardView = (id) => {
 //   router.push({ name: 'boardview', params: { id } })
 // }
@@ -95,6 +109,17 @@ const response = ref('요청사항')
 // }
 
 // // Viewlist();
+
+watchEffect(async () => {
+  const res = await axios.get(`http://192.168.0.67:8080/question?${pageNum.value}`, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
+  arr.value = res.data.list
+  totalpages.value = res.data.totalpages
+})
 </script>
 
 <style lang="scss" scoped></style>

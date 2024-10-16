@@ -6,6 +6,8 @@ import BoardInput from '@/components/BoardInput.vue'
 import Mypage from '@/components/Mypage.vue'
 import Quirylist from '@/components/Quirylist.vue'
 
+import tttest from '@/components/tttest.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -33,6 +35,11 @@ const router = createRouter({
       path: '/Quirylist',
       name: 'quirylist',
       component: Quirylist
+    },
+    {
+      path: '/tttest',
+      name: 'tttest',
+      component: tttest
     }
   ]
 })

@@ -1,86 +1,54 @@
 <template>
   <div>
-    <h1>-문의 게시판-</h1>
+    <h1 class="p-5 text font-bold text-3xl text-blue-800">-문의 게시판-</h1>
+    <hr class="border-2 border-blue-800" />
     <br />
     <div>
-      <h1>자주하는 질문</h1>
+      <h1 class="border-t-2 border-b-2">◎자주하는 질문</h1>
       <ul>
-        <li>Q.출결 증빙자료 머시기</li>
-        <li>Q.당일에 증빙자료 머시기</li>
-        <li>Q.휴가신청 제출 머시기..</li>
+        <li class="hover:cursor-pointer ml-4 p-1 border-b">
+          Q : 출결 증빙자료가 없어요. 어떡하죠?
+        </li>
+        <li class="hover:cursor-pointer ml-4 p-1 border-b">
+          Q : 당일에 증빙자료 제출을 까먹었어요.
+        </li>
+        <li class="hover:cursor-pointer ml-4 p-1 border-b">
+          Q : 휴가 신청서 제출은 어떻게 하나요?
+        </li>
       </ul>
     </div>
     <div>
-      <h1>학생문의</h1>
+      <br />
+      <div class="text-center font-bold text-3xl text-blue-800"><h1>학생문의</h1></div>
 
-
-
-
-      <div class="flex flex-col">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table
-          class="min-w-full text-left text-sm font-light text-surface dark:text-white">
-          <thead
-            class="border-b border-neutral-200 font-medium dark:border-white/10">
-            <tr>
-              <th scope="col" class="px-6 py-4">#</th>
-              <th scope="col" class="px-6 py-4">First</th>
-              <th scope="col" class="px-6 py-4">Last</th>
-              <th scope="col" class="px-6 py-4">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-              <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
-              <td class="whitespace-nowrap px-6 py-4">Mark</td>
-              <td class="whitespace-nowrap px-6 py-4">Otto</td>
-              <td class="whitespace-nowrap px-6 py-4">@mdo</td>
-            </tr>
-            <tr
-              class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-              <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
-              <td class="whitespace-nowrap px-6 py-4">Jacob</td>
-              <td class="whitespace-nowrap px-6 py-4">Thornton</td>
-              <td class="whitespace-nowrap px-6 py-4">@fat</td>
-            </tr>
-            <tr
-              class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-              <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
-              <td class="whitespace-nowrap px-6 py-4">Larry</td>
-              <td class="whitespace-nowrap px-6 py-4">Wild</td>
-              <td class="whitespace-nowrap px-6 py-4">@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-      <div class="w-1280 bg-slate-300">
-        <ul class="flex w-full bg-slate-50">
-          <li class="w-1/4 text-center border-t-2 border-b-2">{{ title }}</li>
+      <br />
+      <div class="w-1280 bg-white">
+        <ul class="flex w-full bg-[#eee]">
           <li class="w-1/4 text-center border-t-2 border-b-2">{{ user }}</li>
+          <li class="w-1/4 text-center border-t-2 border-b-2">{{ title }}</li>
           <li class="w-1/4 text-center border-t-2 border-b-2">{{ wdate }}</li>
           <li class="w-1/4 text-center border-t-2 border-b-2">{{ response }}</li>
         </ul>
-        <ul v-for="item in arr" :key="item.id" class="hover:cursor-pointer">
-          <li class="w-1/4 text-center border-t-2 border-b-2">{{ item.title }}</li>
-          <li class="w-1/4 text-center border-t-2 border-b-2">{{ item.user }}</li>
-          <li class="w-1/4 text-center border-t-2 border-b-2">{{ item.wdate }}</li>
-          <li class="w-1/4 text-center border-t-2 border-b-2">{{ item.response }}</li>
+        <ul
+          v-for="item in arr"
+          :key="item.id"
+          class="hover:cursor-pointer transition duration-300 hover:bg-[#eee] flex w-full p-3 border-b border-[#eee]"
+          @click="GoBoardView(item.idx)"
+        >
+          <li class="w-1/4 text-center">{{ item.user }}</li>
+          <li class="w-1/4 text-center">{{ item.title }}</li>
+          <li class="w-1/4 text-center">{{ item.wdate }}</li>
+          <li class="w-1/4 text-center">{{ item.response }}</li>
         </ul>
       </div>
-      <button class="border border-red-500 cursor-pointer hover:bg-red-500" @click="GofreeBoardInput" >문의접수</button>
+      <button
+        class="bg-blue-700 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+        @click="GofreeBoardInput"
+      >
+        문의접수
+      </button>
     </div>
+    <br />
     <ul class="flex space-x-2">
       <li
         class="cursor-pointer p-3"
@@ -91,6 +59,7 @@
         {{ num }}
       </li>
     </ul>
+    <br />
   </div>
 </template>
 
@@ -105,52 +74,33 @@ const router = useRouter()
 const arr = ref([])
 const title = ref('주제')
 const user = ref('작성자')
-const wdate = ('작성일')
+const wdate = '작성일'
 const response = ref('요청사항')
 
 const pageNum = ref(0)
 const totalpages = ref(5)
-// const GoBoardView = (id) => {
-//   router.push({ name: 'boardview', params: { id } })
-// }
-
-// const Viewlist = async () => {
-
-//   try {
-
-//     // const res = await axios.get(`http://localhost:8080/Board`)
-
-// const res = await axios.post(`http://192.168.0.67:8080/question?${pageNum=2&size=5}`)
-
-//     arr.value = res.data.list
-//     totalpages.value = res.data.totalpages
-
-//   } catch (e) {
-//     console.log(e)
-//     return e
-//   }
-// }
-
-// // watchEffect( async() => {
-
-// // js따로 팔때 쓰는걸로
-// // })
+// const size = ref(10)
 
 const GofreeBoardInput = () => {
   router.push({ name: 'freeboardinput' })
 }
 
-
 watchEffect(async () => {
-  const res = await axios.get(`http://192.168.0.67:8080/question?${pageNum.value, size=5}`, {
+  console.log(pageNum.value)
+  const res = await axios.get(`http://192.168.0.67:8080/question?${pageNum.value}`, {
     headers: {
       'Content-Type': 'application/json'
     }
   })
-
   arr.value = res.data.list
-  totalpages.value = res.data.totalpages
+  totalpages.value = res.data.totalPages
+
+  console.log(res.data.totalPages)
 })
+
+const GoBoardView = (idx) => {
+  router.push({ name: 'boardview', params: { idx } })
+}
 </script>
 
 <style lang="scss" scoped></style>

@@ -6,13 +6,13 @@
       <h1>요청항목</h1>
       <form action="">
         <label for="early"
-          >조퇴<input v-model="state" type="radio" name="state" id="early" value="early" checked
+          >조퇴<input v-model="type" type="radio" name="state" id="early" value="early" checked
         /></label>
         <label for="going"
-          >외출<input v-model="state" type="radio" name="state" id="going" value="going"
+          >외출<input v-model="type" type="radio" name="state" id="going" value="going"
         /></label>
         <label for="absent"
-          >결석<input v-model="state" type="radio" name="state" id="absent" value="absent"
+          >결석<input v-model="type" type="radio" name="state" id="absent" value="absent"
         /></label>
       </form>
     </div>
@@ -46,7 +46,7 @@
 
     <div>
       <textarea
-        v-model="body"
+        v-model="reason"
         name=""
         id=""
         cols="30"
@@ -66,20 +66,21 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { useBoardlistStore } from '@/stores/Boardlist'
+import dayjs from 'dayjs'
 
 const boardlist = useBoardlistStore()
 
 const router = useRouter()
 
-const body = ref('')
+const reason = ref('')
 
-const title = ref('ㅇㅇ')
-
-const state = ref('early')
+const type = ref('early')
 
 const conn = ref('병가')
 
-
+const adate = String(new dayjs().format('YYYY-MM-DD '))
+// HH:mm 시 분
+console.log(adate)
 
 const { tsetidx } = boardlist
 
@@ -94,18 +95,18 @@ const cancle = () => {
 }
 
 const insert = () => {
- 
   const data = {
     // state: state.value,
-    body: body.value,
-    title: title.value,
-    user: user //유저 객체안의 id값을 일단 넘김
+    reason: reason.value,
+    type: type.value,
+    user: user, //유저 객체안의 id값을 일단 넘김
+    adate: adate
   }
-  console.log(state.value)
-  console.log(body.value)
+  console.log(type.value)
+  console.log(reason.value)
 
   axios
-    .post(` http://192.168.0.67:8080/question/save`, data)
+    .post(` http://192.168.0.67:8080/attendance/unlogin`, data)
 
     .then((res) => {
       console.log(res)

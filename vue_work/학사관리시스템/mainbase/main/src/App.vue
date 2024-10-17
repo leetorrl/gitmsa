@@ -3,9 +3,12 @@
     <h1 class="bg-red-500 sm:390px">시작!</h1>
     <p>밑에 라우터뷰</p>
     <p>2xl xl lg md sm 테일윈드 미디아 크기</p>
-    <button class="border border-red-500 float-right" @click="goQuiry">문의게시판</button>
-    <button class="border border-red-500 float-right" @click="goMypage()">
-      마이페이지(조퇴요청 조회기능)
+    <button class="text-blue-800 font-bold float-right m-1" @click="goQuiry">
+      <span class="font-bold text-blue-800">| </span>문의게시판
+    </button>
+
+    <button class="text-blue-800 font-bold float-right m-1" @click="goMypage()">
+      <span class="font-bold text-blue-800">| </span>마이페이지
     </button>
     <br />
 

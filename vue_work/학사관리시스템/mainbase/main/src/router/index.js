@@ -19,7 +19,7 @@ const router = createRouter({
       component: home
     },
     {
-      path: '/BoardView',
+      path: '/BoardView/:idx',
       name: 'boardview',
       component: BoardView
     },
@@ -52,7 +52,7 @@ const router = createRouter({
       path: '/freeBoardinput',
       name: 'freeboardinput',
       component: freeBoardinput
-    },
+    }
   ]
 })
 

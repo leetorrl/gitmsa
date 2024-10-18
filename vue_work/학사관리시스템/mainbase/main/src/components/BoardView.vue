@@ -1,21 +1,56 @@
 <template>
-  <div>
-    <h1 class="bg-green-400">-BoardView-</h1>
+  <div class="">
+    <div class="flex justify-center">
+      <div class="border-2 p-3 w-6/12">
+        <div class="w-full">
+          <h1 class="bg-blue-800 text-[#eee]">-BoardView-</h1>
 
-    <div class="bg-[#eee]">
-      <div class="border-2">
-        <div>{{ title }} (요청상태 = {{ response }})</div>
-        <div>작성자 : {{ user }} 작성일 : {{ wdate }}</div>
-      </div>
+          <div class="">
+            <div class="border-t border-b">
+              <div>{{ title }} (요청상태 = {{ response }})</div>
+              <div>작성자 : {{ user }} 작성일 : {{ wdate }}</div>
+            </div>
 
-      <div class="border-2 pt-10 pr-10 pb-20 pl-10">
-        {{ body }}
+            <div class="border min-h-80 pt-10 pr-10 pb-20 pl-10">
+              {{ body }}
+            </div>
+          </div>
+          <div>
+            <button
+              class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+              @click="GoBoardInput"
+            >
+              문의접수
+            </button>
+            <button
+              class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+              @click="cancle()"
+            >
+              요청리스트
+            </button>
+          </div>
+          <br />
+          <br />
+          <div v-if="responsebl">
+            <textarea
+              v-model="comment"
+              class="border w-full resize-none"
+              name=""
+              id=""
+              placeholder="답변기입"
+            ></textarea>
+            <button
+              @click="insetcomment"
+              class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring float-right"
+            >
+              답글입력
+            </button>
+          </div>
+          <br />
+          <br />
+        </div>
       </div>
     </div>
-    <button class="border border-red-500 cursor-pointer" @click="GoBoardInput">요청접수</button>
-    <button class="border border-red-500" @click="cancle()">요청리스트</button>
-    <br />
-    <br />
   </div>
 </template>
 
@@ -36,11 +71,25 @@ const wdate = ref('get wdate')
 const user = ref('get state')
 const response = ref('get response')
 
+const responsebl = ref(true)
+
+const comment = ref('')
+
 const cancle = () => {
-  router.push({ name: 'quirylist' })
+  router.back()
 }
 const GoBoardInput = () => {
-  router.push({ name: 'boardinput' })
+  router.push({ name: 'freeboardinput' })
+}
+
+const insetcomment = async () => {
+  // const res = await axios.post(`http://192.168.0.67:8080/    /${route.params.idx}`)
+
+  // if(res.status == 200){
+
+  // }
+
+  responsebl.value = false
 }
 
 watchEffect(async () => {

@@ -79,10 +79,29 @@ const response = ref('요청사항')
 
 const pageNum = ref(0)
 const totalpages = ref(10)
-// const size = ref(10)
 
 const GofreeBoardInput = () => {
   router.push({ name: 'freeboardinput' })
+}
+
+const setpageNum = async (num) => {
+  //  const token = localStorage.getItem('token')
+
+  // if (pageNum.value == undefined) pageNum.value = 0 피니아 쓸때 사용
+  try {
+    const res = await axios.get(`http://192.168.0.67:8080/question?pageNum=${num}`, {
+      headers: {
+        'Content-Type': 'application/json'
+        // Authorization: 'Bearer ' + token
+      }
+    })
+
+    arr.value = res.data.list
+    // totalpages.value = res.data.totalpages
+  } catch (e) {
+    console.log(e)
+    return e
+  }
 }
 
 watchEffect(async () => {

@@ -8,7 +8,7 @@
         <div>작성자 : {{ user }} 작성일 : {{ wdate }}</div>
       </div>
 
-      <div class="border-2">
+      <div class="border-2 pt-10 pr-10 pb-20 pl-10">
         {{ body }}
       </div>
     </div>

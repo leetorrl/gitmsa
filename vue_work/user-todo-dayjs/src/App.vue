@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <h1>dd</h1>
+	<div>
+		<div><TheNav /></div>
 
-    <router-link to="/Home">home</router-link>
-    <br />
-    <router-link to="/Month">month</router-link>
-    <router-view></router-view>
-    <h1>dd</h1>
-  </div>
+		<router-view class="pt-16"></router-view>
+		<h1>dd</h1>
+	</div>
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import TheNav from './components/TheNav.vue';
 </script>
 
 <style lang="scss" scoped></style>

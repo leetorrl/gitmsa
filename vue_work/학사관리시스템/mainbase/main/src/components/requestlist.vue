@@ -63,7 +63,7 @@ const GoBoardView = () => {
 const setpageNum = (num) => {
   pageNum.value = num
 }
-console.log(pageNum)
+
 watchEffect(async () => {
   const res = await axios.get(`http://192.168.0.67:8080/question?${pageNum.value}`, {
     headers: {

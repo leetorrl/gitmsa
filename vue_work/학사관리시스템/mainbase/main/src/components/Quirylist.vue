@@ -3,9 +3,9 @@
     <h1 class="p-5 text font-bold text-3xl text-blue-800">-문의 게시판-</h1>
     <hr class="border-2 border-blue-800" />
     <br />
-    <div>
+    <div class="border border-blue-800 ml-10 w-2/12">
       <h1 class="border-t-2 border-b-2">◎자주하는 질문</h1>
-      <ul>
+      <ul class="">
         <li class="hover:cursor-pointer ml-4 p-1 border-b">
           Q : 출결 증빙자료가 없어요. 어떡하죠?
         </li>
@@ -78,7 +78,7 @@ const wdate = '작성일'
 const response = ref('요청사항')
 
 const pageNum = ref(0)
-const totalpages = ref(5)
+const totalpages = ref(10)
 // const size = ref(10)
 
 const GofreeBoardInput = () => {

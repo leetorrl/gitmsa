@@ -3,8 +3,9 @@
     <div class="flex justify-center">
       <div class="border-2 p-3 w-6/12">
         <div class="w-full">
-          <h1 class="bg-blue-700 text-white">문의사항작성</h1>
-
+          <h1 class="p-5 text font-bold text-3xl text-blue-800">-문의사항작성-</h1>
+          <hr class="border-2 border-blue-800" />
+<br>
           <div>
             <h1 class="m-2 text-blue-700">1. 제목을 입력해주세요.</h1>
             <input
@@ -30,18 +31,24 @@
             ></textarea>
           </div>
 
-          <button
-            class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
-            @click="insert"
-          >
-            작성완료
-          </button>
-          <button
-            class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
-            @click="cancle"
-          >
-            취소
-          </button>
+
+
+          <div class="w-full flex flex-col justify-center items-center">
+      <button
+        class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
+        @click="insert"
+      >
+        작성완료
+      </button>
+      <button
+        class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded "
+        @click="cancle"
+      >
+        취소
+      </button>
+
+    </div>
+
         </div>
       </div>
     </div>

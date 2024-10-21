@@ -1,9 +1,4 @@
 <template>
-  <div>
-    <h1 class="bg-red-500 sm:390px">시작!</h1>
-    <p>밑에 라우터뷰</p>
-    <p>2xl xl lg md sm 테일윈드 미디아 크기</p>
-
     <div class="float-right m-1">
       <button class="text-blue-800 font-bold p-1" @click="goVacation">
         <span class="font-bold text-blue-800">| </span>휴가신청
@@ -24,7 +19,7 @@
     <RouterView />
 
     <foott />
-  </div>
+  
 </template>
 
 <script setup>
@@ -59,8 +54,8 @@ const goVacation = () => {
   router.push({ name: 'vacationmemory' })
 }
 
-const Mainhome = (tsetidx) => {
-  router.push({ name: 'home', params: { tsetidx } })
+const Mainhome = () => {
+  router.push({ name: 'dayzcounter' })
 }
 
 //토큰값 넣고 유저 권한용도로 쓸거 ex ADMIN , user

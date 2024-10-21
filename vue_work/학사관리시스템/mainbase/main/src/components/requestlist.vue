@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <p>-학원생 요청사항-</p>
+  <div class="m-3">
+    <div class="flex justify-center">
+      <div class="border-2 p-3 w-6/12">
+        <div class="w-full">
+          <h1 class="p-5 text font-bold text-3xl text-blue-800">-출결요청여부-</h1>
+          <hr class="border-2 border-blue-800" />
+          <br>
     <div class="w-1280 bg-slate-300">
       <ul class="flex w-full bg-slate-50">
         <li class="w-1/4 text-center border-t-2 border-b-2">{{ Bid }}</li>
@@ -17,7 +22,8 @@
         <li class="w-1/4 text-center border-t-2 border-b-2">{{ item.type }}</li>
       </ul>
     </div>
-    <button class="border border-red-500 cursor-pointer" @click="GoBoardInput">요청접수</button>
+    <button  @click="GoBoardInput"  class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring">요청접수</button>
+    
     <ul class="flex space-x-2">
       <li
         class="cursor-pointer p-3"
@@ -29,6 +35,9 @@
       </li>
     </ul>
   </div>
+</div>
+</div>
+</div>
 </template>
 
 <script setup>

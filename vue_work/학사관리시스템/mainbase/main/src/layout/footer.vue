@@ -32,7 +32,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const gohome = () => {
-  router.push({ name: 'home' })
+  router.push({ name: 'dayzcounter' })
 }
 </script>
 

@@ -1,9 +1,14 @@
 <template>
-  <div>
-    <h1 class="bg-orange-400">요청사항</h1>
+  <div class="m-3">
+    <div class="flex justify-center">
+      <div class="border-2 p-3 w-6/12">
+        <div class="w-full">
+          <h1 class="p-5 text font-bold text-3xl text-blue-800">-출결요청-</h1>
+          <hr class="border-2 border-blue-800" />
 
-    <div>
-      <h1>요청항목</h1>
+    <div class="">
+      <br>
+      <h1 class="text-blue-800">1. 요청항목</h1>
       <form action="">
         <label for="early"
           >조퇴<input v-model="type" type="radio" name="state" id="early" value="early" checked
@@ -18,7 +23,7 @@
     </div>
     <br />
     <div>
-      <h1>요청사유</h1>
+      <h1 class="text-blue-800">2. 요청사유</h1>
       <form action="">
         <label for="병가"
           >병가<input v-model="conn" type="radio" name="conn" id="병가" value="병가" checked
@@ -33,16 +38,8 @@
           >기타<input v-model="conn" type="radio" name="conn" id="기타" value="기타"
         /></label>
       </form>
+      <br>
     </div>
-    <button @click="temp">확인버튼</button>
-    <!-- <label for=""
-          ><input class="border-2" v-model="title" type="text" name="" id="" placeholder="제목기입"
-        /></label> -->
-    <!-- <select class="border-2" v-model="selectstate" name="" id="">
-          <option value="0">조퇴</option>
-          <option value="1">퇴실</option>
-          <option value="2">결석</option>
-        </select> -->
 
     <div>
       <textarea
@@ -52,13 +49,30 @@
         cols="30"
         rows="10"
         placeholder="내용기입"
-        class="border-2 width: 500px height: 200px"
+        class="border-2 w-full resize-none"
       ></textarea>
     </div>
+  
+    <div class="w-full flex flex-col justify-center items-center">
+      <button
+        class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
+        @click="insert"
+      >
+        작성완료
+      </button>
+      <button
+        class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded "
+        @click="cancle"
+      >
+        취소
+      </button>
 
-    <button class="border border-red-500" @click="insert">작성완료</button>
-    <button class="border border-red-500" @click="cancle">취소</button>
+    </div>
+
   </div>
+</div>
+</div>
+</div>
 </template>
 
 <script setup>

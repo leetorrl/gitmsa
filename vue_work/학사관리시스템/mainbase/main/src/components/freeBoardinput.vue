@@ -1,37 +1,50 @@
 <template>
-  <div>
-    <h1 class="bg-orange-400">문의사항작성</h1>
+  <div class="m-3">
+    <div class="flex justify-center">
+      <div class="border-2 p-3 w-6/12">
+        <div class="w-full">
+          <h1 class="bg-blue-700 text-white">문의사항작성</h1>
 
-    <div>
-      <h1>제목</h1>
-      <input class="border-2" type="text" name="" id="" v-model="title" placeholder="제목입력" />
+          <div>
+            <h1 class="m-2 text-blue-700">1. 제목을 입력해주세요.</h1>
+            <input
+              class="border-2 w-full"
+              type="text"
+              name=""
+              id=""
+              v-model="title"
+              placeholder="제목입력"
+            />
+          </div>
+          <br />
+          <h1 class="m-2 text-blue-700">2. 문의 내용을 입력하여 주십시오.</h1>
+          <div>
+            <textarea
+              v-model="body"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="내용기입"
+              class="border-2 w-full resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+            @click="insert"
+          >
+            작성완료
+          </button>
+          <button
+            class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+            @click="cancle"
+          >
+            취소
+          </button>
+        </div>
+      </div>
     </div>
-    <br />
-
-    <div>
-      <textarea
-        v-model="body"
-        name=""
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="내용기입"
-        class="border-2 width: 500px height: 200px"
-      ></textarea>
-    </div>
-
-    <button
-      class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
-      @click="insert"
-    >
-      작성완료
-    </button>
-    <button
-      class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
-      @click="cancle"
-    >
-      취소
-    </button>
   </div>
 </template>
 
@@ -75,9 +88,12 @@ const insert = () => {
       axios
         .post(` http://192.168.0.67:8080/question/save`, data)
         .then((res) => {
-          console.log(res)
+          const idx = res.data.idx
+          console.log(idx)
+
           alert('요청이 접수되었습니다.')
-          router.push({ name: 'quirylist' })
+
+          router.push({ name: 'boardview', params: { idx } })
           return
         })
         .catch((e) => {

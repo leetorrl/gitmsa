@@ -6,9 +6,12 @@ import BoardInput from '@/components/BoardInput.vue'
 import Mypage from '@/components/Mypage.vue'
 import Quirylist from '@/components/Quirylist.vue'
 
-import tttest from '@/components/tttest.vue'
 import requestlist from '@/components/requestlist.vue'
 import freeBoardinput from '@/components/freeBoardinput.vue'
+import Linkloding from '@/components/Linkloding.vue'
+import Vacationinput from '@/components/Vacationinput.vue'
+import Vacationmemory from '@/components/Vacationmemory.vue'
+import Hwpdownload from '@/components/Hwpdownload.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,11 +41,7 @@ const router = createRouter({
       name: 'quirylist',
       component: Quirylist
     },
-    {
-      path: '/tttest',
-      name: 'tttest',
-      component: tttest
-    },
+
     {
       path: '/requestlist',
       name: 'requestlist',
@@ -52,6 +51,26 @@ const router = createRouter({
       path: '/freeBoardinput',
       name: 'freeboardinput',
       component: freeBoardinput
+    },
+    {
+      path: '/Linkloding/:idx',
+      name: 'linkloding',
+      component: Linkloding
+    },
+    {
+      path: '/Vacationinput',
+      name: 'vacationinput',
+      component: Vacationinput
+    },
+    {
+      path: '/Vacationmemory',
+      name: 'vacationmemory',
+      component: Vacationmemory
+    },
+    {
+      path: '/Hwpdownload',
+      name: 'hwpdownload',
+      component: Hwpdownload
     }
   ]
 })

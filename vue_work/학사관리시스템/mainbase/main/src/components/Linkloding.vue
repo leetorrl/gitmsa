@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>dd</h1>
+    <h1>로딩중</h1>
   </div>
 </template>
 

@@ -3,13 +3,20 @@
     <h1 class="bg-red-500 sm:390px">시작!</h1>
     <p>밑에 라우터뷰</p>
     <p>2xl xl lg md sm 테일윈드 미디아 크기</p>
-    <button class="text-blue-800 font-bold float-right m-1" @click="goQuiry">
-      <span class="font-bold text-blue-800">| </span>문의게시판
-    </button>
 
-    <button class="text-blue-800 font-bold float-right m-1" @click="goMypage()">
-      <span class="font-bold text-blue-800">| </span>마이페이지
-    </button>
+    <div class="float-right m-1">
+      <button class="text-blue-800 font-bold p-1" @click="goVacation">
+        <span class="font-bold text-blue-800">| </span>휴가신청
+      </button>
+
+      <button class="text-blue-800 font-bold p-1" @click="goQuiry">
+        <span class="font-bold text-blue-800">| </span>문의게시판
+      </button>
+
+      <button class="text-blue-800 font-bold p-1" @click="goMypage()">
+        <span class="font-bold text-blue-800">| </span>마이페이지
+      </button>
+    </div>
     <br />
 
     <headd />
@@ -22,7 +29,7 @@
 
 <script setup>
 import { RouterView } from 'vue-router'
-
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useBoardlistStore } from './stores/Boardlist'
 import { storeToRefs } from 'pinia'
@@ -47,9 +54,17 @@ const goMypage = () => {
 const goQuiry = () => {
   router.push({ name: 'quirylist' })
 }
+
+const goVacation = () => {
+  router.push({ name: 'vacationmemory' })
+}
+
 const Mainhome = (tsetidx) => {
   router.push({ name: 'home', params: { tsetidx } })
 }
+
+//토큰값 넣고 유저 권한용도로 쓸거 ex ADMIN , user
+const roles = ref('')
 
 Mainhome()
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="m-3">
     <div class="flex justify-center">
       <div class="border-2 p-3 w-6/12">
         <div class="w-full">
@@ -17,7 +17,7 @@
           </div>
           <div>
             <button
-              class="min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+              class="m-3 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
               @click="GoBoardInput"
             >
               문의접수

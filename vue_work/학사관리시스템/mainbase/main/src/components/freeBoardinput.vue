@@ -5,7 +5,7 @@
         <div class="w-full">
           <h1 class="p-5 text font-bold text-3xl text-blue-800">-문의사항작성-</h1>
           <hr class="border-2 border-blue-800" />
-<br>
+          <br />
           <div>
             <h1 class="m-2 text-blue-700">1. 제목을 입력해주세요.</h1>
             <input
@@ -31,24 +31,20 @@
             ></textarea>
           </div>
 
-
-
           <div class="w-full flex flex-col justify-center items-center">
-      <button
-        class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
-        @click="insert"
-      >
-        작성완료
-      </button>
-      <button
-        class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded "
-        @click="cancle"
-      >
-        취소
-      </button>
-
-    </div>
-
+            <button
+              class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
+              @click="insert"
+            >
+              작성완료
+            </button>
+            <button
+              class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded"
+              @click="cancle"
+            >
+              취소
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -62,57 +58,73 @@ import axios from 'axios'
 import { useBoardlistStore } from '@/stores/Boardlist'
 
 const boardlist = useBoardlistStore()
-const router = useRouter()
 
 const { tsetidx } = boardlist
 
-const body = ref('')
-const title = ref('')
-
 const idx = ref(tsetidx)
 
-const user = {
-  //유저객체
-  idx: idx.value
-}
+const router = useRouter()
+
+const body = ref('')
+const title = ref('')
 
 const cancle = () => {
   router.back()
 }
 
-const insert = () => {
-  const data = {
-    // state: state.value,
-    body: body.value.trim(),
-    title: title.value.trim(),
-    user: user //유저 객체안의 id값을 일단 넘김
-  }
-  // console.log(state.value)
-  console.log(body.value)
+const insert = async () => {
+  const userid = ref('userid3')
+  const password = ref('password')
 
-  if (data.title !== '' && data.title !== null) {
-    if (data.body !== '' && data.body !== null) {
-      axios
-        .post(` http://192.168.0.67:8080/question/save`, data)
-        .then((res) => {
-          const idx = res.data.idx
-          console.log(idx)
+  axios
+    .get(`http://192.168.0.67:8080/sign/login?userid=${userid.value}&password=${password.value}`)
+    .then((respons) => {
+      const token = respons.data
 
-          alert('요청이 접수되었습니다.')
+      console.log(token)
 
-          router.push({ name: 'boardview', params: { idx } })
-          return
-        })
-        .catch((e) => {
-          console.log(e)
-          alert('에러발생' + e)
-        })
-    } else {
-      alert('내용을 입력하시길 바랍니다.')
-    }
-  } else {
-    alert('제목을 입력하시길 바랍니다.')
-  }
+      const user = {
+        //유저객체
+        idx: idx.value
+      }
+
+      const data = {
+        // state: state.value,
+        body: body.value.trim(),
+        title: title.value.trim(),
+        user: user //유저 객체안의 id값을 일단 넘김
+      }
+      // console.log(state.value)
+      console.log(body.value)
+
+      if (data.title !== '' && data.title !== null) {
+        if (data.body !== '' && data.body !== null) {
+          axios
+            .post(`http://192.168.0.67:8080/question/save`, data, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            })
+            .then((res) => {
+              const idx = res.data.idx
+              console.log(idx)
+
+              alert('요청이 접수되었습니다.')
+
+              router.push({ name: 'boardview', params: { idx } })
+              return
+            })
+            .catch((e) => {
+              console.log(e)
+              alert('에러발생' + e)
+            })
+        } else {
+          alert('내용을 입력하시길 바랍니다.')
+        }
+      } else {
+        alert('제목을 입력하시길 바랍니다.')
+      }
+    })
 }
 </script>
 

@@ -3,7 +3,7 @@
 		<div><TheNav /></div>
 
 		<router-view class="pt-16"></router-view>
-		<h1>dd</h1>
+		<h1>App</h1>
 	</div>
 </template>
 

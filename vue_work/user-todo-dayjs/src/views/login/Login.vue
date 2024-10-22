@@ -26,6 +26,7 @@
 const kakaoLogin = () => {
 	window.Kakao.Auth.authorize({
 		redirectUri: 'http://localhost:5173/oauth',
+		// scope: 'account_email,talk_calendar_task',
 	});
 };
 

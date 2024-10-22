@@ -22,9 +22,13 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class KakaoController {
 
+
     @GetMapping("login")
     public String kakaoCode(@RequestParam(value = "code") String code) {
         log.info("code {}", code);
+
+
+        int a = 10;
 
         // 1. restTemplate
         try {

@@ -5,14 +5,10 @@
         <div class="w-full">
           <h1 class="p-5 text font-bold text-3xl text-blue-800">-출결조회-</h1>
           <hr class="border-2 border-blue-800" />
-
-          <div class="inline-block">
-            <p>{{ today }}</p>
-            <p>{{ year }}</p>
-
-            <div class="pt-16">
+          <div class="">
+            <div class="pt-5">
               <main class="flex justify-center">
-                <div class="max-w-lg w-full bg-white shadow-md rounded-lg p-4">
+                <div class="w-full bg-[#eee] shadow-md rounded-lg p-4">
                   <h1 class="text-xl font-bold text-center mb-4">
                     <button @click="subMonth()">&lt;&lt;</button>
                     {{ now.format('YYYY년 MM월') }}
@@ -20,16 +16,16 @@
                   </h1>
                   <div>
                     <div
-                      class="text-center flex text-gray-600 bg-red-300"
+                      class="text-center flex text-gray-600 bg-blue-800"
                       style="justify-content: space-around"
                     >
-                      <div class="w-12 p-2 px-4 text-red-600">일</div>
-                      <div class="w-12 p-2 px-4">월</div>
-                      <div class="w-12 p-2 px-4">화</div>
-                      <div class="w-12 p-2 px-4">수</div>
-                      <div class="w-12 p-2 px-4">목</div>
-                      <div class="w-12 p-2 px-4">금</div>
-                      <div class="w-12 p-2 px-4 text-blue-500">토</div>
+                      <div class="w-12 p-2 px-4 text-red-600 font-bold">일</div>
+                      <div class="w-12 p-2 px-4 text-white font-bold">월</div>
+                      <div class="w-12 p-2 px-4 text-white font-bold">화</div>
+                      <div class="w-12 p-2 px-4 text-white font-bold">수</div>
+                      <div class="w-12 p-2 px-4 text-white font-bold">목</div>
+                      <div class="w-12 p-2 px-4 text-white font-bold">금</div>
+                      <div class="w-12 p-2 px-4 text-blue-500 font-bold">토</div>
                     </div>
 
                     <div
@@ -51,7 +47,7 @@
                       >
                         <div class="w-12">
                           <span>{{ column.get('date') }}</span>
-                          <p>dd</p>
+                          <p>{{ checking }}</p>
                         </div>
                       </div>
                     </div>
@@ -61,7 +57,25 @@
             </div>
           </div>
 
-          <div class="flex">dd</div>
+          <div class="">
+            <ul class="flex" style="justify-content: center">
+              <li class="text-center m-10 p-2 border-2 rounded w-20">
+                <span class="font-bold">0</span><br />전체
+              </li>
+              <li class="text-center m-10 p-2 border-2 rounded w-20">
+                <span class="font-bold">0</span><br />미처리
+              </li>
+              <li class="text-center m-10 p-2 border-2 rounded w-20">
+                <span class="font-bold">0</span><br />출석
+              </li>
+              <li class="text-center m-10 p-2 border-2 rounded w-20">
+                <span class="font-bold">0</span><br />조퇴
+              </li>
+              <li class="text-center m-10 p-2 border-2 rounded w-20">
+                <span class="font-bold">0</span><br />결석
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -85,10 +99,7 @@ const selectDate = ref(null)
 const title = ref('')
 const content = ref('')
 
-const doSave = () => {
-  //백에 넘겨줄 데이터
-  console.log('save', title.value, content.value, selectDate.value)
-}
+const checking = ref('○')
 
 const subMonth = () => {
   now.value = dayjs(now.value).subtract(1, 'month')

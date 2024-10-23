@@ -6,3 +6,20 @@ export const useBoardlistStore = defineStore('Boardlist', () => {
 
   return { tsetidx }
 })
+
+export const useloginPiniaStore = defineStore('login', {
+  state: () => ({
+    loginCheck: false
+  }),
+
+  actions: {
+    login(logindata) {
+      this.loginCheck = true
+      console.log(logindata)
+    },
+
+    logout() {
+      this.loginCheck = false
+    }
+  }
+})

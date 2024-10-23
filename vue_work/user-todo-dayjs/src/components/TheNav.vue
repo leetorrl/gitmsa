@@ -26,6 +26,7 @@
 						<router-link to="/About" class="hover:text-blue-500">About</router-link>
 						<router-link to="/Month" class="hover:text-blue-500">Month</router-link>
 						<router-link to="/Login" class="hover:text-blue-500">Login</router-link>
+						<router-link to="/message" class="hover:text-blue-500">message</router-link>
 					</div>
 				</div>
 				<!-- Mobile Menu (hidden by default) -->
@@ -35,6 +36,7 @@
 						<router-link to="/About" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</router-link>
 						<router-link to="/Month" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Month</router-link>
 						<router-link to="/Login" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Login</router-link>
+						<router-link to="/message" class="hover:text-blue-500">message</router-link>
 					</div>
 				</template>
 			</div>

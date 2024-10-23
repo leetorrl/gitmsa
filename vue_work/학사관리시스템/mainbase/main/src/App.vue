@@ -1,25 +1,28 @@
 <template>
-    <div class="float-right m-1">
-      <button class="text-blue-800 font-bold p-1" @click="goVacation">
-        <span class="font-bold text-blue-800">| </span>휴가신청
-      </button>
+  <div class="float-right m-1">
+    <button class="text-blue-800 font-bold p-1" @click="goVacation">
+      <span class="font-bold text-blue-800">| </span>휴가신청
+    </button>
 
-      <button class="text-blue-800 font-bold p-1" @click="goQuiry">
-        <span class="font-bold text-blue-800">| </span>문의게시판
-      </button>
+    <button class="text-blue-800 font-bold p-1" @click="goQuiry">
+      <span class="font-bold text-blue-800">| </span>문의게시판
+    </button>
 
-      <button class="text-blue-800 font-bold p-1" @click="goMypage()">
-        <span class="font-bold text-blue-800">| </span>마이페이지
-      </button>
-    </div>
-    <br />
+    <button class="text-blue-800 font-bold p-1" @click="goMypage()">
+      <span class="font-bold text-blue-800">| </span>마이페이지
+    </button>
 
-    <headd />
+    <button class="text-blue-800 font-bold p-1" @click="goManager()">
+      <span class="font-bold text-blue-800">| </span>매니저 계정시작페이지
+    </button>
+  </div>
+  <br />
 
-    <RouterView />
+  <headd />
 
-    <foott />
-  
+  <RouterView />
+
+  <foott />
 </template>
 
 <script setup>
@@ -56,6 +59,10 @@ const goVacation = () => {
 
 const Mainhome = () => {
   router.push({ name: 'dayzcounter' })
+}
+
+const goManager = () => {
+  router.push({ name: 'attendancelist' })
 }
 
 //토큰값 넣고 유저 권한용도로 쓸거 ex ADMIN , user

@@ -13,6 +13,7 @@ import Vacationinput from '@/components/Vacationinput.vue'
 import Vacationmemory from '@/components/Vacationmemory.vue'
 import Hwpdownload from '@/components/Hwpdownload.vue'
 import DayzCounter from '@/components/DayzCounter.vue'
+import attendancelist from '@/components/attendancelist.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -77,6 +78,11 @@ const router = createRouter({
       path: '/DayzCounter',
       name: 'dayzcounter',
       component: DayzCounter
+    },
+    {
+      path: '/attendancelist',
+      name: 'attendancelist',
+      component: attendancelist
     }
   ]
 })

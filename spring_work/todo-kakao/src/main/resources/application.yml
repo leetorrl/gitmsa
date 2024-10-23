@@ -43,11 +43,18 @@ spring:
 
 
 # jwt 토큰 만들때 사용되는 비밀번호
+msa:
   jwt:
     secret: abcdefghijklmnopqrstuvwxyz01234567890
 
 my:
   value: "welcome to my value"
+
+oauth:
+  kakao:
+    client_id: 8ffa4f957158f993d06aeb4a873e59cb
+    client_secret: cKWx2j7rkW9kdmxayLNgYcNWhBtMilHZ
+
 
 
 

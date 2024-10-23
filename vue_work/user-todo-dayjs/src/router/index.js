@@ -5,6 +5,7 @@ import About from '@/views/About.vue';
 import Month from '@/views/Month.vue';
 import Login from '@/views/login/Login.vue';
 import Oauth from '@/views/login/Oauth.vue';
+import Message from '@/views/Message.vue';
 
 const loginRouter = [
 	{
@@ -39,6 +40,11 @@ const router = createRouter({
 			path: '/About',
 			name: 'about',
 			component: About,
+		},
+		{
+			path: '/message',
+			name: 'message',
+			component: Message,
 		},
 	],
 });

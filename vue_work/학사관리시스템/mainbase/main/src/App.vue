@@ -99,7 +99,7 @@ const autologin = async () => {
     )
     console.log('로그인 성공한 응애토큰')
 
-      console.log('Bearer token ='+ res.data)
+      console.log('Access token ='+ res.data)
 
     if (res.status == 200) { //status 리턴 안했으면 지우기
 
@@ -110,15 +110,15 @@ const autologin = async () => {
       console.log("로컬에 저장된 사춘기 토큰")
       console.log(token)
 
-      const jwttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
+      const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
 
       const headertoken = { headers: {
-                      Authorization: `Bearer ${jwttoken}`
+                      Authorization: `Bearer ${ttoken}`
                       }
             }
 
-            console.log('헤더http로 성장한 jwt토큰')
-            console.log("headertoken = "+headertoken)
+            console.log('헤더http에 담긴 jwt로 성장한 토큰')
+            console.log("Refresh = "+headertoken)
 
       loginPinia.login(headertoken)
 

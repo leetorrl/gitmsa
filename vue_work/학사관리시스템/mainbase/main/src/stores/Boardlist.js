@@ -13,13 +13,18 @@ export const useloginPiniaStore = defineStore('login', {
   }),
 
   actions: {
-    login(logindata) {
+    login(headertoken) {
+      if(headertoken!==null){
       this.loginCheck = true
-      console.log(logindata)
+      console.log("피니아 들어간 헤더토큰"+ headertoken)
+      }
     },
 
     logout() {
+
+
       this.loginCheck = false
+
     }
   }
 })

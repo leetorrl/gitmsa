@@ -21,6 +21,9 @@
     <button class="text-blue-800 font-bold p-1" @click="logout()">
       <span class="font-bold text-blue-800">| </span>로그아웃
     </button>
+    <button class="text-blue-800 font-bold p-1" @click="selecttoken()">
+      <span class="font-bold text-blue-800">| </span>토큰확인
+    </button>
   </div>
   <br />
 
@@ -82,29 +85,48 @@ const roles = ref('')
 Mainhome()
 
 const autologin = async () => {
-  console.log('로그인 시도1')
+  
 
   const userid = ref('userid3')
   const password = ref('password')
+
+  console.log("아이디 = "+userid)
+  console.log("비밀번호 = "+password)
 
   try {
     const res = await axios.get(
       `http://192.168.0.67:8080/sign/login?userid=${userid.value}&password=${password.value}`
     )
-    console.log('로그인시도2')
+    console.log('로그인 성공한 응애토큰')
 
-    if (res.status == 200) {
-      console.log('로그인시도3')
-      console.log(res)
+      console.log('Bearer token ='+ res.data)
 
-      localStorage.setItem('token', res.data)
-      const logindata = await doLogincheck()
+    if (res.status == 200) { //status 리턴 안했으면 지우기
 
-      loginPinia.login(logindata)
+      // localStorage.setItem('token', res.data) //로컬저장방식 보안취약
+    
+      const token = localStorage.getItem('token', res.data)
+
+      console.log("로컬에 저장된 사춘기 토큰")
+      console.log(token)
+
+      const jwttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
+
+      const headertoken = { headers: {
+                      Authorization: `Bearer ${jwttoken}`
+                      }
+            }
+
+            console.log('헤더http로 성장한 jwt토큰')
+            console.log("headertoken = "+headertoken)
+
+      loginPinia.login(headertoken)
 
       alert('자동로그인 완료')
     } else {
       loginPinia.logout()
+      headertoken.value = null
+      alert('status not 200')
     }
   } catch (e) {
     console.log(e)
@@ -113,30 +135,32 @@ const autologin = async () => {
 
 const logout = () => {
   loginPinia.logout()
-  alert('로그아웃')
+  headertoken.value = null
+  alert('토큰 쥬금 ㅠㅠ')
 }
 
-const doLogincheck = async () => {
-  const GLOBAL_URL = ref(`http://192.168.0.67:8080`)
-
-  const token = localStorage.getItem('token')
-
-  const check = `${GLOBAL_URL.value}/check`
-
-  if (!token) {
-    return false
-  }
-
+const doLogincheck = async (token) => {
+  
   try {
-    const res = await axios.get(`${check}?jwt=${token}`)
+    const ress = await axios.get(`http://192.168.0.67:8080/check?jwt=${token}`)
 
-    console.log('로그인시도4')
-    return res
+    return ress
+
   } catch (e) {
+    alert('jwt토큰이 가출함 ㅠ')
     console.log(e)
     return e
   }
 }
+
+
+const selecttoken = () => {
+  
+
+  alert("로그인됨" + )
+
+}
+
 </script>
 
 <style lang="scss" scoped></style>

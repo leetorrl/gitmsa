@@ -110,10 +110,10 @@ const autologin = async () => {
       console.log("로컬에 저장된 사춘기 토큰")
       console.log(token)
 
-      const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
+     // const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
 
-      const headertoken = { headers: {
-                      Authorization: `Bearer ${ttoken}`
+      const headertoken = { headers: { //api 요청할때 마다 보내주기
+                      Authorization: `Bearer ${token}`
                       }
             }
 

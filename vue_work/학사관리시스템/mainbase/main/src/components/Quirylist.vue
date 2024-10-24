@@ -44,8 +44,12 @@
                 <li class="w-1/4 text-center">{{ item.response }}</li>
               </ul>
             </div>
-            <button  @click="GofreeBoardInput"  class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring">문의접수</button>
-           
+            <button
+              @click="GofreeBoardInput"
+              class="m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded hover:bg-blue-800 hover:text-white active:bg-blue-700 focus:outline-none focus:ring"
+            >
+              문의접수
+            </button>
           </div>
           <br />
           <ul class="flex space-x-2">
@@ -91,7 +95,7 @@ const setpageNum = async (num) => {
 
   // if (pageNum.value == undefined) pageNum.value = 0 피니아 쓸때 사용
   try {
-    const res = await axios.get(`http://192.168.0.67:8080/question?pageNum=${num}`, {
+    const res = await axios.get(`http://192.168.0.67:8080/question/manager?pageNum=${num}`, {
       headers: {
         'Content-Type': 'application/json'
         // Authorization: 'Bearer ' + token
@@ -108,7 +112,7 @@ const setpageNum = async (num) => {
 
 watchEffect(async () => {
   console.log(pageNum.value)
-  const res = await axios.get(`http://192.168.0.67:8080/question?${pageNum.value}`, {
+  const res = await axios.get(`http://192.168.0.67:8080/question/manager?${pageNum.value}`, {
     headers: {
       'Content-Type': 'application/json'
     }
@@ -119,8 +123,8 @@ watchEffect(async () => {
   console.log(res.data.totalPages)
 })
 
-const GoBoardView = (idx) => {
-  router.push({ name: 'boardview', params: { idx } })
+const GoBoardView = (pageidx) => {
+  router.push({ name: 'boardview', params: { pageidx } })
 }
 </script>
 

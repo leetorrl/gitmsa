@@ -54,77 +54,39 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
-import { useBoardlistStore } from '@/stores/Boardlist'
-
-const boardlist = useBoardlistStore()
-
-const { tsetidx } = boardlist
-
-const idx = ref(tsetidx)
+import { freeBoardinput } from '@/api/freeboardapi'
 
 const router = useRouter()
 
 const body = ref('')
 const title = ref('')
+const idx = ref('')
+
+// console.log(state.value)
 
 const cancle = () => {
   router.back()
 }
 
 const insert = async () => {
-  const userid = ref('userid3')
-  const password = ref('password')
+  const data = {
+    body: body.value.trim(),
+    title: title.value.trim()
+  }
 
-  axios
-    .get(`http://192.168.0.67:8080/sign/login?userid=${userid.value}&password=${password.value}`)
-    .then((respons) => {
-      const token = respons.data
+  console.log(data)
 
-      console.log(token)
+  const res = await freeBoardinput(data)
 
-      const user = {
-        //유저객체
-        idx: idx.value
-      }
+  console.log('게시판 작성 성공' + res)
 
-      const data = {
-        // state: state.value,
-        body: body.value.trim(),
-        title: title.value.trim(),
-        user: user //유저 객체안의 id값을 일단 넘김
-      }
-      // console.log(state.value)
-      console.log(body.value)
+  idx.value = res.data.idx
 
-      if (data.title !== '' && data.title !== null) {
-        if (data.body !== '' && data.body !== null) {
-          axios
-            .post(`http://192.168.0.67:8080/question/save`, data, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then((res) => {
-              const idx = res.data.idx
-              console.log(idx)
+  const pageidx = idx.value
 
-              alert('요청이 접수되었습니다.')
+  alert('요청이 접수되었습니다.')
 
-              router.push({ name: 'boardview', params: { idx } })
-              return
-            })
-            .catch((e) => {
-              console.log(e)
-              alert('에러발생' + e)
-            })
-        } else {
-          alert('내용을 입력하시길 바랍니다.')
-        }
-      } else {
-        alert('제목을 입력하시길 바랍니다.')
-      }
-    })
+  router.push({ name: 'boardview', params: { pageidx } })
 }
 </script>
 

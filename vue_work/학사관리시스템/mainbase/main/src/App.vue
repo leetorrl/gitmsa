@@ -15,13 +15,13 @@
     <button class="text-blue-800 font-bold p-1" @click="goManager()">
       <span class="font-bold text-blue-800">| </span>매니저 계정시작페이지
     </button>
-    <button class="text-blue-800 font-bold p-1" @click="autologin()">
-      <span class="font-bold text-blue-800">| </span>로그인
-    </button>
-    <button class="text-blue-800 font-bold p-1" @click="logout()">
+    <button v-if="loginPinia.loginCheck" class="text-blue-800 font-bold p-1" @click="logout()">
       <span class="font-bold text-blue-800">| </span>로그아웃
     </button>
-    <button class="text-blue-800 font-bold p-1" @click="selecttoken()">
+    <button v-else class="text-blue-800 font-bold p-1" @click="autologin()">
+      <span class="font-bold text-blue-800">| </span>로그인
+    </button>
+    <button class="text-blue-800 font-bold p-1" @click="selecttoken(token)">
       <span class="font-bold text-blue-800">| </span>토큰확인
     </button>
   </div>
@@ -41,8 +41,9 @@ import { useRouter } from 'vue-router'
 import { useBoardlistStore } from './stores/Boardlist'
 // import { storeToRefs } from 'pinia'
 import { watchEffect } from 'vue'
-import axios from 'axios'
+
 import { useloginPiniaStore } from './stores/Boardlist'
+import { login, loginCheck } from './api/logapi'
 
 import header from '@/layout/header.vue'
 import footer from '@/layout/footer.vue'
@@ -85,52 +86,39 @@ const roles = ref('')
 Mainhome()
 
 const autologin = async () => {
-  const userid = ref('userid2')
+  const userid = ref('userid4')
   const password = ref('password')
 
   console.log('아이디 = ' + userid.value)
   console.log('비밀번호 = ' + password.value)
 
+  const userdata = {
+    userid: userid.value,
+    password: password.value
+  }
+
   try {
-    const res = await axios.get(
-      `http://192.168.0.67:8080/sign/login?userid=${userid.value}&password=${password.value}`
-    )
-    console.log('로그인 성공한 응애토큰')
+    const apitoken = await login(userdata)
 
-    console.log('Access token =' + res.data)
-
-    if (res.status == 200) {
+    if (apitoken.status == 200) {
       //status 리턴 안했으면 지우기
 
-      // localStorage.setItem('token', res.data) //로컬저장방식 보안취약
+      console.log('조금 성장한 청소년 토큰' + apitoken.data)
 
-      console.log(res.data)
+      localStorage.setItem('token', apitoken.data)
 
-      localStorage.setItem('token', res.data)
+      const token = localStorage.getItem('token')
 
-      const token = localStorage.getItem('token', res.data)
+      console.log('로컬 저장된 어른 토큰')
+      console.log(token)
 
-      console.log('로컬에 저장된 사춘기 토큰')
-      console.log(token) //왜 값이 없나
+      loginPinia.login(token)
 
-      // const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
-
-      const headertoken = {
-        headers: {
-          //api 요청할때 마다 보내주기
-          Authorization: `Bearer ${token}`
-        }
-      }
-
-      console.log('헤더http에 담긴 jwt로 성장한 토큰')
-      console.log('header = ' + headertoken)
-
-      loginPinia.login(headertoken)
-
-      alert('자동로그인 완료')
+      alert('로그인 완료')
     } else {
       loginPinia.logout()
-      headertoken.value = null
+      localStorage.removeItem('token')
+
       alert('status not 200')
     }
   } catch (e) {
@@ -140,25 +128,35 @@ const autologin = async () => {
 
 const logout = () => {
   loginPinia.logout()
-  headertoken.value = null
+  localStorage.removeItem('token')
+
   alert('토큰 쥬금 ㅠㅠ')
 }
 
-const doLogincheck = async (token) => {
-  try {
-    const ress = await axios.get(`http://192.168.0.67:8080/check?jwt=${token}`)
-
-    return ress
-  } catch (e) {
-    alert('jwt토큰이 가출함 ㅠ')
-    console.log(e)
-    return e
+const selecttoken = () => {
+  if (loginPinia.loginCheck) {
+    alert('로그인중')
+  } else {
+    alert('로그아웃되있음')
   }
 }
 
-const selecttoken = () => {
-  alert('로그인됨')
-}
+// watchEffect(async () => {
+//   const res = await loginCheck()
+
+//   if (res == false) {
+//     loginPinia.logout()
+//   } else {
+//     console.log('로그인 유지되는중 ' + res)
+
+//     if (res.status !== 200) {
+//       localStorage.removeItem('token')
+//       loginPinia.logout()
+//     } else {
+//       loginPinia.login(res.data)
+//     }
+//   }
+// })
 </script>
 
 <style lang="scss" scoped></style>

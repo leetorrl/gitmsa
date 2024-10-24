@@ -24,7 +24,7 @@ const router = createRouter({
       component: home
     },
     {
-      path: '/BoardView/:idx',
+      path: '/BoardView/:pageidx',
       name: 'boardview',
       component: BoardView
     },

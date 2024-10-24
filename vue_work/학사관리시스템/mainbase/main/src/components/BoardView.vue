@@ -55,11 +55,11 @@
 </template>
 
 <script setup>
-import axios from 'axios'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
 import { watchEffect } from 'vue'
+import { Quiryview } from '@/api/freeboardapi'
 
 const router = useRouter()
 const route = useRoute()
@@ -93,7 +93,9 @@ const insetcomment = async () => {
 }
 
 watchEffect(async () => {
-  const res = await axios.get(`http://192.168.0.67:8080/question/view/${route.params.idx}`)
+  console.log('뷰의 idx' + route.params.pageidx)
+
+  const res = await Quiryview(route.params.pageidx)
 
   if (res.status == 200) {
     idx.value = res.data.idx
@@ -103,7 +105,7 @@ watchEffect(async () => {
     user.value = res.data.user
     response.value = res.data.response
   } else {
-    alert(res.response.data.message)
+    alert(res.response.message)
     router.push({ name: 'home' })
   }
 })

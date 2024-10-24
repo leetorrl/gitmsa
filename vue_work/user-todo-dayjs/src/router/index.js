@@ -1,50 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-import Home from '@/views/Home.vue';
-import About from '@/views/About.vue';
-import Month from '@/views/Month.vue';
-import Login from '@/views/login/Login.vue';
-import Oauth from '@/views/login/Oauth.vue';
-import Message from '@/views/Message.vue';
+import HomeView from '@/views/HomeView.vue';
+import MonthView from '@/views/MonthView.vue';
+import LoginView from '@/views/login/LoginView.vue';
+import LoginProcessView from '@/views/login/LoginProcessView.vue';
+import MessageView from '@/views/MessageView.vue';
+import MyPageView from '@/views/MyPageView.vue';
 
 const loginRouter = [
 	{
-		path: '/Month',
-		name: 'month',
-		component: Month,
-	},
-	{
-		path: '/Login',
+		path: '/login',
 		name: 'login',
-		component: Login,
+		component: LoginView,
 	},
 	{
-		path: '/Oauth',
+		path: '/oauth',
 		name: 'oauth',
-		component: Oauth,
+		component: LoginProcessView,
 	},
 ];
 const freeBoardRouter = [];
-
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		...loginRouter,
 		...freeBoardRouter,
 		{
-			path: '/Home',
+			path: '/',
 			name: 'home',
-			component: Home,
+			component: HomeView,
 		},
 		{
-			path: '/About',
-			name: 'about',
-			component: About,
+			path: '/month',
+			name: 'month',
+			component: MonthView,
 		},
 		{
 			path: '/message',
 			name: 'message',
-			component: Message,
+			component: MessageView,
+		},
+		{
+			path: '/mypage',
+			name: 'mypage',
+			component: MyPageView,
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: () => import('../views/AboutView.vue'),
 		},
 	],
 });

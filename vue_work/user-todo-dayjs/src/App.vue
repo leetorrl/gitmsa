@@ -1,15 +1,14 @@
-<template>
-	<div>
-		<div><TheNav /></div>
-
-		<router-view class="pt-16"></router-view>
-		<h1>App</h1>
-	</div>
-</template>
-
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import TheNav from './components/TheNav.vue';
+
+// nav 위치 설정
+import TheLayoutNav from './components/TheLayoutNav.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<template>
+	<!-- ...사용한 곳...-->
+	<TheLayoutNav />
+
+	<RouterView class="pt-16" />
+</template>
+<style scoped></style>

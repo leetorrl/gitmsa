@@ -4,10 +4,9 @@
 		<input
 			v-model="message"
 			type="text"
-			class="block min-w-80 w-full px-3 py-2 my-5 text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+			class="block min-w-80 px-3 py-2 my-5 text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
 			placeholder="메시지를 입력하세요."
 		/>
-
 		<button
 			@click="sendMessage"
 			class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -18,22 +17,22 @@
 </template>
 
 <script setup>
+import { msgSend } from '@/api/loginApi';
 import { ref } from 'vue';
-import { msgSend } from '@/api/loginapi';
-
 const message = ref('');
 const sendMessage = async () => {
-	console.log('Message sent: ', message);
-
 	const token = localStorage.getItem('token');
-
 	if (!token) {
-		alert('로그인 하셔야 메시지를 보낼 수 있습니다.');
+		alert('로그인하셔야 메시지를 보낼수 있습니다.');
 		return;
 	}
-
-	await msgSend(message.value);
-    
+	const res = await msgSend(message.value);
+	if (res.status.toString().startsWith('2')) {
+		alert('메시지 성공');
+		message.value = '';
+	} else {
+		alert('메시지 전송 실패');
+	}
 };
 </script>
 

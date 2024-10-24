@@ -85,13 +85,11 @@ const roles = ref('')
 Mainhome()
 
 const autologin = async () => {
-  
-
-  const userid = ref('userid3')
+  const userid = ref('userid2')
   const password = ref('password')
 
-  console.log("아이디 = "+userid)
-  console.log("비밀번호 = "+password)
+  console.log('아이디 = ' + userid.value)
+  console.log('비밀번호 = ' + password.value)
 
   try {
     const res = await axios.get(
@@ -99,26 +97,33 @@ const autologin = async () => {
     )
     console.log('로그인 성공한 응애토큰')
 
-      console.log('Access token ='+ res.data)
+    console.log('Access token =' + res.data)
 
-    if (res.status == 200) { //status 리턴 안했으면 지우기
+    if (res.status == 200) {
+      //status 리턴 안했으면 지우기
 
       // localStorage.setItem('token', res.data) //로컬저장방식 보안취약
-    
+
+      console.log(res.data)
+
+      localStorage.setItem('token', res.data)
+
       const token = localStorage.getItem('token', res.data)
 
-      console.log("로컬에 저장된 사춘기 토큰")
-      console.log(token)
+      console.log('로컬에 저장된 사춘기 토큰')
+      console.log(token) //왜 값이 없나
 
-     // const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
+      // const ttoken = await doLogincheck(token) //jwt로 바로 준거면 필요없음
 
-      const headertoken = { headers: { //api 요청할때 마다 보내주기
-                      Authorization: `Bearer ${token}`
-                      }
-            }
+      const headertoken = {
+        headers: {
+          //api 요청할때 마다 보내주기
+          Authorization: `Bearer ${token}`
+        }
+      }
 
-            console.log('헤더http에 담긴 jwt로 성장한 토큰')
-            console.log("Refresh = "+headertoken)
+      console.log('헤더http에 담긴 jwt로 성장한 토큰')
+      console.log('header = ' + headertoken)
 
       loginPinia.login(headertoken)
 
@@ -140,12 +145,10 @@ const logout = () => {
 }
 
 const doLogincheck = async (token) => {
-  
   try {
     const ress = await axios.get(`http://192.168.0.67:8080/check?jwt=${token}`)
 
     return ress
-
   } catch (e) {
     alert('jwt토큰이 가출함 ㅠ')
     console.log(e)
@@ -153,14 +156,9 @@ const doLogincheck = async (token) => {
   }
 }
 
-
 const selecttoken = () => {
-  
-
-  alert("로그인됨" + )
-
+  alert('로그인됨')
 }
-
 </script>
 
 <style lang="scss" scoped></style>

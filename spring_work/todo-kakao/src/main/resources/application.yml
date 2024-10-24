@@ -1,3 +1,4 @@
+
 server:
   port: 8080
 
@@ -22,6 +23,7 @@ spring:
 
   jpa:
     hibernate:
+      #      ddl-auto: none
       ddl-auto: create
 
 
@@ -54,7 +56,5 @@ oauth:
   kakao:
     client_id: 8ffa4f957158f993d06aeb4a873e59cb
     client_secret: cKWx2j7rkW9kdmxayLNgYcNWhBtMilHZ
-
-
 
 

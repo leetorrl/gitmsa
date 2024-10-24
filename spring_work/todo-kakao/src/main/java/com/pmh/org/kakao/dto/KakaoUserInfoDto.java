@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@Data
-public class KakaoUserinfoDto {
+import lombok.Data;
 
+@Data
+public class KakaoUserInfoDto {
     private long id;
     @JsonProperty(value ="connected_at")
     private String connectedAt;
@@ -29,8 +30,7 @@ public class KakaoUserinfoDto {
     @Data
     @ToString
     public static class KakaoAccount {
-        private boolean profileNicknameNeedsAgreement;
-        private boolean profileImageNeedsAgreement;
+        @JsonProperty(value = "profile")
         private Profile profile;
         @JsonProperty(value = "email")
         private String email;

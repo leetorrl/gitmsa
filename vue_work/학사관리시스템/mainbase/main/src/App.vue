@@ -43,7 +43,7 @@ import { useRouter } from 'vue-router'
 // import { watchEffect } from 'vue'
 
 import { useloginPiniaStore } from './stores/Boardlist'
-import { login } from './api/logapi'
+// import { login } from './api/logapi'
 
 import header from '@/layout/header.vue'
 import footer from '@/layout/footer.vue'

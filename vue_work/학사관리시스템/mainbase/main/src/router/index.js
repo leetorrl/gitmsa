@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import home from '@/components/home.vue'
+
+import Calendar from '@/components/Calendar.vue'
+
 import BoardView from '@/components/BoardView.vue'
 import BoardInput from '@/components/BoardInput.vue'
 
@@ -19,9 +21,9 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/home',
-      name: 'home',
-      component: home
+      path: '/Calendar',
+      name: 'calender',
+      component: Calendar
     },
     {
       path: '/BoardView/:pageidx',

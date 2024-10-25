@@ -6,73 +6,77 @@
           <h1 class="p-5 text font-bold text-3xl text-blue-800">-출결요청-</h1>
           <hr class="border-2 border-blue-800" />
 
-    <div class="">
-      <br>
-      <h1 class="text-blue-800">1. 요청항목</h1>
-      <form action="">
-        <label for="early"
-          >조퇴<input v-model="type" type="radio" name="state" id="early" value="early" checked
-        /></label>
-        <label for="going"
-          >외출<input v-model="type" type="radio" name="state" id="going" value="going"
-        /></label>
-        <label for="absent"
-          >결석<input v-model="type" type="radio" name="state" id="absent" value="absent"
-        /></label>
-      </form>
-    </div>
-    <br />
-    <div>
-      <h1 class="text-blue-800">2. 요청사유</h1>
-      <form action="">
-        <label for="병가"
-          >병가<input v-model="conn" type="radio" name="conn" id="병가" value="병가" checked
-        /></label>
-        <label for="조문"
-          >조문<input v-model="conn" type="radio" name="conn" id="조문" value="조문"
-        /></label>
-        <label for="훈련"
-          >훈련<input v-model="conn" type="radio" name="conn" id="훈련" value="훈련"
-        /></label>
-        <label for="기타"
-          >기타<input v-model="conn" type="radio" name="conn" id="기타" value="기타"
-        /></label>
-      </form>
-      <br>
-    </div>
+          <div class="">
+            <br />
+            <h1 class="text-blue-800">1. 요청항목</h1>
+            <form action="">
+              <label for="early"
+                >조퇴<input
+                  v-model="type"
+                  type="radio"
+                  name="state"
+                  id="early"
+                  value="early"
+                  checked
+              /></label>
+              <label for="going"
+                >외출<input v-model="type" type="radio" name="state" id="going" value="going"
+              /></label>
+              <label for="absent"
+                >결석<input v-model="type" type="radio" name="state" id="absent" value="absent"
+              /></label>
+            </form>
+          </div>
+          <br />
+          <div>
+            <h1 class="text-blue-800">2. 요청사유</h1>
+            <form action="">
+              <label for="병가"
+                >병가<input v-model="conn" type="radio" name="conn" id="병가" value="병가" checked
+              /></label>
+              <label for="조문"
+                >조문<input v-model="conn" type="radio" name="conn" id="조문" value="조문"
+              /></label>
+              <label for="훈련"
+                >훈련<input v-model="conn" type="radio" name="conn" id="훈련" value="훈련"
+              /></label>
+              <label for="기타"
+                >기타<input v-model="conn" type="radio" name="conn" id="기타" value="기타"
+              /></label>
+            </form>
+            <br />
+          </div>
 
-    <div>
-      <textarea
-        v-model="reason"
-        name=""
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="내용기입"
-        class="border-2 w-full resize-none"
-      ></textarea>
-    </div>
-  
-    <div class="w-full flex flex-col justify-center items-center">
-      <button
-        class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
-        @click="insert"
-      >
-        작성완료
-      </button>
-      <button
-        class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded "
-        @click="cancle"
-      >
-        취소
-      </button>
+          <div>
+            <textarea
+              v-model="reason"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="내용기입"
+              class="border-2 w-full resize-none"
+            ></textarea>
+          </div>
 
+          <div class="w-full flex flex-col justify-center items-center">
+            <button
+              class="w-full h-10 m-1 min-w-[40px] text-center bg-blue-800 text-white border border-blue-800 rounded"
+              @click="insert"
+            >
+              작성완료
+            </button>
+            <button
+              class="w-full h-10 m-1 min-w-[40px] text-center text-blue-800 border border-blue-800 rounded"
+              @click="cancle"
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
-</div>
-</div>
-</div>
 </template>
 
 <script setup>

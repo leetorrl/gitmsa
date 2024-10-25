@@ -9,8 +9,6 @@
           <div class="border-2">
             <div class="">
               <div class="m-3">
-                <h1>user idx = {{ idx }}</h1>
-
                 <br />
                 <label for=""
                   >내용
@@ -73,64 +71,37 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
 import dayjs from 'dayjs'
+import { vacation } from '@/api/vacation'
 
 const router = useRouter()
 
 const personalNum = ref('123456-789012')
 const reason = ref('몰디브가서 모히또 한잔 할려고')
-const startdate = String(new dayjs().format('YYYY-MM-DD'))
-const phonecall = ref('')
-const enddate = ref('')
+const startdate = ref(String(new dayjs().format('YYYY-MM-DD')))
+const phonecall = ref('010-1234-5678')
+const enddate = ref(String(new dayjs().add(4, 'day').format('YYYY-MM-DD')))
 
 const cancle = () => {
   router.back()
 }
 
 const Vacationinsert = async () => {
-  const userid = ref('userid3')
-  const password = ref('password')
+  const vadata = {
+    personalNum: personalNum.value,
+    reason: reason.value.trim(),
+    startdate: startdate.value,
+    phonecall: phonecall.value,
+    enddate: enddate.value
+  }
 
-  axios
-    .get(`http://192.168.0.67:8080/sign/login?userid=${userid.value}&password=${password.value}`)
-    .then((respons) => {
-      const token = respons.data
+  console.log(vadata)
 
-      console.log(token)
+  const res = await vacation(vadata)
 
-      const data = {
-        personalNum: personalNum.value,
-        reason: reason.value.trim(),
-        startdate: startdate,
-        phonecall: phonecall.value,
-        enddate: enddate.value
-      }
-
-      console.log(data)
-      if (data.reason !== '' && data.reason !== null) {
-        if (data.peresonalNum !== '' && data.peresonalNum !== null) {
-          axios
-            .post(`http://192.168.0.67:8080/vacation/request`, data, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then((res) => {
-              console.log(res)
-              alert('제출되었습니다.')
-              router.push({ name: 'vacationmemory' })
-              return
-            })
-        } else if (personalNum.value >= 13) {
-          alert('번호를 다시 기입 바랍니다.')
-        } else {
-          alert('비상연락망을 입력바랍니다..')
-        }
-      } else {
-        alert('내용을 입력 바랍니다.')
-      }
-    })
+  alert('휴가신청이 제출되었습니다.')
+  console.log(res)
+  // router.push({ name: 'vacationmemory' })
 }
 </script>
 

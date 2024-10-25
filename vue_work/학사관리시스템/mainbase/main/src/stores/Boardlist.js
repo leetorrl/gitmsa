@@ -13,14 +13,14 @@ export const useloginPiniaStore = defineStore('login', {
   }),
 
   actions: {
-    login(token) {
+    pinialogin(token) {
       if (token !== null) {
         console.log('로그인 체크')
         this.loginCheck = true
       }
     },
 
-    logout() {
+    pinialogout() {
       console.log('로그아웃 체크')
       this.loginCheck = false
     }

@@ -43,10 +43,12 @@ import { useBoardlistStore } from './stores/Boardlist'
 import { watchEffect } from 'vue'
 
 import { useloginPiniaStore } from './stores/Boardlist'
-import { login, loginCheck } from './api/logapi'
+import { login } from './api/logapi'
 
 import header from '@/layout/header.vue'
 import footer from '@/layout/footer.vue'
+
+import { onMounted } from 'vue'
 
 const headd = header
 const foott = footer
@@ -85,8 +87,12 @@ const roles = ref('')
 
 Mainhome()
 
+onMounted(() => {
+  loginPinia.pinialogin(token)
+})
+
 const autologin = async () => {
-  const userid = ref('userid4')
+  const userid = ref('userid3')
   const password = ref('password')
 
   console.log('아이디 = ' + userid.value)
@@ -107,16 +113,17 @@ const autologin = async () => {
 
       localStorage.setItem('token', apitoken.data)
 
+      //이걸 logapi.js로 만들어야함
       const token = localStorage.getItem('token')
 
       console.log('로컬 저장된 어른 토큰')
       console.log(token)
 
-      loginPinia.login(token)
+      loginPinia.pinialogin(token)
 
       alert('로그인 완료')
     } else {
-      loginPinia.logout()
+      loginPinia.pinialogout()
       localStorage.removeItem('token')
 
       alert('status not 200')
@@ -127,7 +134,7 @@ const autologin = async () => {
 }
 
 const logout = () => {
-  loginPinia.logout()
+  loginPinia.pinialogout()
   localStorage.removeItem('token')
 
   alert('토큰 쥬금 ㅠㅠ')

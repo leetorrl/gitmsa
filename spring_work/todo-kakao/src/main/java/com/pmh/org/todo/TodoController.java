@@ -68,7 +68,7 @@ public class TodoController {
 
 
         KakaoEntity kakaoEntity = kakaoRepository.findByEmail(userDetails.getUsername());
-        List<TodoEntity> list = todoRepository.findAllBtKakaoEntity(kakaoEntity);
+        List<TodoEntity> list = todoRepository.findAllByKakaoEntity(kakaoEntity);
 
         return ResponseEntity.ok(list);
 

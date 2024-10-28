@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, watchEffect } from 'vue';
+import { ref, watch } from 'vue';
 import dayjs from 'dayjs';
 import { saveTodo, getTodos } from '@/api/monthApi.js';
 
@@ -8,6 +8,8 @@ import { saveTodo, getTodos } from '@/api/monthApi.js';
 
 // dayjs.extend(utc);
 // dayjs.extend(timezone);
+
+const isDisabled = ref(false)
 
 const now = ref(dayjs());
 const columns = ref([]);
@@ -20,14 +22,46 @@ const content = ref('');
 
 const todos = ref([]);
 
+const toast = ref(false);
+
+const setDate=(e) => {
+
+	selectDate.value = e.target.value;
+}
+
+
 const doSave = async () => {
+
+	isDisabled.value = true;
+
 	console.log('save', title.value, content.value, selectDate.value);
 	await saveTodo(title.value, content.value, selectDate.value);
+	await doGet()
+
+	title.value = '';
+	content.value = '';
+	toast.value = true;
+
+	setTimeout(() => {
+		toast.value = false;
+		isDisabled.value = false
+	}, 3000);
+};
+
+
+const doGet = async()=> {
 	const res = await getTodos();
-	if (res.status == 200) {
+ if(res.status == '200'){
+	const newData = res.data;
+
+	if(JSON.stringify(todos.value) !== JSON.stringify(newData)){
 		todos.value = res.data;
 	}
-};
+ }
+
+}
+
+
 
 const subMonth = () => {
 	now.value = dayjs(now.value).subtract(1, 'month');
@@ -40,9 +74,14 @@ const selectDateFn = (date) => {
 	selectDate.value = dayjs(date).format('YYYY-MM-DD');
 };
 
+
+
 watch(
-	now,
-	(newValue, _) => {
+	[now,todos],
+	async ()=> {
+		console.log('test')
+		await doGet();
+       
 		columns.value = []; // 원래 있던 값 제거
 		groupColumns.value = []; // 원래 있던 값 제거
 		// 제일 처음 로딩 할때는 now는 현재 달력...
@@ -79,16 +118,12 @@ watch(
 	},
 );
 
-watchEffect(async () => {
-	const res = await getTodos();
-	if (res.status == 200) {
-		todos.value = res.data;
-	}
-});
+
+
 </script>
 
 <template>
-	<div>
+	<div class="pt-32">
 		<h1>MonthView</h1>
 		<main class="flex justify-center">
 			<div class="max-w-lg w-full bg-white shadow-md rounded-lg p-4">
@@ -119,13 +154,19 @@ watchEffect(async () => {
 						}"
 					>
 						<span>{{ column.get('date') }}</span>
+
+
 						<template v-for="todo in todos" :key="todo">
-							<div v-if="todo.selectDate == column.format('YYYY-MM-DD')">
-								<div class="mt-2 text-green-600">
+							<div class=" rounded" :class="{'bg-red-500':todo.complted == '0', 
+							                               'bg-blue-500':todo.complted == '1', }"
+							 v-if="todo.selectDate == column.format('YYYY-MM-DD')">
+								<div >
 									<span>{{ todo.title }}</span>
 								</div>
 							</div>
 						</template>
+
+
 					</div>
 				</div>
 			</div>
@@ -149,17 +190,20 @@ watchEffect(async () => {
 					<div class="mb-4">
 						<label for="description" class="block text-gray-700 text-sm font-bold mb-2">상세 설명</label>
 						<textarea
+						
 							v-model="content"
 							id="description"
 							rows="4"
 							placeholder="상세 설명을 입력하세요"
-							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+							class="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						></textarea>
 					</div>
 
 					<div class="mb-6">
 						<label for="due-date" class="block text-gray-700 text-sm font-bold mb-2">마감일</label>
 						<input
+						readonly
+                            @change="setDate"
 							v-model="selectDate"
 							type="date"
 							id="due-date"
@@ -170,7 +214,8 @@ watchEffect(async () => {
 					<div class="flex items-center justify-center">
 						<button
 							type="submit"
-							class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+							:disabled="isDisabled"
+							class=" disabled:opacity-50 disabled:cursor-not-allowed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 						>
 							등록하기
 						</button>
@@ -178,5 +223,17 @@ watchEffect(async () => {
 				</form>
 			</div>
 		</div>
+
+
+
+
+</div>
+<template v-if="toast">
+	<div class="toast">
+		 등록하였습니다.
 	</div>
 </template>
+
+
+</template>
+

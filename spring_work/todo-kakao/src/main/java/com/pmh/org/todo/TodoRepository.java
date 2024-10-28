@@ -8,5 +8,5 @@ import java.util.List;
 public interface TodoRepository extends JpaRepository<TodoEntity,Long> {
 
     //select * from todo where kakao_id = ?
-    List<TodoEntity> findAllBtKakaoEntity(KakaoEntity kakaoEntity);
+    List<TodoEntity> findAllByKakaoEntity(KakaoEntity kakaoEntity);
 }

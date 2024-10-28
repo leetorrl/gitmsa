@@ -14,7 +14,7 @@ spring:
     ## DB ??
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/pmh?serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://localhost:3307/pmh?serverTimezone=Asia/Seoul
     username: root
     password: 1234
     ## jpa create
@@ -41,5 +41,5 @@ msa:
 
 oauth:
   kakao:
-    client_id: 477ea0788a39a67ac40fa6b1bc49e7d8
-    client_secret: rhFfJfqQ4bHm22u3aLuIgDAOSLRn5XjI
+    client_id: 8ffa4f957158f993d06aeb4a873e59cb
+    client_secret: cKWx2j7rkW9kdmxayLNgYcNWhBtMilHZ

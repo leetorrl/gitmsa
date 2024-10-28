@@ -24,11 +24,14 @@ export const saveTodo = async (title, content, selectDate) => {
 
 export const getTodos = async () => {
 	if (localStorage.getItem('token') === undefined || localStorage.getItem('token') === null) return;
+	//토큰이 없다면 리턴
+	
 	const headers = {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${localStorage.getItem('token')}`,
 	};
 	try {
+		console.log(headers)
 		const res = await axios.get(`${url}/todo/findall`, { headers });
 		return res;
 	} catch (err) {

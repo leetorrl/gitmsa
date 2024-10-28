@@ -52,7 +52,6 @@ public class KakaoService {
             body.add("code", code);
             body.add("client_secret", environment.getProperty("oauth.kakao.client_secret"));
 
-
             HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(body, headers);
 
             ResponseEntity<KakaoTokenDto> result = restTemplate.exchange(url, HttpMethod.POST, requestEntity, KakaoTokenDto.class);

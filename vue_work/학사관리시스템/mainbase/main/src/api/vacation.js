@@ -3,6 +3,7 @@ import axios from 'axios'
 const url = 'http://192.168.0.67:8080'
 const token = localStorage.getItem('token')
 export const vacation = async (vadata) => {
+  
   console.log('js api로 넘어간 data = ' + vadata)
 
   console.log('휴가신청 토큰 체크' + token)

@@ -14,7 +14,7 @@ spring:
     ## DB ??
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3307/pmh?serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://192.168.0.69:3307/db?serverTimezone=Asia/Seoul
     username: root
     password: 1234
     ## jpa create

@@ -1,0 +1,15 @@
+docker build -t leetorrl/todo-kakao .
+
+# 마리아디비 컨테이너 실행활때 -e
+# docker run -d -e MARIADB_ROOT_PASSWORD=1234 -p 3307:3306 mariadb
+
+# maria_container network 연결
+docker network connect nginx-spring-maria maria_container
+
+
+docker run -p 20000:20000 \
+-e SPRING_DATASOURCE_URL=jdbc:mariadb://maria_container:3307/db?serverTimezone=Asia/Seoul \
+-e SPRING_DATASOURCE_PASSWORD=1234 \
+-d --network nginx-spring-maria \
+--name todo-kakao \
+leetorrl/todo-kakao

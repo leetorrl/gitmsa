@@ -15,7 +15,7 @@ export default function Index(){
        
 <Link href="/home/aa" style={{fontSize:30}}>AA</Link>
 
-<Link href="(tabs)" style={{fontSize:30}}>tabs</Link>
+<Link href="(tabs)" style={{fontSize:30}} replace>tabs</Link>
                 </View>
                 
     )

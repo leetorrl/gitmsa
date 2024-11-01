@@ -28,11 +28,13 @@ public class UserController {
         return ResponseEntity.ok(userResponse);
     }
 
+
     @GetMapping("login")
     public ResponseEntity<String> getUser() {
 
         return ResponseEntity.ok(null);
     }
+
 
     @GetMapping("Kakaologin")
     public ResponseEntity<String> KakaoLogin() {

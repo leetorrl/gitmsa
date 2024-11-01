@@ -21,7 +21,7 @@ public class UserSerivceImpl  implements UserService{
     @Override
     public UserResponse join(UserRequest userRequest){
 
-        String reqEmail = userRepository.getEmail();
+        String reqEmail = userRequest.getEmail();
 
        userRepository.findByEmail(reqEmail)
                 .ifPresent(user -> {
@@ -34,7 +34,7 @@ public class UserSerivceImpl  implements UserService{
         userEntity.setUserId(UUID.randomUUID().toString());
 
         userRepository.save(userEntity);
-        
+
         UserResponse userResponse =  mapper.map(userEntity,UserResponse.class);
 
         return userResponse;

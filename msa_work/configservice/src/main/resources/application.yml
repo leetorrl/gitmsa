@@ -10,6 +10,7 @@ spring:
           uri: https://github.com/leetorrl/spring-cloud-config
           default-label: main
 
+#환경설정 변경되면 refresh post 요청
 management:
   endpoints:
     web:

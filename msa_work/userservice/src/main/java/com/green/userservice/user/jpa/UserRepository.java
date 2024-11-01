@@ -1,7 +1,13 @@
 package com.green.userservice.user.jpa;
 
 
-import org.hibernate.type.descriptor.converter.spi.JpaAttributeConverter;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaAttributeConverter<> {
+import java.util.Optional;
+
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
+
+    Optional<UserEntity> findByEmail(String reqEmail);
 }

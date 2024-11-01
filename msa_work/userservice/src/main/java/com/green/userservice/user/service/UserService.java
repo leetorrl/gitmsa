@@ -1,6 +1,16 @@
 package com.green.userservice.user.service;
 
-public class UserService {
+import com.green.userservice.user.vo.UserRequest;
+import com.green.userservice.user.vo.UserResponse;
+import org.springframework.stereotype.Service;
+
+
+public interface UserService {
+
+
+    UserResponse join(UserRequest userRequest);
+
+
 
 
 }

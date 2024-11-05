@@ -30,7 +30,7 @@ public class UserController {
 
 
     @GetMapping("login")
-    public ResponseEntity<String> getUser() {
+    public ResponseEntity<String> getUser(@RequestBody UserRequest userRequest) {
 
         return ResponseEntity.ok(null);
     }

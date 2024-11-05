@@ -1,6 +1,7 @@
 package com.green.userservice.user;
 
 import com.green.userservice.user.service.UserService;
+import com.green.userservice.user.vo.LoginRespones;
 import com.green.userservice.user.vo.UserRequest;
 import com.green.userservice.user.vo.UserResponse;
 
@@ -30,7 +31,12 @@ public class UserController {
 
 
     @GetMapping("login")
-    public ResponseEntity<String> getUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<String> getUser(
+            @RequestParam(value = "email") String email,
+            @RequestParam(value = "password") String password
+    ) {
+
+       LoginRespones loginRespones = userService.login(email, password);
 
         return ResponseEntity.ok(null);
     }

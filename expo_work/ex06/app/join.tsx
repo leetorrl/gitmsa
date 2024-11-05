@@ -12,8 +12,8 @@ import {
 export default function App() {
   const doSignUp = async () => {
     try {
-      const res = await axios.post("http://m.hellomh.site/users/join", {
-        email: "ddd@naver.com",
+      const res = await axios.post("http://192.168.0.69:20000/users/join", {
+        email: "dd@naver.com",
         name: "홍길동",
         password: "abcd1234",
       });

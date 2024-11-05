@@ -1,14 +1,15 @@
 package com.green.userservice.user.service;
 
 import com.green.userservice.error.UserException;
+import com.green.userservice.jwt.JwtUtils;
 import com.green.userservice.user.jpa.UserEntity;
 import com.green.userservice.user.jpa.UserRepository;
+import com.green.userservice.user.vo.LoginRespones;
 import com.green.userservice.user.vo.UserRequest;
 import com.green.userservice.user.vo.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import java.util.UUID;
 
@@ -17,6 +18,8 @@ import java.util.UUID;
 public class UserSerivceImpl  implements UserService{
 
     private final UserRepository userRepository;
+
+    private final JwtUtils jwtUtils;
 
     @Override
     public UserResponse join(UserRequest userRequest){
@@ -38,6 +41,21 @@ public class UserSerivceImpl  implements UserService{
         UserResponse userResponse =  mapper.map(userEntity,UserResponse.class);
 
         return userResponse;
+    }
+
+    @Override
+    public LoginRespones login(String email, String password) {
+
+       UserEntity userEntity = userRepository.findByEmailAndPassword(email, password)
+               .orElseThrow(()-> new UserException("Invalid email or password"));
+
+       LoginRespones loginRespones = new LoginRespones();
+       loginRespones.setUserId(userEntity.getUserId());
+       loginRespones.setAccessToken(jwtUtils.createAccessToken(userEntity.getEmail(), userEntity.getUserId()));
+       loginRespones.setRefreshToken(jwtUtils.createRefreshToken(userEntity.getEmail()));
+       loginRespones.setEmail(userEntity.getEmail());
+
+        return loginRespones;
     }
 
 }

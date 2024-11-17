@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1713463083591" clover="3.2.0">
+  <project timestamp="1713463083591" name="All files">
+    <metrics statements="772" coveredstatements="24" conditionals="152" coveredconditionals="2" methods="387" coveredmethods="14" elements="1311" coveredelements="40" complexity="0" loc="772" ncloc="772" packages="11" files="159" classes="159"/>
+    <package name="src">
+      <metrics statements="17" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="App.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/App.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="AppClass.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/AppClass.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="config-overrides.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/config-overrides.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/index.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="1256" count="0" type="stmt"/>
+        <line num="1263" count="0" type="stmt"/>
+        <line num="1270" count="0" type="stmt"/>
+        <line num="1284" count="0" type="stmt"/>
+      </file>
+      <file name="reportWebVitals.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/reportWebVitals.js">
+        <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap03">
+      <metrics statements="114" coveredstatements="3" conditionals="17" coveredconditionals="0" methods="64" coveredmethods="2"/>
+      <file name="Download.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/Download.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="EventArgs.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventArgs.js">
+        <metrics statements="13" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="EventArgs2.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventArgs2.js">
+        <metrics statements="11" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="EventBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventBasic.js">
+        <metrics statements="10" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="EventCompare.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventCompare.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="EventError.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventError.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="EventKey.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventKey.js">
+        <metrics statements="4" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="EventMouse.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventMouse.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="EventObj.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventObj.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="EventOnce.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventOnce.js">
+        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="EventPassive.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventPassive.js">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="EventPoint.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventPoint.js">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="EventPropagation.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/EventPropagation.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="ForFilter.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ForFilter.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="ForItem.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ForItem.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="ForList.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ForList.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="ForNest.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ForNest.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+      </file>
+      <file name="ForSort.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ForSort.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="ListTemplate.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/ListTemplate.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="MyHello.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/MyHello.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+      <file name="SelectStyle.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/SelectStyle.js">
+        <metrics statements="1" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="StateBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/StateBasic.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="StateCounter.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/StateCounter.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="StateParent.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/StateParent.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="StyledPanel.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/StyledPanel.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="TitledPanel.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/TitledPanel.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="TypeProp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/TypeProp.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="books.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap03/books.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap04">
+      <metrics statements="142" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="72" coveredmethods="0"/>
+      <file name="FormBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormBasic.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="FormCheck.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormCheck.js">
+        <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="FormCheckMulti.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormCheckMulti.js">
+        <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+      </file>
+      <file name="FormFile.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormFile.js">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="FormList.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormList.js">
+        <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+      <file name="FormRadio.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormRadio.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="FormSelect.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormSelect.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="FormTextarea.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormTextarea.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="FormYup.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FormYup.js">
+        <metrics statements="13" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="311" count="0" type="stmt"/>
+        <line num="312" count="0" type="stmt"/>
+        <line num="313" count="0" type="stmt"/>
+        <line num="315" count="0" type="stmt"/>
+        <line num="316" count="0" type="stmt"/>
+        <line num="317" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="318" count="0" type="stmt"/>
+        <line num="321" count="0" type="stmt"/>
+        <line num="328" count="0" type="stmt"/>
+        <line num="356" count="0" type="stmt"/>
+        <line num="368" count="0" type="stmt"/>
+        <line num="369" count="0" type="stmt"/>
+        <line num="371" count="0" type="stmt"/>
+      </file>
+      <file name="FromKorean.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/FromKorean.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+      </file>
+      <file name="StateForm.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateForm.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="StateFormUC.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateFormUC.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="StateNest.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateNest.js">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="StateNestImmer.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateNestImmer.js">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+      </file>
+      <file name="StateNestImmer2.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateNestImmer2.js">
+        <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+      <file name="StateTodo.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/StateTodo.js">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+      <file name="yup.kr.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap04/yup.kr.js">
+        <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap05">
+      <metrics statements="83" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="57" coveredmethods="0"/>
+      <file name="EmotionComp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/EmotionComp.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="EmotionJsx.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/EmotionJsx.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorEvent.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorEvent.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorEventRoot.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorEventRoot.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorFallback.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorFallback.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorRetryRoot.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorRetryRoot.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorRetryThrow.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorRetryThrow.js">
+        <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorRoot.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorRoot.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorThrow.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ErrorThrow.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="HeavyUI.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/HeavyUI.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="LazyBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/LazyBasic.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="LazyButton.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/LazyButton.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="LazyButton2.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/LazyButton2.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="LazyMulti.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/LazyMulti.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="MyLoading.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/MyLoading.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="PortalBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/PortalBasic.js">
+        <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+      <file name="ProfilerBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ProfilerBasic.js">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="StyledCommon.css.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledCommon.css.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="StyledCommon.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledCommon.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="StyledComp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledComp.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="StyledComp2.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledComp2.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="StyledGlobal.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledGlobal.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="StyledProps.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/StyledProps.js">
+        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="SuspenseResult.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/SuspenseResult.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="SuspenseSimple.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/SuspenseSimple.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ThrowPromise.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ThrowPromise.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="ThrowResult.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/ThrowResult.js">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="wrapPromise.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap05/wrapPromise.js">
+        <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap06">
+      <metrics statements="67" coveredstatements="12" conditionals="26" coveredconditionals="1" methods="31" coveredmethods="5"/>
+      <file name="FormMui.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/FormMui.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="MaterialBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MaterialBasic.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="MaterialDrawer.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MaterialDrawer.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+      <file name="MaterialGrid.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MaterialGrid.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="MaterialMode.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MaterialMode.js">
+        <metrics statements="5" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+      </file>
+      <file name="MyButton.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MyButton.js">
+        <metrics statements="3" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+      </file>
+      <file name="MyButton.stories.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/MyButton.stories.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="QueryBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/QueryBasic.js">
+        <metrics statements="12" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="QueryPre.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/QueryPre.js">
+        <metrics statements="20" coveredstatements="12" conditionals="6" coveredconditionals="1" methods="8" coveredmethods="5"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+      <file name="QuerySuspense.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/QuerySuspense.js">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="theme.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap06/theme.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap07">
+      <metrics statements="197" coveredstatements="7" conditionals="38" coveredconditionals="1" methods="101" coveredmethods="5"/>
+      <file name="HookCallbackRef.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookCallbackRef.js">
+        <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="HookContext.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookContext.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="HookContextChild.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookContextChild.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="HookCustom.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookCustom.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="HookDeferred.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookDeferred.js">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="HookDeferredTransition.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookDeferredTransition.js">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="HookEffect.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookEffect.js">
+        <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="HookMemo.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookMemo.js">
+        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="HookMemoChild.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookMemoChild.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="HookReducer.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookReducer.js">
+        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="HookReducerInit.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookReducerInit.js">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="HookReducerUp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookReducerUp.js">
+        <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="HookRef.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookRef.js">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="HookRefForward.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookRefForward.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+      <file name="HookRefNg.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookRefNg.js">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+      <file name="HookThemeButton.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookThemeButton.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="HookTimer.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookTimer.js">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+      <file name="HookTransition.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookTransition.js">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+      </file>
+      <file name="HookTransitionChild.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/HookTransitionChild.js">
+        <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+      </file>
+      <file name="MyTextBox.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/MyTextBox.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="MyThemeProvider.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/MyThemeProvider.js">
+        <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+      <file name="RecoilCounter.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/RecoilCounter.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+      </file>
+      <file name="RecoilTodo.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/RecoilTodo.js">
+        <metrics statements="16" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+      <file name="RecoilTodoUp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/RecoilTodoUp.js">
+        <metrics statements="13" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+      <file name="StateEffect.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/StateEffect.js">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="ThemeContext.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/ThemeContext.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      </file>
+      <file name="UseCounter.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/UseCounter.js">
+        <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="books.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/books.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="comments.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap07/comments.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap08">
+      <metrics statements="96" coveredstatements="0" conditionals="33" coveredconditionals="0" methods="38" coveredmethods="0"/>
+      <file name="AboutPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/AboutPage.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+      <file name="ArticlePage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/ArticlePage.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="BookFormPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/BookFormPage.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+      <file name="BookNest.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/BookNest.js">
+        <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="BookPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/BookPage.js">
+        <metrics statements="4" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+      </file>
+      <file name="BookQueryPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/BookQueryPage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="BookStatePage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/BookStatePage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="CommonErrorPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/CommonErrorPage.js">
+        <metrics statements="8" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+      <file name="FirstPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/FirstPage.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="InfoPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/InfoPage.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="InvalidParamsPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/InvalidParamsPage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="MyHeader.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/MyHeader.js">
+        <metrics statements="5" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="MyLink.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/MyLink.js">
+        <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="NotFoundPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/NotFoundPage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="RouterApp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/RouterApp.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="RouterCustom.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/RouterCustom.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="RouterNav.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/RouterNav.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="RouterParam.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/RouterParam.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="382" count="0" type="stmt"/>
+        <line num="385" count="0" type="stmt"/>
+        <line num="387" count="0" type="stmt"/>
+      </file>
+      <file name="RouterScroll.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/RouterScroll.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+      <file name="SearchPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/SearchPage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="SecondPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/SecondPage.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="TopPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/TopPage.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="51" count="0" type="stmt"/>
+      </file>
+      <file name="WeatherLazyPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/WeatherLazyPage.js">
+        <metrics statements="20" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+      </file>
+      <file name="WeatherPage.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/WeatherPage.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="books.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/books.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="routesBasic.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesBasic.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="routesHandle.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesHandle.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="routesLink.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesLink.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="routesMyLink.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesMyLink.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="routesParam.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesParam.js">
+        <metrics statements="14" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="680" count="0" type="stmt"/>
+        <line num="681" count="0" type="stmt"/>
+        <line num="683" count="0" type="stmt"/>
+        <line num="690" count="0" type="stmt"/>
+        <line num="691" count="0" type="stmt"/>
+        <line num="698" count="0" type="stmt"/>
+        <line num="699" count="0" type="stmt"/>
+        <line num="701" count="0" type="stmt"/>
+        <line num="705" count="0" type="stmt"/>
+        <line num="712" count="0" type="stmt"/>
+        <line num="713" count="0" type="stmt"/>
+        <line num="716" count="0" type="stmt"/>
+        <line num="717" count="0" type="stmt"/>
+        <line num="725" count="0" type="stmt"/>
+      </file>
+      <file name="routesScroll.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap08/routesScroll.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.chap09">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="MyUtil.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/chap09/MyUtil.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.column">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="MyStore.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/column/MyStore.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store">
+      <metrics statements="20" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="atom.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/store/atom.js">
+        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="atomUp.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/store/atomUp.js">
+        <metrics statements="15" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.stories">
+      <metrics statements="30" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="0"/>
+      <file name="Button.jsx" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Button.jsx">
+        <metrics statements="5" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+      <file name="Button.stories.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Button.stories.js">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+      </file>
+      <file name="Header.jsx" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Header.jsx">
+        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+      <file name="Header.stories.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Header.stories.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+      </file>
+      <file name="Page.jsx" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Page.jsx">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="Page.stories.js" path="/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/samples_ko/data/my-react/src/stories/Page.stories.js">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

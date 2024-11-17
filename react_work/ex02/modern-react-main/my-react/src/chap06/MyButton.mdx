@@ -1,0 +1,35 @@
+import {
+  Meta,
+  Title,
+  Description,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/blocks";
+import * as MyButtonStories from "./MyButton.stories";
+
+{/* 스토리 및 문서 연결 */}
+
+<Meta of={MyButtonStories} />
+{/* <Meta of={MyButtonStories} name="API Ref" /> */}
+
+<Title />
+
+<Description />
+
+<Primary />
+
+<Controls />
+
+**※표의 외관을 변경하려면 표의 Control 열을 조작하세요**
+
+## 구체적인 예시
+
+backgroundColor 속성으로 버튼의 배경색을 변경할 수도 있다.
+
+<Canvas of={MyButtonStories.Yellow} />
+
+---
+
+_Copyright WINGS Project, 2023-_

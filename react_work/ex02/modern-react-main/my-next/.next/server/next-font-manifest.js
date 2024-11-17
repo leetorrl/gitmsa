@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/gaheeyoon/Dropbox/YOONGAHEE/위키북스/99_리액트 입문/07_예제/modern-react/my-next/src/app/layout\":[\"static/media/a6f8c6b7131e657a-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

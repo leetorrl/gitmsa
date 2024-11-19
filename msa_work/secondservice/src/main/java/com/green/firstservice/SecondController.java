@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("first-service")
-public class FirstController {
+@RequestMapping("second-service")
+public class SecondController {
 
 
     private final Environment environment;
@@ -21,6 +21,6 @@ public class FirstController {
 
 
         System.out.println("여기 서버가 동작..."+environment.getProperty("local.server.port"));
-        return "FirstService";
+        return "SecondService";
     }
 }

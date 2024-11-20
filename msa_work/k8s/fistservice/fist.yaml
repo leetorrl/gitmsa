@@ -14,7 +14,7 @@ spec: # 어떻게 만들지 대한 내용
     spec: # pod 한개에 대한 내용
       containers:
         - name: first-service
-          image: leetorrl/firstservice:msa-01 #dockerhub 에 있는 image
+          image: leetorrl/first-service:msa.k8.01 #dockerhub 에 있는 image
           ports:
             - containerPort: 40001 #default one
 

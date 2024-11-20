@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment # pod 여러개 만들겠다는 명령어
+metadata:
+  name: first-service-deployment
+spec: # 어떻게 만들지 대한 내용
+  replicas: 1 # 생성할 파드 갯수
+  selector:
+    matchLabels:
+      app: first-service #쿠버네티스 내의 변수명
+  template: # blueprint for pods
+    metadata:
+      labels:
+        app: first-service # 서비스에서 찾는 변수명
+    spec: # pod 한개에 대한 내용
+      containers:
+        - name: first-service
+          image: leetorrl/firstservice:msa-01 #dockerhub 에 있는 image
+          ports:
+            - containerPort: 40001 #default one
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 40001
+      targetPort: 40001
+  selector:
+    app: first-service

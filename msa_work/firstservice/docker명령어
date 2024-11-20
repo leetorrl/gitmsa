@@ -1,0 +1,6 @@
+#이미지 삭제
+docker rmi leetorrl/first-service:msa.k8.01
+#이미지 생성
+docker build -t leetorrl/first-service:msa.k8.01 .
+#이미지 dockerhub 업로드 명렁어
+docker push leetorrl/first-service:msa.k8.01

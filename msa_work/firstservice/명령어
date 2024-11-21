@@ -1,0 +1,4 @@
+
+서버 실행 10번 반복(테스트용)
+
+for i in {1..10}; do curl localhost:40001/first-service/test; done

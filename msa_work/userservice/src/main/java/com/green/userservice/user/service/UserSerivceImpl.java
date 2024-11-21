@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -57,5 +59,19 @@ public class UserSerivceImpl  implements UserService{
 
         return loginRespones;
     }
+
+    @Override
+    public List<UserResponse> list(){
+
+        List<UserEntity> list = userRepository.findAll();
+
+        List<UserResponse> userResponses = new ArrayList<>();
+
+        list.forEach(userEntity -> userResponses.add( new ModelMapper().map( userEntity , UserResponse.class))
+        );
+
+        return userResponses;
+    };
+
 
 }

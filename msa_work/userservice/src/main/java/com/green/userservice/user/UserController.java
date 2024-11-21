@@ -10,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+
 @RestController
 @RequestMapping("users")
 @RequiredArgsConstructor
@@ -27,6 +30,11 @@ public class UserController {
         UserResponse userResponse = userService.join(userRequest);
 
         return ResponseEntity.ok(userResponse);
+    }
+
+    @GetMapping("list")
+    public ResponseEntity<List<UserResponse>> listUser(){
+        return ResponseEntity.ok(userService.list());
     }
 
 

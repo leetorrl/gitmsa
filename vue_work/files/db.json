@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "idx": "0",
+      "nickname": "leetorrl",
+      "name": "이동현",
+      "age": 22,
+      "image": ""
+    },
+    {
+      "idx": "1",
+      "nickname": "leetorrl1",
+      "name": "Lewis",
+      "age": 57,
+      "image": ""
+    },
+    {
+      "idx": "2",
+      "nickname": "leetorrl2",
+      "name": "Evan",
+      "age": 35,
+      "image": ""
+    },
+    {
+      "idx": "3",
+      "nickname": "leetorrl3",
+      "name": "Alex",
+      "age": 22,
+      "image": ""
+    },
+    {
+      "idx": "4",
+      "nickname": "leetorrl4",
+      "name": "Mike",
+      "age": 41,
+      "image": ""
+    },
+    {
+      "idx": "5",
+      "nickname": "leetorrl5",
+      "name": "현동이",
+      "age": 30
+    },
+    {
+      "id": "0f18",
+      "idx": "6",
+      "nickname": "leetorrl6",
+      "name": "동동동",
+      "age": 50
+    }
+  ]
+}

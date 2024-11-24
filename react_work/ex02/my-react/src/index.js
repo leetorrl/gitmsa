@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './chap02/class.css'
 import MyHello from './MyHello';
@@ -12,6 +10,17 @@ import ForList from './chap03/ForList';
 import ForNest from './chap03/ForNest';
 import ForFilter from './chap03/ForFilter';
 import ForSort from './chap03/ForSort';
+import SelectStyle from './chap03/SelectStyle';
+import StyledPanel from './chap03/Styledpanel';
+import TitledPanel from './chap03/TitledPanel';
+import Siderbar from './chap03/Siderbar';
+import ListTemplate from './chap03/ListTemplate';
+import { RouterProvider } from 'react-router-dom';
+import routesBasic from './chap08/routesBasic';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+
+const title = '모던 리액트 Deep Dive';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const name = '홍길동'
 const content = '반응형?'
@@ -31,15 +40,45 @@ const props = {
   //padding: '3px'
 }
 
-const title = '모던 리액트 Deep Dive';
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+
+  
+  // <TitledPanel>
+  // <p key='title'>회원 모집 중!</p>
+  // <p key='body'>위키북스 프로젝트에 오신 것을 환영합니다!!</p>
+  // <div>
+  // </div>
+  // </ TitledPanel>
+<>
+<Router><Siderbar testnum={12} /></Router>
+
+
+<ListTemplate src={books}>
+  {elem => (
+   <div>
+     <dt>
+      <a href={`https://wikibook.co.kr/images/cover/s/${elem.isbn}.jpg`}>
+      {elem.title}({elem.price}원)
+      </a>
+     </dt>
+     <dd>{elem.summary}</dd>
+   </div>
+  )}
+  
+  </ListTemplate>
+ 
+  <MyHello />
+
+<RouterProvider router={routesBasic} />
+
+</>
+
+
+ 
 );
+
+
 
 const contentt = `<h3>WINGS 프로젝트</h3>
 <img src="https://wings.msn.to/image/wings.jpg" />`;
@@ -119,10 +158,20 @@ setInterval(()=>{
 <ForFilter src={books}/>
 <br/>
 <ForSort src={books}/>
+<br/>
+<SelectStyle mode="dark"/>
+
+<br/>
+<StyledPanel>
+  <p>회원 모집 중!</p>
+  <p>위키북스 프로젝트에 오신 것을 환영합니다!!</p>
+  </StyledPanel>
+<br/>
 
   </>    
+ 
   );
-},1000)
+},100000)
 
 const aa = ()=>{
 

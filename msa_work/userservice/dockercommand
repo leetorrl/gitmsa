@@ -1,6 +1,6 @@
 #이미지 삭제
-docker rmi leetorrl/user-service:msa.k8.01
+docker rmi leetorrl/user-service:msa.k8.02
 #이미지 생성
-docker build -t leetorrl/user-service:msa.k8.01 .
+docker build -t leetorrl/user-service:msa.k8.02 .
 #이미지 dockerhub 업로드 명렁어
-docker push leetorrl/user-service:msa.k8.01
+docker push leetorrl/user-service:msa.k8.02

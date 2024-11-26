@@ -1,15 +1,13 @@
 package com.green.orderservice.order.service;
 
-import com.green.orderservice.order.vo.OrderRespones;
+import com.green.orderservice.order.vo.OrderResponse;
 import com.green.orderservice.order.vo.OrderRequest;
+
+import java.util.List;
 
 
 public interface OrderService {
 
-
-    OrderResponse join(OrderRequest orderRequest);
-
-
-    OrderRespones login(String email, String password);
-
+    OrderResponse order(OrderRequest orderRequest,String userId);
+    List<OrderResponse> list(String userId);
 }

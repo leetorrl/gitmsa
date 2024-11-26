@@ -6,6 +6,7 @@ import com.green.userservice.user.vo.LoginRespones;
 import com.green.userservice.user.vo.UserRequest;
 import com.green.userservice.user.vo.UserResponse;
 
+import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,33 @@ public class UserController {
 
     private final UserService userService;
     private  final FirstClient firstClient;
+
+    @Timed("long.work")
+    @GetMapping("long-work")
+    public String longWork(){
+
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return "Long work completed";
+    }
+
+
+    @GetMapping("short-work")
+    @Timed("short.work")
+    public String shortwork(){
+        try {
+            Thread.sleep(10); // 5 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "short work completed";
+    }
+
+
+
 
     @GetMapping("test")
     public String test(){

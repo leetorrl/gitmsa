@@ -1,50 +1,35 @@
 package com.green.orderservice.order;
 
 import com.green.orderservice.order.service.OrderService;
-import com.green.orderservice.order.vo.OrderRespones;
+import com.green.orderservice.order.vo.OrderResponse;
 import com.green.orderservice.order.vo.OrderRequest;
-
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("users")
+@RequestMapping("order-service")
 @RequiredArgsConstructor
-@CrossOrigin
 public class OrderController {
 
     private final OrderService orderService;
 
-
-    @PostMapping("join")
-    public ResponseEntity<OrderResponse> joinUser(@RequestBody OrderRequest orderRequest) {
-
-        orderService.join(orderRequest);
-
-        OrderResponse orderResponse = orderService.join(orderRequest);
-
+    // 해당하는 사용자 주문하기
+    @PostMapping("/{userId}/order")
+    public ResponseEntity<OrderResponse> userOrder(@PathVariable String userId,
+                                                   @RequestBody OrderRequest orderRequest) {
+        OrderResponse orderResponse = orderService.order(orderRequest, userId);
         return ResponseEntity.ok(orderResponse);
     }
 
-
-    @GetMapping("login")
-    public ResponseEntity<String> getUser(
-            @RequestParam(value = "email") String email,
-            @RequestParam(value = "password") String password
-    ) {
-
-       OrderRespones orderRespones = orderService.login(email, password);
-
-        return ResponseEntity.ok(null);
+    // 해당하는 사용자 주문목록보기
+    @GetMapping("/{userId}/order")
+    public ResponseEntity<List<OrderResponse>> userOrders(@PathVariable String userId) {
+        List<OrderResponse> orderResponses = orderService.list(userId);
+        return ResponseEntity.ok(orderResponses);
     }
 
-
-    @GetMapping("Kakaologin")
-    public ResponseEntity<String> KakaoLogin() {
-
-        return ResponseEntity.ok(null);
-    }
 
 }

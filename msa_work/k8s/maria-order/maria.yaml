@@ -1,0 +1,54 @@
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: maria-name
+#
+
+---
+apiVersion: apps/v1
+kind: Deployment # pod 여러개 만들겠다는 명령어
+metadata:
+  name: mariadb-order-deployment
+#  namespace: maria-name
+spec: # 어떻게 만들지 대한 내용
+  replicas: 1 # 생성할 파드 갯수
+  selector:
+    matchLabels:
+      app: mariadb-order #쿠버네티스 내의 변수명
+  template: # blueprint for pods
+    metadata:
+      labels:
+        app: mariadb-order # 서비스에서 찾는 변수명
+    spec: # pod 한개에 대한 내용
+      containers:
+        - name: mariadb-order
+          image: mariadb #dockerhub 에 있는 image
+          ports:
+            - containerPort: 3306 #default one
+          env: #환경설정
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb-secret
+                  key: password
+          volumeMounts:
+            - name: mariadb-initdb-config-order
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mariadb-initdb-config-order
+          configMap:
+            name: mariadb-initdb-config-order
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-order
+#  namespace: maria-name
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3306
+      targetPort: 3306
+      nodePort: 33307 #윈도우에서 접근할 port
+  selector:
+    app: mariadb-order

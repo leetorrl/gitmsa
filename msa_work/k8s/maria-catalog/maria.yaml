@@ -8,20 +8,20 @@
 apiVersion: apps/v1
 kind: Deployment # pod 여러개 만들겠다는 명령어
 metadata:
-  name: mariadb-deployment
+  name: mariadb-catalog-deployment
 #  namespace: maria-name
 spec: # 어떻게 만들지 대한 내용
   replicas: 1 # 생성할 파드 갯수
   selector:
     matchLabels:
-      app: mariadb #쿠버네티스 내의 변수명
+      app: mariadb-catalog #쿠버네티스 내의 변수명
   template: # blueprint for pods
     metadata:
       labels:
-        app: mariadb # 서비스에서 찾는 변수명
+        app: mariadb-catalog # 서비스에서 찾는 변수명
     spec: # pod 한개에 대한 내용
       containers:
-        - name: mariadb
+        - name: mariadb-catalog
           image: mariadb #dockerhub 에 있는 image
           ports:
             - containerPort: 3306 #default one
@@ -32,22 +32,23 @@ spec: # 어떻게 만들지 대한 내용
                   name: mariadb-secret
                   key: password
           volumeMounts:
-            - name: mariadb-initdb-config
+            - name: mariadb-initdb-config-catalog
               mountPath: /docker-entrypoint-initdb.d
       volumes:
-        - name: mariadb-initdb-config
+        - name: mariadb-initdb-config-catalog
           configMap:
-            name: mariadb-initdb-config
+            name: mariadb-initdb-config-catalog
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mariadb
+  name: mariadb-catalog
 #  namespace: maria-name
 spec:
   type: LoadBalancer
   ports:
     - port: 3306
       targetPort: 3306
+      nodePort: 33308
   selector:
-    app: mariadb
+    app: mariadb-catalog

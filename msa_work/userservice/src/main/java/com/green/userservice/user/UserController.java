@@ -79,14 +79,19 @@ public class UserController {
 
 
     @GetMapping("login")
-    public ResponseEntity<String> getUser(
+    public ResponseEntity<LoginRespones> getUser(
             @RequestParam(value = "email") String email,
-            @RequestParam(value = "password") String password
-    ) {
+            @RequestParam(value = "password") String password) {
+        LoginRespones loginResponse = userService.login(email,password);
+        return ResponseEntity.ok(loginResponse);
+    }
 
-       LoginRespones loginRespones = userService.login(email, password);
 
-        return ResponseEntity.ok(null);
+    @GetMapping("get-user/{userId}")
+    public ResponseEntity<UserResponse> getUser(@PathVariable(value = "userId") String userId){
+
+        UserResponse userResponse = userService.getUser(userId);
+        return ResponseEntity.ok(userResponse);
     }
 
 

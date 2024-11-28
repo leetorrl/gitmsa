@@ -45,10 +45,11 @@ metadata:
   name: mariadb-catalog
 #  namespace: maria-name
 spec:
-  type: LoadBalancer
+  #  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 3306
       targetPort: 3306
-      nodePort: 33308
+      nodePort: 30308
   selector:
     app: mariadb-catalog

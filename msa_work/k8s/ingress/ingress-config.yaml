@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: pmh-ingress
+  name: msa-ingress
 spec:
   rules:
     - http:
@@ -23,12 +23,19 @@ spec:
           - path: /user-service
             pathType: Prefix
             backend:
-               service:
-                 name: user-service
-                 port:
-                   number: 40003
-          - path: /
+              service:
+                name: user-service
+                port:
+                  number: 40003
+          - path: /order-service
             pathType: Prefix
+            backend:
+              service:
+                name: order-service
+                port:
+                  number: 40004
+          - path: /
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: node-service

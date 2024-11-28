@@ -20,4 +20,6 @@ public interface UserService {
 
     List<UserResponse> list();
 
+
+    UserResponse getUser(String userId);
 }

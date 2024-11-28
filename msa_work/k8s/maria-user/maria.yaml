@@ -45,10 +45,11 @@ metadata:
   name: mariadb-user
 #  namespace: maria-name
 spec:
-  type: LoadBalancer
+#  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 3306
       targetPort: 3306
-      nodePort: 33306
+      nodePort: 30306
   selector:
     app: mariadb-user

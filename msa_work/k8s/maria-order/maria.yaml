@@ -45,10 +45,11 @@ metadata:
   name: mariadb-order
 #  namespace: maria-name
 spec:
-  type: LoadBalancer
+  #  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 3306
       targetPort: 3306
-      nodePort: 33307 #윈도우에서 접근할 port
+      nodePort: 30307 #윈도우에서 접근할 port
   selector:
     app: mariadb-order

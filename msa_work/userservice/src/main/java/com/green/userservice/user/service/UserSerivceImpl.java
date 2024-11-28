@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -71,7 +72,18 @@ public class UserSerivceImpl  implements UserService{
         );
 
         return userResponses;
-    };
+    }
+
+
+    @Override
+    public UserResponse getUser(String userId) {
+
+        Optional<UserEntity> userEntity = userRepository.findByUserId(userId);
+
+        return null;
+    }
+
+    ;
 
 
 }

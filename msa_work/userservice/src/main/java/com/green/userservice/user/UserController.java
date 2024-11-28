@@ -72,7 +72,6 @@ public class UserController {
         return ResponseEntity.ok(userService.list());
     }
 
-
     @GetMapping("login")
     public ResponseEntity<LoginResponse> getUser(
             @RequestParam(value = "email") String email,

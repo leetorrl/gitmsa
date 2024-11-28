@@ -19,30 +19,27 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class UserSerivceImpl  implements UserService{
+public class UserSerivceImpl implements UserService {
 
-    private final UserRepository userRepository;
+    private final UserRepository userRepository; // UserRepository dependency injection
     private final JwtUtils jwtUtils;
     private final OrderClient orderClient;
 
     @Override
-    public UserResponse join(UserRequest userRequest){
-
+    public UserResponse join(UserRequest userRequest) {
         String reqEmail = userRequest.getEmail();
 
-       userRepository.findByEmail(reqEmail)
+        userRepository.findByEmail(reqEmail)
                 .ifPresent(user -> {
-                    throw new UserException(String.format("이미 존재하는 email 메일입니다 \n 회원가입 할 수 없습니다.%s", reqEmail));
+                    throw new UserException(String.format("이미 존재하는 email 메일입니다 \n회원가입 할 수 없습니다.%s", reqEmail));
                 });
 
         ModelMapper mapper = new ModelMapper();
         UserEntity userEntity = mapper.map(userRequest, UserEntity.class);
-
         userEntity.setUserId(UUID.randomUUID().toString());
+        userEntity = userRepository.save(userEntity); // UserRepository 에서 UserEntity를 저장
 
-        userRepository.save(userEntity);
-
-        UserResponse userResponse =  mapper.map(userEntity,UserResponse.class);
+        UserResponse userResponse = mapper.map(userEntity, UserResponse.class);
 
         return userResponse;
     }
@@ -50,31 +47,32 @@ public class UserSerivceImpl  implements UserService{
     @Override
     public LoginResponse login(String email, String password) {
 
-       UserEntity userEntity = userRepository.findByEmailAndPassword(email, password)
-               .orElseThrow(()-> new UserException("Invalid email or password"));
-
-       LoginResponse loginResponse = new LoginResponse();
-       loginResponse.setUserId(userEntity.getUserId());
-       loginResponse.setAccessToken(jwtUtils.createAccessToken(userEntity.getEmail(), userEntity.getUserId()));
-       loginResponse.setRefreshToken(jwtUtils.createRefreshToken(userEntity.getEmail()));
-       loginResponse.setEmail(userEntity.getEmail());
+        // email password 확인 하고 틀리면 Exception 처리
+        UserEntity userEntity =
+                userRepository.findByEmailAndPassword(email, password)
+                        .orElseThrow(
+                                () ->
+                                        new UserException("Invalid email or password")
+                        );
+        // 로그인한 유저가 있으면 loginResponse 객체 생성해서 controller에 반환
+        LoginResponse loginResponse = new LoginResponse();
+        loginResponse.setUserId(userEntity.getUserId());
+        loginResponse.setAccessToken(jwtUtils.createAccessToken(userEntity.getEmail(), userEntity.getUserId()));
+        loginResponse.setRefreshToken(jwtUtils.createRefreshToken(userEntity.getEmail()));
+        loginResponse.setEmail(userEntity.getEmail());
 
         return loginResponse;
     }
 
     @Override
-    public List<UserResponse> list(){
-
+    public List<UserResponse> list() {
         List<UserEntity> list = userRepository.findAll();
-
         List<UserResponse> userResponses = new ArrayList<>();
-
-        list.forEach(userEntity -> userResponses.add( new ModelMapper().map( userEntity , UserResponse.class))
+        list.forEach(
+                userEntity -> userResponses.add(new ModelMapper().map(userEntity, UserResponse.class))
         );
-
         return userResponses;
     }
-
 
     @Override
     public UserResponse getUser(String userId) {

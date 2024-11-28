@@ -1,6 +1,7 @@
 #이미지 삭제
-docker rmi leetorrl/user-service:msa.k8.02
+kubetctl delete deploy user-service-deployment
+docker rmi leetorrl/user-service:msa.k8.03
 #이미지 생성
-docker build -t leetorrl/user-service:msa.k8.02 .
+docker build -t leetorrl/user-service:msa.k8.03 .
 #이미지 dockerhub 업로드 명렁어
-docker push leetorrl/user-service:msa.k8.02
+docker push leetorrl/user-service:msa.k8.03

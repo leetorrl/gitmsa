@@ -2,18 +2,15 @@ package com.green.userservice.user;
 
 import com.green.userservice.feign.FirstClient;
 import com.green.userservice.user.service.UserService;
-import com.green.userservice.user.vo.LoginRespones;
+import com.green.userservice.user.vo.LoginResponse;
 import com.green.userservice.user.vo.UserRequest;
 import com.green.userservice.user.vo.UserResponse;
-
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("user-service")
@@ -22,7 +19,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private  final FirstClient firstClient;
+    private final FirstClient firstClient;
 
     @Timed("long.work")
     @GetMapping("long-work")
@@ -47,8 +44,6 @@ public class UserController {
         }
         return "short work completed";
     }
-
-
 
 
     @GetMapping("test")
@@ -79,25 +74,22 @@ public class UserController {
 
 
     @GetMapping("login")
-    public ResponseEntity<LoginRespones> getUser(
+    public ResponseEntity<LoginResponse> getUser(
             @RequestParam(value = "email") String email,
             @RequestParam(value = "password") String password) {
-        LoginRespones loginResponse = userService.login(email,password);
+        LoginResponse loginResponse = userService.login(email,password);
         return ResponseEntity.ok(loginResponse);
     }
 
 
-    @GetMapping("get-user/{userId}")
+    @GetMapping("getuser/{userId}")
     public ResponseEntity<UserResponse> getUser(@PathVariable(value = "userId") String userId){
-
         UserResponse userResponse = userService.getUser(userId);
         return ResponseEntity.ok(userResponse);
     }
 
-
     @GetMapping("Kakaologin")
     public ResponseEntity<String> KakaoLogin() {
-
         return ResponseEntity.ok(null);
     }
 

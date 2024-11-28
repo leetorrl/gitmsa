@@ -1,10 +1,12 @@
 package com.green.userservice.user.service;
 
 import com.green.userservice.error.UserException;
+import com.green.userservice.feign.OrderClient;
 import com.green.userservice.jwt.JwtUtils;
 import com.green.userservice.user.jpa.UserEntity;
 import com.green.userservice.user.jpa.UserRepository;
-import com.green.userservice.user.vo.LoginRespones;
+import com.green.userservice.user.vo.LoginResponse;
+import com.green.userservice.user.vo.OrderResponse;
 import com.green.userservice.user.vo.UserRequest;
 import com.green.userservice.user.vo.UserResponse;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -21,8 +22,8 @@ import java.util.UUID;
 public class UserSerivceImpl  implements UserService{
 
     private final UserRepository userRepository;
-
     private final JwtUtils jwtUtils;
+    private final OrderClient orderClient;
 
     @Override
     public UserResponse join(UserRequest userRequest){
@@ -47,18 +48,18 @@ public class UserSerivceImpl  implements UserService{
     }
 
     @Override
-    public LoginRespones login(String email, String password) {
+    public LoginResponse login(String email, String password) {
 
        UserEntity userEntity = userRepository.findByEmailAndPassword(email, password)
                .orElseThrow(()-> new UserException("Invalid email or password"));
 
-       LoginRespones loginRespones = new LoginRespones();
-       loginRespones.setUserId(userEntity.getUserId());
-       loginRespones.setAccessToken(jwtUtils.createAccessToken(userEntity.getEmail(), userEntity.getUserId()));
-       loginRespones.setRefreshToken(jwtUtils.createRefreshToken(userEntity.getEmail()));
-       loginRespones.setEmail(userEntity.getEmail());
+       LoginResponse loginResponse = new LoginResponse();
+       loginResponse.setUserId(userEntity.getUserId());
+       loginResponse.setAccessToken(jwtUtils.createAccessToken(userEntity.getEmail(), userEntity.getUserId()));
+       loginResponse.setRefreshToken(jwtUtils.createRefreshToken(userEntity.getEmail()));
+       loginResponse.setEmail(userEntity.getEmail());
 
-        return loginRespones;
+        return loginResponse;
     }
 
     @Override
@@ -77,13 +78,12 @@ public class UserSerivceImpl  implements UserService{
 
     @Override
     public UserResponse getUser(String userId) {
-
-        Optional<UserEntity> userEntity = userRepository.findByUserId(userId);
-
-        return null;
+        UserEntity userEntity = userRepository.findByUserId(userId).orElseThrow(
+                () -> new UserException(String.format("User with id %s not found", userId))
+        );
+        UserResponse userResponse = new ModelMapper().map(userEntity, UserResponse.class);
+        List<OrderResponse> orderResponses = orderClient.getOrders(userId);
+        userResponse.setOrderResponses(orderResponses);
+        return userResponse;
     }
-
-    ;
-
-
 }

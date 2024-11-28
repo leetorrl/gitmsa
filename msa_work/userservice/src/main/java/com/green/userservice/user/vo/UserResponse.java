@@ -2,9 +2,10 @@ package com.green.userservice.user.vo;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class UserResponse {
-
     private Long id;
 
     private String email;
@@ -15,4 +16,5 @@ public class UserResponse {
 
     private String password;
 
+    private List<OrderResponse> orderResponses;
 }

@@ -9,7 +9,6 @@ import lombok.Data;
 @Data
 public class UserRequest {
 
-
     @Schema(hidden=true)
     private Long id;
 

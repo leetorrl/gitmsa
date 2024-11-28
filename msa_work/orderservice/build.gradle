@@ -28,6 +28,17 @@ ext {
 }
 
 dependencies {
+
+
+	//zikin 라이브러리
+	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+	implementation 'io.zipkin.brave:brave-instrumentation-spring-web'
+	implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
+	implementation 'io.micrometer:micrometer-observation'
+
+	implementation 'io.github.openfeign:feign-micrometer'
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-actuator' // 메트릭 자동생성
 	implementation 'io.micrometer:micrometer-core' // 메트릭 생성 라이브러리
 	implementation 'io.micrometer:micrometer-registry-prometheus' // 프로메테우스에서 메트릭 자동으로..

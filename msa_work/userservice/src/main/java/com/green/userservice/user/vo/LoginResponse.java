@@ -3,7 +3,7 @@ package com.green.userservice.user.vo;
 import lombok.Data;
 
 @Data
-public class LoginRespones {
+public class LoginResponse {
 
     private String accessToken;
     private String refreshToken;

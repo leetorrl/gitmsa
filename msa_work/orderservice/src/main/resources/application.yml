@@ -7,7 +7,7 @@ spring:
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/msa?serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://localhost:30307/msa?serverTimezone=Asia/Seoul
     username: root
     password: 1234
   output:
@@ -44,11 +44,26 @@ spring:
 #     tracing:
 #       endpoint: http://localhost:9411/api/v2/spans
 
+logging:
+  level:
+    org.springframework.web: DEBUG    # HTTP 요청 관련 로그 (Actuator HTTP 엔드포인트) 이거 해야 다 나옴...
+  pattern:
+    correlation: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+#  pattern:
+#    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"  # 파일 로그 패턴
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  tracing:
+    sampling:
+      probability: 1.0 # 모든 요청을 추적 (0.1로 설정하면 10%만 추적)
+    zipkin:
+      enabled: true
+      endpoint: http://192.168.0.69:9411/api/v2/spans
+
 
 first-service-url: http://localhost:40001
 catalog-service-url: http://localhost:20002
